@@ -1,0 +1,299 @@
+fileFormatVersion: 2
+guid: 896061561413bfaf99f00f8a0e73e319
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6892193004028055510
+    second: remasterizado_0
+  - first:
+      213: 890204101083712635
+    second: remasterizado_1
+  - first:
+      213: -741268602191363703
+    second: remasterizado_2
+  - first:
+      213: 7538825070458761266
+    second: remasterizado_3
+  - first:
+      213: 1810025273394835677
+    second: remasterizado_4
+  - first:
+      213: -6931384854026202126
+    second: remasterizado_5
+  - first:
+      213: 3673453313196162162
+    second: remasterizado_6
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: remasterizado_0
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 268
+        width: 550
+        height: 153
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 187, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a20b97faaf20a50a0800000000000000
+      internalID: -6892193004028055510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: remasterizado_1
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 265
+        width: 550
+        height: 153
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 187, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7cc0b6d9e3aa5c00800000000000000
+      internalID: 890204101083712635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: remasterizado_2
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 262
+        width: 550
+        height: 153
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 187, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981cb3b322c76b5f0800000000000000
+      internalID: -741268602191363703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: remasterizado_3
+      rect:
+        serializedVersion: 2
+        x: 2377
+        y: 261
+        width: 550
+        height: 153
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 187, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 230f08c85794f9860800000000000000
+      internalID: 7538825070458761266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: remasterizado_4
+      rect:
+        serializedVersion: 2
+        x: 3117
+        y: 262
+        width: 550
+        height: 153
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 187, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd0bd2f65608e1910800000000000000
+      internalID: 1810025273394835677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: remasterizado_5
+      rect:
+        serializedVersion: 2
+        x: 3954
+        y: 265
+        width: 550
+        height: 153
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 187, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3de360336cecf90800000000000000
+      internalID: -6931384854026202126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: remasterizado_6
+      rect:
+        serializedVersion: 2
+        x: 4777
+        y: 268
+        width: 152
+        height: 153
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 152, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27cf908535abaf230800000000000000
+      internalID: 3673453313196162162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4b2b3ebda872e2c40ac7233ba18ae5fc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      remasterizado_0: -6892193004028055510
+      remasterizado_1: 890204101083712635
+      remasterizado_2: -741268602191363703
+      remasterizado_3: 7538825070458761266
+      remasterizado_4: 1810025273394835677
+      remasterizado_5: -6931384854026202126
+      remasterizado_6: 3673453313196162162
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
