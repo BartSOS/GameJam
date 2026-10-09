@@ -234,11 +234,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 727118026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -301.9121, y: 0}
-  m_SizeDelta: {x: -603.8243, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -5.7789307, y: 0.00073814}
+  m_SizeDelta: {x: 190.3089, y: 446.83}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &310014996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +519,7 @@ Camera:
   field of view: 34
   orthographic: 1
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -574,6 +574,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848c24e5c64c8d7f5948af715daede94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
+  painelStatus: {fileID: 310014995}
+  posicaoOculta: 500
+  posicaoVisivel: 0
 --- !u!1 &541232857
 GameObject:
   m_ObjectHideFlags: 0

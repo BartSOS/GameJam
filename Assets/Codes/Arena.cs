@@ -229,7 +229,7 @@ public class ArenaVisualizer : MonoBehaviour
                 novoCard.name = $"CardTank_ID_{t.id}";
     
                 cardTankUI = novoCard.GetComponent<CardTankUI>();
-                cardTankUI.onEntry($"Tank_{t.id}"); // Exemplo de nome, você pode ajustar conforme necessário
+                cardTankUI.onEntry(t.id, $"Tank_{t.id}", this); // Exemplo de nome, você pode ajustar conforme necessário
                 cardTanksAtivos.Add(t.id, cardTankUI);
             }
 
@@ -368,5 +368,14 @@ public class ArenaVisualizer : MonoBehaviour
         
         // Só devolve para a caixa de munição quando a fumaça acabar
         pool.Enqueue(script);
+    }
+
+    public MovementTank getTankById(int id)
+    {
+        if (tanquesNaCena.ContainsKey(id))
+        {
+            return tanquesNaCena[id];
+        }
+        return null;
     }
 }

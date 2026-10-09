@@ -18,7 +18,7 @@ public class CameraController : MonoBehaviour
     {
         reducao = 0.5f;
         tempoAnimacao = 0.5f;
-        padding = 0.1f;
+        padding = 0.05f;
         cameraDigital = GetComponent<CameraDigital>();
     }
 
@@ -28,7 +28,11 @@ public class CameraController : MonoBehaviour
 
         if (painelStatus != null)
         {
+            float pixelWidth = ((RectTransform)painelStatus.parent).rect.width;
+            float porcentagemSobra = 1 - 2*padding - reducao;
+            float larguraPainel = pixelWidth * porcentagemSobra;
             painelStatus.anchoredPosition = new Vector2(posicaoOculta, painelStatus.anchoredPosition.y);
+            painelStatus.sizeDelta = new Vector2(larguraPainel, painelStatus.sizeDelta.y);
         }
 
     }

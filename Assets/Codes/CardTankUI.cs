@@ -1,8 +1,11 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using DG.Tweening;
+using UnityEngine.InputSystem;
 
-public class CardTankUI : MonoBehaviour
+public class CardTankUI : MonoBehaviour, IPointerClickHandler
 {
     private TextMeshProUGUI texto;
     private Image barraHp;
@@ -11,6 +14,10 @@ public class CardTankUI : MonoBehaviour
     private float larguraMaxEnergy;
     private float energyAntiga;
     private float hpAntiga;
+    private bool selecionado = false;
+    private int idTank;
+    private float tempoAnimacao;
+    private ArenaVisualizer arenaManager;
 
     void Awake()
     { 
@@ -30,7 +37,7 @@ public class CardTankUI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        tempoAnimacao = 0.5f;
     }
 
     // Update is called once per frame
@@ -38,14 +45,25 @@ public class CardTankUI : MonoBehaviour
     {
         barraHp.rectTransform.sizeDelta = Vector2.Lerp(barraHp.rectTransform.sizeDelta, new Vector2(larguraMaxHp * (hpAntiga / 100f), barraHp.rectTransform.sizeDelta.y), 10f * Time.deltaTime);
         barraShield.rectTransform.sizeDelta = Vector2.Lerp(barraShield.rectTransform.sizeDelta, new Vector2(larguraMaxEnergy * (energyAntiga / 100f), barraShield.rectTransform.sizeDelta.y), 10f * Time.deltaTime);
+    
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            if (!RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), Mouse.current.position.ReadValue(), null))
+            {
+                if (selecionado)
+                    DesmarcaCard();
+                selecionado = false;   
+            }
+        }
     }
 
-    public void onEntry(string name)
+    public void onEntry(int id, string name, ArenaVisualizer arena)
     {
+        idTank = id;
         energyAntiga = 100f;
         larguraMaxHp = barraHp.rectTransform.sizeDelta.x;
         larguraMaxEnergy = barraShield.rectTransform.sizeDelta.x;
-
+        arenaManager = arena;   
         texto.text = name;
         barraHp.fillAmount = 1f;
         barraShield.fillAmount = 1f;
@@ -64,6 +82,67 @@ public class CardTankUI : MonoBehaviour
         energyAntiga = energy;
         hpAntiga = hp;
     }   
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        selecionado = !selecionado;
+
+        transform.DOKill();
+
+        if (selecionado)
+        {
+            transform.DOScale(1.1f, tempoAnimacao).SetEase(Ease.OutCubic);
+            RectTransform rect = transform.GetComponent<RectTransform>();
+            rect.DOAnchorPosY(rect.anchoredPosition.y + 10f, tempoAnimacao).SetEase(Ease.OutCubic);
+            BrilharContornoTank();
+        }
+        else
+        {
+            DesmarcaCard();
+        }
+    }
+
+    private void DesmarcaCard()
+    {
+        transform.DOScale(new Vector3(1f, 1f, 1f), tempoAnimacao).SetEase(Ease.OutCubic);
+        RectTransform rect = transform.GetComponent<RectTransform>();
+        rect.DOAnchorPosY(rect.anchoredPosition.y - 10f, tempoAnimacao).SetEase(Ease.OutCubic);
+        PararBrilhoTank();
+    }
+
+    public void BrilharContornoTank()
+    {
+        MovementTank tank;
+
+        if (arenaManager != null)
+        {
+            tank = arenaManager.getTankById(idTank);
+        }
+
+        else return;
+
+        if (tank != null)
+        {
+            tank.BrilharTank();
+        }
+    }
+
+    public void PararBrilhoTank()
+    {
+        MovementTank tank;
+
+        if (arenaManager != null)
+        {
+            tank = arenaManager.getTankById(idTank);
+        }
+
+        else return;
+
+        if (tank != null)
+        {
+            tank.PararBrilhoTank();
+        }
+    }
 }
 
 public static class UtilsColor
