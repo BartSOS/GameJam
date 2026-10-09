@@ -5,26 +5,32 @@ using UnityEngine.InputSystem;
 public class CameraController : MonoBehaviour
 {
     private CameraDigital cameraDigital;
-    private float orthographicNormal;
-    private float orthographicAlvo;
-    private Vector3 posicaoAlvo;
-    private Vector3 posicaoNormal;
-    private float tempoAnimacao = 0.5f;
+    private float padding;
+    private float tempoAnimacao;
+    private Vector2 posicaoAlvo;
+    private float reducao;
+    [Header("Interface (UI)")]
+    public RectTransform painelStatus;
+    [SerializeField] private float posicaoOculta = -500f;
+    [SerializeField] private float posicaoVisivel = 0f;
 
     void Awake()
     {
+        reducao = 0.5f;
+        tempoAnimacao = 0.5f;
+        padding = 0.1f;
         cameraDigital = GetComponent<CameraDigital>();
-        posicaoNormal = new Vector3(0, 0, -10);
     }
 
     void Start()
     {
-        orthographicNormal = cameraDigital.cam.orthographicSize;
-        orthographicAlvo = orthographicNormal*0.7f;
-        Vector3 tamanhoNormal = cameraDigital.calculaTamanho(orthographicNormal, cameraDigital.cam.aspect);
-        Vector3 tamanhoAlvo = cameraDigital.calculaTamanho(orthographicAlvo, cameraDigital.cam.aspect);
+        posicaoAlvo = new Vector2(padding, (1 - reducao) / 2);
 
-        posicaoAlvo = new Vector3(tamanhoAlvo.x/2 - tamanhoNormal.x/2, tamanhoAlvo.y/2 - tamanhoNormal.y/2, -10);
+        if (painelStatus != null)
+        {
+            painelStatus.anchoredPosition = new Vector2(posicaoOculta, painelStatus.anchoredPosition.y);
+        }
+
     }
 
     public void ZoomIn()
@@ -32,8 +38,14 @@ public class CameraController : MonoBehaviour
         cameraDigital.cam.DOKill();
         transform.DOKill();
 
-        cameraDigital.cam.DOOrthoSize(orthographicAlvo, tempoAnimacao).SetEase(Ease.OutCubic);
-        cameraDigital.cam.transform.DOMove(posicaoAlvo, tempoAnimacao).SetEase(Ease.OutCubic);
+        if (painelStatus != null)
+            painelStatus.DOKill();
+
+        Rect rect = new Rect(posicaoAlvo, new Vector2(reducao, reducao));
+        cameraDigital.cam.DORect(rect, tempoAnimacao).SetEase(Ease.OutCubic);
+
+        if (painelStatus != null)
+            painelStatus.DOAnchorPosX(posicaoVisivel, tempoAnimacao).SetEase(Ease.OutCubic);
     }
 
     public void ZoomOut()
@@ -41,8 +53,13 @@ public class CameraController : MonoBehaviour
         cameraDigital.cam.DOKill();
         transform.DOKill();
 
-        cameraDigital.cam.DOOrthoSize(orthographicNormal, tempoAnimacao).SetEase(Ease.OutCubic);
-        cameraDigital.cam.transform.DOMove(posicaoNormal, tempoAnimacao).SetEase(Ease.OutCubic);
+        if (painelStatus != null)
+            painelStatus.DOKill();
+
+        cameraDigital.cam.DORect(new Rect(Vector2.zero, new Vector2(1f, 1f)), tempoAnimacao).SetEase(Ease.OutCubic);
+
+        if (painelStatus != null)
+            painelStatus.DOAnchorPosX(posicaoOculta, tempoAnimacao).SetEase(Ease.OutCubic);
     }
 
     void Update()
