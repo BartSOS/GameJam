@@ -1,7 +1,34 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
+
+class Bar
+{
+    private Image image;
+    private float valorAtual;
+    private float larguraMaxima;
+    private float altura;
+
+    public Bar(Image image)
+    {
+        this.image = image;
+        this.larguraMaxima = image.rectTransform.sizeDelta.x;
+        this.altura = image.rectTransform.sizeDelta.y;
+        this.valorAtual = 100f;
+    }
+
+    public void updateBar(float val)
+    {
+        if (Mathf.Approximately(val, valorAtual)) return;
+
+        valorAtual = val;
+        image.rectTransform.DOKill();
+        image.rectTransform.DOSizeDelta(new Vector2(larguraMaxima * (val / 100f), altura), 0.5f);
+    }
+}
 
 public class MovementTank : MonoBehaviour
 {
@@ -19,6 +46,14 @@ public class MovementTank : MonoBehaviour
     private Coroutine coroutine;
     private Coroutine coroutineShield; 
     private GameObject contornoFake;
+    public Image imageHp;
+    public Image imageEnergy;
+    public TextMeshProUGUI texto;
+
+    private Bar barraHp;
+    private Bar barraEnergy;
+    
+    public Transform canvas;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
@@ -32,10 +67,16 @@ public class MovementTank : MonoBehaviour
         spriteRendererBase = renderes[1];
 
         scaleTank();
+
+        barraHp = new Bar(imageHp); 
+        barraEnergy = new Bar(imageEnergy);
+
+        canvas.name = $"CanvasTank_{gameObject.name}";
     }
 
     void Start()
     {
+        texto.text = gameObject.name;
         contornoFake = new GameObject("ContornoFake");
         CriaChildren(transform.gameObject, contornoFake);
         contornoFake.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
@@ -52,6 +93,27 @@ public class MovementTank : MonoBehaviour
         criaContorno(contornoFakeRendererTopo, spriteRendererTopo);
 
         contornoFake.SetActive(false);
+    }
+
+    void LateUpdate()
+    {
+        if (canvas != null)
+        {
+            canvas.rotation = Quaternion.identity;
+            canvas.position = new Vector3(transform.position.x, transform.position.y, 0f);
+        }
+    }
+
+    void OnEnable()
+    {
+        if (canvas != null)
+            canvas.gameObject.SetActive(true);
+    }
+
+    void OnDisable()
+    {
+        if (canvas != null)
+            canvas.gameObject.SetActive(false);
     }
 
     private void criaContorno(SpriteRenderer spriteRenderer, SpriteRenderer spriteOriginal)
@@ -92,16 +154,22 @@ public class MovementTank : MonoBehaviour
         topo = spriteRendererTopo.gameObject;
         bas = spriteRendererBase.gameObject;
 
-        Vector3 tamSpriteBase = spriteRendererBase.sprite.bounds.size;
+        float max = Mathf.Max(spriteRendererBase.sprite.bounds.size.x, spriteRendererBase.sprite.bounds.size.y);
+
+        Vector3 tamSpriteBase = new Vector3(max, max, 1f);
 
         CameraDigital cam = Camera.main.GetComponent<CameraDigital>();
 
-        Vector3 scaleMax = Project.regraDeTres(new Vector3(40f, 40f), cam.Tam_Engine, cam.Tam_Mundo);
+        transform.localScale = Project.regraDeTresMaster(
+            transform.localScale,
+            tamSpriteBase,
+            new Vector3(80f, 80f, 1f)
+        );
 
-        transform.localScale = Project.regraDeTres(transform.localScale, tamSpriteBase, scaleMax);
+        // oq seria tamSpriteEngine? 
     }
 
-    public void updateValues(float x, float y, float angle, float hp, bool shield)
+    public void updateValues(float x, float y, float angle, float hp, float energy, bool shield)
     {
         posicao = new Vector2(x, y);
         this.angle = Quaternion.Euler(0f, 0f, angle - 90f);
@@ -119,7 +187,7 @@ public class MovementTank : MonoBehaviour
                 if (coroutine != null)
                     StopCoroutine(coroutine);
 
-                StartCoroutine(animaDano());
+                coroutine = StartCoroutine(animaDano());
             }
 
         }
@@ -137,6 +205,14 @@ public class MovementTank : MonoBehaviour
             if (EnergyShield.activeSelf)
                 coroutineShield = StartCoroutine(exitShield());
 
+
+        updateBars(this.hp, energy);
+    }
+
+    private void updateBars(float hp, float energy)
+    {
+        barraHp.updateBar(hp);
+        barraEnergy.updateBar(energy);
     }
 
     private IEnumerator exitShield()
@@ -191,4 +267,5 @@ public class MovementTank : MonoBehaviour
         contornoFake.transform.DOKill();
         contornoFake.SetActive(false);
     }
+
 }

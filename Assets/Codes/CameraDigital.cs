@@ -14,6 +14,9 @@ public class CameraDigital : MonoBehaviour
     public float Largura_Engine => width_engine;
     public float Altura_Engine => height_engine;
 
+    public float Altura_Mundo => altura;
+    public float Largura_Mundo => largura;
+
     public Vector2 Tam_Mundo => new Vector3(altura, altura);
     public Vector2 Tam_Engine => new Vector3(width_engine, height_engine);
     public Vector2 Tam_Tela => new Vector3(largura, altura);

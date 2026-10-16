@@ -106,11 +106,11 @@ public class Project
         return new Vector3(Div(vector.x, current.x), Div(vector.y, current.y), Div(vector.z, current.z));
     }
 
-    public static Vector3 regraDeTresMaster(Vector3 transformLocalScale, Vector3 tamLastSprite, Vector3 tamSpriteEngine)
+    public static Vector3 regraDeTresMaster(Vector3 transformLocalScale, Vector3 tamSpriteWorld, Vector3 tamSpriteEngine)
     {
         CameraDigital cameraDigital = Camera.main.GetComponent<CameraDigital>();
         Vector3 scaleMax = regraDeTres(tamSpriteEngine, cameraDigital.Tam_Engine, cameraDigital.Tam_Mundo);
-        return regraDeTres(transformLocalScale, tamLastSprite, scaleMax);
+        return regraDeTres(transformLocalScale, tamSpriteWorld, scaleMax);
     }
 
     public void normalizaDates<TData>(

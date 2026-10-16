@@ -11,8 +11,11 @@ public class CameraController : MonoBehaviour
     private float reducao;
     [Header("Interface (UI)")]
     public RectTransform painelStatus;
-    [SerializeField] private float posicaoOculta = -500f;
+    public RectTransform button;
+    private float posicaoOculta;
     [SerializeField] private float posicaoVisivel = 0f;
+    [SerializeField] private float offsetButton;
+    private bool painelAberto = false;
 
     void Awake()
     {
@@ -31,8 +34,10 @@ public class CameraController : MonoBehaviour
             float pixelWidth = ((RectTransform)painelStatus.parent).rect.width;
             float porcentagemSobra = 1 - 2*padding - reducao;
             float larguraPainel = pixelWidth * porcentagemSobra;
+            posicaoOculta = larguraPainel;
             painelStatus.anchoredPosition = new Vector2(posicaoOculta, painelStatus.anchoredPosition.y);
-            painelStatus.sizeDelta = new Vector2(larguraPainel, painelStatus.sizeDelta.y);
+            painelStatus.sizeDelta = new Vector2(larguraPainel, ((RectTransform)painelStatus.parent).rect.height);
+            button.anchoredPosition = new Vector2(offsetButton, button.anchoredPosition.y);
         }
 
     }
@@ -68,12 +73,18 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        // Verifica se existe um teclado conectado para não dar erro
-        if (Keyboard.current != null) 
+    }
+
+    public void AlternarPainel()
+    {
+        painelAberto = !painelAberto;
+        if (painelAberto)
         {
-            // wasPressedThisFrame é o equivalente ao GetKeyDown no novo sistema
-            if (Keyboard.current.upArrowKey.wasPressedThisFrame) ZoomIn();
-            if (Keyboard.current.downArrowKey.wasPressedThisFrame) ZoomOut();
+            ZoomIn();
+        }
+        else
+        {
+            ZoomOut();
         }
     }
 

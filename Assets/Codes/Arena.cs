@@ -180,7 +180,7 @@ public class ArenaVisualizer : MonoBehaviour
             }
 
             MovementTank objTanque = tanquesNaCena[t.id];
-            objTanque.updateValues(t.x, t.y, t.angle, t.hp, t.shield);
+            objTanque.updateValues(t.x, t.y, t.angle, t.hp, t.energy, t.shield);
             
             // Garante que o estado visual reflita a simulação
             if (!t.alive)
