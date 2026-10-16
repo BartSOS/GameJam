@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
 
     void Awake()
     {
-        reducao = 0.5f;
+        reducao = 0.6f;
         tempoAnimacao = 0.5f;
         padding = 0.05f;
         cameraDigital = GetComponent<CameraDigital>();
@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
             float porcentagemSobra = 1 - 2*padding - reducao;
             float larguraPainel = pixelWidth * porcentagemSobra;
             posicaoOculta = larguraPainel;
-            painelStatus.anchoredPosition = new Vector2(posicaoOculta, painelStatus.anchoredPosition.y);
+            painelStatus.anchoredPosition = new Vector2(posicaoOculta, 0f);
             painelStatus.sizeDelta = new Vector2(larguraPainel, ((RectTransform)painelStatus.parent).rect.height);
             button.anchoredPosition = new Vector2(offsetButton, button.anchoredPosition.y);
         }

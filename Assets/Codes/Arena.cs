@@ -85,8 +85,8 @@ public class ArenaVisualizer : MonoBehaviour
                 AtualizarCardTanks(project.frames[(int)indice].tanks);
                 AtualizarItems(project.frames[(int)indice].items);
 
-                indice++;
                 Debug.Log(project.frames[(int)indice].tick);
+                indice++;
                 pode = false;
             }
 
@@ -102,7 +102,7 @@ public class ArenaVisualizer : MonoBehaviour
             {
                 gameOver = true;
                 AudioController audioController = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioController>();
-                var unicoItem = tanquesNaCena.First();
+                var unicoItem = tanquesNaCena.FirstOrDefault(t => t.Value.gameObject.activeSelf);
                 audioController.tocaSomSaida(unicoItem.Value.name); 
             }
         }
@@ -168,8 +168,8 @@ public class ArenaVisualizer : MonoBehaviour
         {
             if (!tanquesNaCena.ContainsKey(t.id))
             {
-                GameObject novoTanque = Instantiate(Tank, transform);
                 configurarCores(t.id);
+                GameObject novoTanque = Instantiate(Tank, transform);
                 novoTanque.name = $"Tank_{t.id}";
                 
                 // CORREÇÃO: O GetComponent deve ser chamado no objeto instanciado (novoTanque), 
@@ -363,8 +363,10 @@ public class ArenaVisualizer : MonoBehaviour
         Func<TVisual, IEnumerator> rotinaMorte
     ) where TVisual : MonoBehaviour
     {
-        if (rotinaMorte != null)
-            yield return StartCoroutine(rotinaMorte(script));
+        IEnumerator rotina = rotinaMorte?.Invoke(script);
+
+        if (rotina != null)
+            yield return StartCoroutine(rotina);
         
         // Só devolve para a caixa de munição quando a fumaça acabar
         pool.Enqueue(script);

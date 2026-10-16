@@ -194,17 +194,18 @@ public class MovementTank : MonoBehaviour
 
         this.hp = hp;
 
-        if (coroutineShield != null && this.shield != shield)
-            StopCoroutine(coroutineShield);
-        
-        this.shield = shield;
+        if (this.shield != shield)
+        {
+            if (coroutineShield != null)
+                StopCoroutine(coroutineShield);
 
-        if (shield)
-           coroutineShield = StartCoroutine(animaShield());
-        else
-            if (EnergyShield.activeSelf)
+            this.shield = shield;
+
+            if (shield)
+                coroutineShield = StartCoroutine(animaShield());
+            else if (EnergyShield.activeSelf)
                 coroutineShield = StartCoroutine(exitShield());
-
+        }
 
         updateBars(this.hp, energy);
     }

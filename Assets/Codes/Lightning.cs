@@ -8,7 +8,7 @@ public class Lightning : MonoBehaviour
     void Awake()
     {
         animator = GetComponent<Animator>();
-        animatorChildren = GetComponentInChildren<Animator>();
+        animatorChildren = GetComponentsInChildren<Animator>()[1];
         transform.localScale = Project.regraDeTresMaster(transform.localScale, GetComponent<SpriteRenderer>().sprite.bounds.size, new Vector3(40f, 40f));
     }
 
