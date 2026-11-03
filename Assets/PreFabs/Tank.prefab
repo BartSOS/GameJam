@@ -186,7 +186,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8825558557092505005, guid: 79951829dc3c9abcf85c52ed7891090f, type: 3}
+  m_Sprite: {fileID: 8825558557092505005, guid: 279a83996ac6b9c2695a82b555deb9ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementTank
   EnergyShield: {fileID: 7259335019990769243}
+  scaleFactorContorno: 1.1
   imageHp: {fileID: 7407507149658776527}
   imageEnergy: {fileID: 5004058534768559803}
   texto: {fileID: 8168194172353878251}
@@ -543,7 +544,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -8756764557099445141, guid: 66e9c4f045e225b548cbcb80594e0c32, type: 3}
+  m_Sprite: {fileID: -8756764557099445141, guid: 91c561a57551088c1aba593e12ff589a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

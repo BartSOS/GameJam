@@ -11,6 +11,7 @@ public class ArenaVisualizer : MonoBehaviour
     public GameObject Tank;
     public GameObject Tiro;
     public GameObject Artillery;
+    public GameObject CheckPoint;
     public GameObject CardTank;
     public Transform Painel;
     public GameObject MedKit;
@@ -23,6 +24,9 @@ public class ArenaVisualizer : MonoBehaviour
     private SpriteRenderer spriteRendererBase;
     [SerializeField] private Sprite [] spritesTopo;
     [SerializeField] private Sprite [] spritesBase;
+
+    private Dictionary<string, CheckPoint> checkPointsNaCena = new Dictionary<string, CheckPoint>();
+    private Dictionary<int, List<CheckPoint>> checkPointsNaCenaEliminacao = new Dictionary<int, List<CheckPoint>>();
 
     private Dictionary<int, MovementTank> tanquesNaCena = new Dictionary<int, MovementTank>();
     private Dictionary<int, ManagerTiro> projeteisNaCena = new Dictionary<int, ManagerTiro>();
@@ -99,14 +103,48 @@ public class ArenaVisualizer : MonoBehaviour
             return;
         }
 
-        foreach (var ponto in pontos)
+        foreach (PontoFase ponto in pontos)
         {
-            
+            CriaPonto(ponto);
+        }
+    }
+
+    private void CriaPonto(PontoFase ponto)
+    {
+        if (ponto == null)
+        {
+            Debug.LogError("Ponto não encontrado no JSON.");
+            return;
+        }
+
+        Debug.LogError($"Criando Ponto: {ponto.id}, x: {ponto.x}, y: {ponto.y}, raio: {ponto.raio}, consumido_tick: {ponto.consumido_tick}");
+
+        if (!checkPointsNaCena.ContainsKey(ponto.id))
+        {
+            GameObject novoPonto = Instantiate(CheckPoint, transform);
+            novoPonto.name = $"CheckPoint_{ponto.id}";
+
+            CheckPoint checkPointScript = novoPonto.GetComponent<CheckPoint>();
+            checkPointScript.onEntry(ponto.raio, ponto.x, ponto.y, ponto.consumido_tick, ponto.ordem);
+
+            checkPointsNaCena.Add(ponto.id, checkPointScript);
+
+            if (!checkPointsNaCenaEliminacao.ContainsKey(ponto.consumido_tick))
+            {
+                checkPointsNaCenaEliminacao.Add(ponto.consumido_tick, new List<CheckPoint>());
+            }
+            checkPointsNaCenaEliminacao[ponto.consumido_tick].Add(checkPointScript);
         }
     }
 
     private void CriaJogador(JogadorFase jogadorFase)
     {
+        if (jogadorFase == null)
+        {
+            Debug.LogError("Jogador não encontrado no JSON.");
+            return;
+        }
+
         
         Tank t = new Tank
         {
@@ -139,7 +177,7 @@ public class ArenaVisualizer : MonoBehaviour
                 x = alvo.x,
                 y = alvo.y,
                 angle = alvo.angulo,
-                hp = 100,
+                hp = alvo.hp,
                 energy = 100,
                 shield = false,
                 alive = true
@@ -148,6 +186,28 @@ public class ArenaVisualizer : MonoBehaviour
             AtualizaTanque(t);
         }
     }
+
+    private void AtualizarCheckPoints(int tick)
+    {
+        if (checkPointsNaCenaEliminacao == null || checkPointsNaCenaEliminacao.Count == 0)
+        {
+            Debug.LogError("Lista de CheckPoints não encontrada ou vazia.");
+            return;
+        }   
+
+        if (checkPointsNaCenaEliminacao.ContainsKey(tick))
+        {
+            List<CheckPoint> checkPoints = checkPointsNaCenaEliminacao[tick];
+            foreach (CheckPoint checkPoint in checkPoints)
+            {
+                if (checkPoint != null)
+                {
+                    checkPoint.gameObject.SetActive(false); // Desativa o CheckPoint quando consumido
+                }
+            }
+        }
+    }
+    
 
     private void StartNamesDosTanques(List<Bots> bots)
     {
@@ -174,6 +234,7 @@ public class ArenaVisualizer : MonoBehaviour
                 AtualizarHazards(project.frames[(int)indice].hazards);
                 AtualizarCardTanks(project.frames[(int)indice].tanks);
                 AtualizarItems(project.frames[(int)indice].items);
+                AtualizarCheckPoints(project.frames[(int)indice].tick);
 
                 Debug.Log(project.frames[(int)indice].tick);
                 indice++;
@@ -257,6 +318,7 @@ public class ArenaVisualizer : MonoBehaviour
             novoTanque.name = nomesDosTanques.ContainsKey(t.id) ? nomesDosTanques[t.id] : $"Tank_{t.id}";
             
             MovementTank tankAtual = novoTanque.GetComponent<MovementTank>();
+            tankAtual.onEntry(t.x, t.y, t.angle, t.turret, t.hp, t.energy, t.shield);
 
             tanquesNaCena.Add(t.id, tankAtual);
         }
@@ -267,7 +329,7 @@ public class ArenaVisualizer : MonoBehaviour
         if (tanquesNaCena.ContainsKey(t.id))
         {
             MovementTank objTanque = tanquesNaCena[t.id];
-            objTanque.updateValues(t.x, t.y, t.angle, t.hp, t.energy, t.shield);
+            objTanque.updateValues(t.x, t.y, t.angle, t.turret, t.hp, t.energy, t.shield);
             
             // Garante que o estado visual reflita a simulação
             if (!t.alive)
@@ -314,6 +376,7 @@ public class ArenaVisualizer : MonoBehaviour
             tiroManager => tiroManager.onExit()
         );
     }
+
 
     private void AtualizarCardTanks(List<Tank> dadosCardTanks)
     {

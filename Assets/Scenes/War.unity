@@ -153,6 +153,7 @@ MonoBehaviour:
   Tank: {fileID: 1891390598317454690, guid: e84445daea19ab900beb351f0618a9d7, type: 3}
   Tiro: {fileID: 1688956659423403782, guid: fe4437435943f1327a9ca06fd504b3be, type: 3}
   Artillery: {fileID: 3265235535973670578, guid: 3a56fcb06e88bc3a8af30962538ded61, type: 3}
+  CheckPoint: {fileID: 7385014782231171913, guid: e0cca5003bec4ba2894fb3014b4935cd, type: 3}
   CardTank: {fileID: 5262777709668367595, guid: 3129e30e53486d7ffab67c16d4050f14, type: 3}
   Painel: {fileID: 310014995}
   MedKit: {fileID: 5782543622997168054, guid: ff3b1b97c688648ec860184b50a41ddb, type: 3}
@@ -200,6 +201,24 @@ MonoBehaviour:
       arena_height: 0
       arena_width: 0
       max_ticks: 0
+    fase:
+      id: 
+      seed: 0
+      max_ticks: 0
+      jogador:
+        tank_id: 0
+        x: 0
+        y: 0
+        angulo: 0
+        hp: 0
+        energia: 0
+      pontos: []
+      alvos: []
+      artilharia: []
+      laser: 0
+      itens: 0
+      zona: 0
+    bots: []
     width: 0
     height: 0
     tam_engine: {x: 0, y: 0, z: 0}

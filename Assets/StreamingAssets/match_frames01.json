@@ -1,0 +1,8458 @@
+{
+  "fase": {
+    "alvos": [],
+    "artilharia": [],
+    "id": "01_andar",
+    "itens": false,
+    "jogador": {
+      "angulo": 114.83000201191074,
+      "energia": 100.0,
+      "hp": 100.0,
+      "tank_id": 1,
+      "x": 150.0,
+      "y": 445.4678149929414
+    },
+    "laser": false,
+    "max_ticks": 400,
+    "pontos": [
+      {
+        "id": "B",
+        "ordem": 1,
+        "raio": 30.0,
+        "x": 800.0,
+        "y": 739.1114481071021,
+        "consumido_tick": 142
+      }
+    ],
+    "seed": 7,
+    "zona": false
+  },
+  "config": {
+    "arena_height": 1000.0,
+    "arena_width": 1000.0,
+    "max_ticks": 400
+  },
+  "partida_id": "1793727491232967748",
+  "data_hora": "03/11/2026 14:38:11",
+  "status": "concluido",
+  "seed": 7,
+  "vencedor": "bot",
+  "turnos": 400,
+  "duracao_ms": 40000,
+  "bots": [
+    {
+      "id": 1,
+      "nome": "bot",
+      "lang": "Python 3",
+      "posicao": 1,
+      "vivo": true,
+      "kills": 0,
+      "hp": 100.0,
+      "vencedor": true,
+      "tick_eliminacao": null
+    }
+  ],
+  "excluidos": [],
+  "frames": [
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 105.83000201191074,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 150.0,
+          "y": 445.4678149929414
+        }
+      ],
+      "tick": 0
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 96.83000201191074,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 150.0,
+          "y": 445.4678149929414
+        }
+      ],
+      "tick": 1
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 87.83000201191074,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 150.0,
+          "y": 445.4678149929414
+        }
+      ],
+      "tick": 2
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 78.83000201191074,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 150.0,
+          "y": 445.4678149929414
+        }
+      ],
+      "tick": 3
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 69.83000201191074,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 150.0,
+          "y": 445.4678149929414
+        }
+      ],
+      "tick": 4
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 60.830002011910736,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 150.0,
+          "y": 445.4678149929414
+        }
+      ],
+      "tick": 5
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 51.830002011910736,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 153.08998404646448,
+          "y": 449.3987180180229
+        }
+      ],
+      "tick": 6
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 42.830002011910736,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 156.75685397363608,
+          "y": 452.7978451026146
+        }
+      ],
+      "tick": 7
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 33.830002011910736,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 160.91031927426428,
+          "y": 455.5814984568377
+        }
+      ],
+      "tick": 8
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 24.830002011910736,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 165.44810784808655,
+          "y": 457.6811352966955
+        }
+      ],
+      "tick": 9
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078457,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 170.01874877429077,
+          "y": 459.7082617169533
+        }
+      ],
+      "tick": 10
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 174.589389700495,
+          "y": 461.7353881372111
+        }
+      ],
+      "tick": 11
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 179.1600306266992,
+          "y": 463.7625145574689
+        }
+      ],
+      "tick": 12
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 183.73067155290343,
+          "y": 465.78964097772666
+        }
+      ],
+      "tick": 13
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 188.30131247910765,
+          "y": 467.81676739798445
+        }
+      ],
+      "tick": 14
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 192.87195340531187,
+          "y": 469.84389381824224
+        }
+      ],
+      "tick": 15
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 197.4425943315161,
+          "y": 471.8710202385
+        }
+      ],
+      "tick": 16
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 202.0132352577203,
+          "y": 473.8981466587578
+        }
+      ],
+      "tick": 17
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 206.58387618392453,
+          "y": 475.9252730790156
+        }
+      ],
+      "tick": 18
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 211.15451711012875,
+          "y": 477.9523994992734
+        }
+      ],
+      "tick": 19
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 215.72515803633297,
+          "y": 479.97952591953117
+        }
+      ],
+      "tick": 20
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 220.2957989625372,
+          "y": 482.00665233978896
+        }
+      ],
+      "tick": 21
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 224.8664398887414,
+          "y": 484.03377876004674
+        }
+      ],
+      "tick": 22
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 229.43708081494563,
+          "y": 486.06090518030453
+        }
+      ],
+      "tick": 23
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 234.00772174114985,
+          "y": 488.0880316005623
+        }
+      ],
+      "tick": 24
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 238.57836266735407,
+          "y": 490.1151580208201
+        }
+      ],
+      "tick": 25
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 243.1490035935583,
+          "y": 492.1422844410779
+        }
+      ],
+      "tick": 26
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784588,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 247.7196445197625,
+          "y": 494.1694108613357
+        }
+      ],
+      "tick": 27
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078453,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 252.29028544596673,
+          "y": 496.19653728159346
+        }
+      ],
+      "tick": 28
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 256.8609263721709,
+          "y": 498.22366370185125
+        }
+      ],
+      "tick": 29
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 261.4315672983751,
+          "y": 500.25079012210904
+        }
+      ],
+      "tick": 30
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 266.0022082245793,
+          "y": 502.2779165423668
+        }
+      ],
+      "tick": 31
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 270.5728491507835,
+          "y": 504.3050429626246
+        }
+      ],
+      "tick": 32
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 275.1434900769877,
+          "y": 506.3321693828824
+        }
+      ],
+      "tick": 33
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 279.7141310031919,
+          "y": 508.3592958031402
+        }
+      ],
+      "tick": 34
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 284.2847719293961,
+          "y": 510.386422223398
+        }
+      ],
+      "tick": 35
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 288.85541285560026,
+          "y": 512.4135486436558
+        }
+      ],
+      "tick": 36
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 293.42605378180446,
+          "y": 514.4406750639135
+        }
+      ],
+      "tick": 37
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784552,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 297.99669470800865,
+          "y": 516.4678014841713
+        }
+      ],
+      "tick": 38
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784495,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 302.5673356342129,
+          "y": 518.4949279044291
+        }
+      ],
+      "tick": 39
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784516,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 307.1379765604171,
+          "y": 520.5220543246869
+        }
+      ],
+      "tick": 40
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784516,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 311.7086174866213,
+          "y": 522.5491807449447
+        }
+      ],
+      "tick": 41
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784516,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 316.27925841282547,
+          "y": 524.5763071652025
+        }
+      ],
+      "tick": 42
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784516,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 320.84989933902966,
+          "y": 526.6034335854603
+        }
+      ],
+      "tick": 43
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784516,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 325.42054026523385,
+          "y": 528.630560005718
+        }
+      ],
+      "tick": 44
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784516,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 329.99118119143805,
+          "y": 530.6576864259758
+        }
+      ],
+      "tick": 45
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784516,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 334.56182211764224,
+          "y": 532.6848128462336
+        }
+      ],
+      "tick": 46
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784516,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 339.1324630438464,
+          "y": 534.7119392664914
+        }
+      ],
+      "tick": 47
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078446,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 343.7031039700507,
+          "y": 536.7390656867492
+        }
+      ],
+      "tick": 48
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 348.2737448962549,
+          "y": 538.766192107007
+        }
+      ],
+      "tick": 49
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 352.8443858224592,
+          "y": 540.7933185272648
+        }
+      ],
+      "tick": 50
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 357.4150267486634,
+          "y": 542.8204449475226
+        }
+      ],
+      "tick": 51
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 361.98566767486767,
+          "y": 544.8475713677803
+        }
+      ],
+      "tick": 52
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 366.5563086010719,
+          "y": 546.8746977880381
+        }
+      ],
+      "tick": 53
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 371.12694952727617,
+          "y": 548.9018242082959
+        }
+      ],
+      "tick": 54
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 375.6975904534804,
+          "y": 550.9289506285537
+        }
+      ],
+      "tick": 55
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 380.26823137968466,
+          "y": 552.9560770488115
+        }
+      ],
+      "tick": 56
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 384.8388723058889,
+          "y": 554.9832034690693
+        }
+      ],
+      "tick": 57
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 389.40951323209316,
+          "y": 557.0103298893271
+        }
+      ],
+      "tick": 58
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 393.9801541582974,
+          "y": 559.0374563095849
+        }
+      ],
+      "tick": 59
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 398.55079508450166,
+          "y": 561.0645827298426
+        }
+      ],
+      "tick": 60
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 403.1214360107059,
+          "y": 563.0917091501004
+        }
+      ],
+      "tick": 61
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 407.69207693691015,
+          "y": 565.1188355703582
+        }
+      ],
+      "tick": 62
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078448,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 412.2627178631144,
+          "y": 567.145961990616
+        }
+      ],
+      "tick": 63
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784424,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 416.83335878931865,
+          "y": 569.1730884108738
+        }
+      ],
+      "tick": 64
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 421.4039997155229,
+          "y": 571.2002148311316
+        }
+      ],
+      "tick": 65
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 425.97464064172715,
+          "y": 573.2273412513894
+        }
+      ],
+      "tick": 66
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 430.5452815679314,
+          "y": 575.2544676716471
+        }
+      ],
+      "tick": 67
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 435.11592249413565,
+          "y": 577.2815940919049
+        }
+      ],
+      "tick": 68
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 439.6865634203399,
+          "y": 579.3087205121627
+        }
+      ],
+      "tick": 69
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 444.25720434654414,
+          "y": 581.3358469324205
+        }
+      ],
+      "tick": 70
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 448.8278452727484,
+          "y": 583.3629733526783
+        }
+      ],
+      "tick": 71
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 453.39848619895264,
+          "y": 585.3900997729361
+        }
+      ],
+      "tick": 72
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 457.9691271251569,
+          "y": 587.4172261931939
+        }
+      ],
+      "tick": 73
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784445,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 462.53976805136114,
+          "y": 589.4443526134517
+        }
+      ],
+      "tick": 74
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078439,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 467.1104089775654,
+          "y": 591.4714790337094
+        }
+      ],
+      "tick": 75
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078441,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 471.68104990376963,
+          "y": 593.4986054539672
+        }
+      ],
+      "tick": 76
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078441,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 476.2516908299739,
+          "y": 595.525731874225
+        }
+      ],
+      "tick": 77
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078441,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 480.82233175617813,
+          "y": 597.5528582944828
+        }
+      ],
+      "tick": 78
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078441,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 485.3929726823824,
+          "y": 599.5799847147406
+        }
+      ],
+      "tick": 79
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078441,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 489.9636136085866,
+          "y": 601.6071111349984
+        }
+      ],
+      "tick": 80
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078441,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 494.5342545347909,
+          "y": 603.6342375552562
+        }
+      ],
+      "tick": 81
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078441,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 499.1048954609951,
+          "y": 605.661363975514
+        }
+      ],
+      "tick": 82
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078441,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 503.6755363871994,
+          "y": 607.6884903957717
+        }
+      ],
+      "tick": 83
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784353,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 508.2461773134036,
+          "y": 609.7156168160295
+        }
+      ],
+      "tick": 84
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078437,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 512.8168182396079,
+          "y": 611.7427432362873
+        }
+      ],
+      "tick": 85
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078437,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 517.3874591658121,
+          "y": 613.7698696565451
+        }
+      ],
+      "tick": 86
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078437,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 521.9581000920163,
+          "y": 615.7969960768029
+        }
+      ],
+      "tick": 87
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078437,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 526.5287410182204,
+          "y": 617.8241224970607
+        }
+      ],
+      "tick": 88
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784314,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 531.0993819444246,
+          "y": 619.8512489173185
+        }
+      ],
+      "tick": 89
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784328,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 535.6700228706288,
+          "y": 621.8783753375762
+        }
+      ],
+      "tick": 90
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784328,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 540.240663796833,
+          "y": 623.905501757834
+        }
+      ],
+      "tick": 91
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784328,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 544.8113047230372,
+          "y": 625.9326281780918
+        }
+      ],
+      "tick": 92
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 549.3819456492414,
+          "y": 627.9597545983496
+        }
+      ],
+      "tick": 93
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784282,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 553.9525865754456,
+          "y": 629.9868810186074
+        }
+      ],
+      "tick": 94
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784282,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 558.5232275016498,
+          "y": 632.0140074388652
+        }
+      ],
+      "tick": 95
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784282,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 563.093868427854,
+          "y": 634.041133859123
+        }
+      ],
+      "tick": 96
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784225,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 567.6645093540582,
+          "y": 636.0682602793808
+        }
+      ],
+      "tick": 97
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784232,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 572.2351502802624,
+          "y": 638.0953866996385
+        }
+      ],
+      "tick": 98
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784232,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 576.8057912064666,
+          "y": 640.1225131198963
+        }
+      ],
+      "tick": 99
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784175,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 581.3764321326707,
+          "y": 642.1496395401541
+        }
+      ],
+      "tick": 100
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784186,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 585.9470730588749,
+          "y": 644.1767659604119
+        }
+      ],
+      "tick": 101
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784186,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 590.5177139850791,
+          "y": 646.2038923806697
+        }
+      ],
+      "tick": 102
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078413,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 595.0883549112833,
+          "y": 648.2310188009274
+        }
+      ],
+      "tick": 103
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078416,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 599.6589958374875,
+          "y": 650.258145221185
+        }
+      ],
+      "tick": 104
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784172,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 604.2296367636917,
+          "y": 652.2852716414428
+        }
+      ],
+      "tick": 105
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784172,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 608.8002776898959,
+          "y": 654.3123980617006
+        }
+      ],
+      "tick": 106
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784115,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 613.3709186161001,
+          "y": 656.3395244819583
+        }
+      ],
+      "tick": 107
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784143,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 617.9415595423043,
+          "y": 658.366650902216
+        }
+      ],
+      "tick": 108
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078415,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 622.5122004685085,
+          "y": 660.3937773224736
+        }
+      ],
+      "tick": 109
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078416,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 627.0828413947127,
+          "y": 662.4209037427313
+        }
+      ],
+      "tick": 110
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784175,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 631.6534823209169,
+          "y": 664.4480301629891
+        }
+      ],
+      "tick": 111
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784175,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 636.224123247121,
+          "y": 666.4751565832469
+        }
+      ],
+      "tick": 112
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078412,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 640.7947641733252,
+          "y": 668.5022830035045
+        }
+      ],
+      "tick": 113
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784143,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 645.3654050995294,
+          "y": 670.5294094237622
+        }
+      ],
+      "tick": 114
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078415,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 649.9360460257336,
+          "y": 672.5565358440199
+        }
+      ],
+      "tick": 115
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784165,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 654.5066869519378,
+          "y": 674.5836622642777
+        }
+      ],
+      "tick": 116
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784165,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 659.077327878142,
+          "y": 676.6107886845355
+        }
+      ],
+      "tick": 117
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784108,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 663.6479688043462,
+          "y": 678.6379151047931
+        }
+      ],
+      "tick": 118
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784126,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 668.2186097305504,
+          "y": 680.6650415250508
+        }
+      ],
+      "tick": 119
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078414,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 672.7892506567546,
+          "y": 682.6921679453085
+        }
+      ],
+      "tick": 120
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784154,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 677.3598915829588,
+          "y": 684.7192943655662
+        }
+      ],
+      "tick": 121
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078417,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 681.930532509163,
+          "y": 686.746420785824
+        }
+      ],
+      "tick": 122
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078417,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 686.5011734353671,
+          "y": 688.7735472060817
+        }
+      ],
+      "tick": 123
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078411,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 691.0718143615713,
+          "y": 690.8006736263394
+        }
+      ],
+      "tick": 124
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078412,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 695.6424552877755,
+          "y": 692.8278000465971
+        }
+      ],
+      "tick": 125
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784136,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 700.2130962139797,
+          "y": 694.8549264668547
+        }
+      ],
+      "tick": 126
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784154,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 704.7837371401839,
+          "y": 696.8820528871124
+        }
+      ],
+      "tick": 127
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784175,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 709.3543780663881,
+          "y": 698.9091793073702
+        }
+      ],
+      "tick": 128
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078412,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 713.9250189925923,
+          "y": 700.9363057276279
+        }
+      ],
+      "tick": 129
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784154,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 718.4956599187965,
+          "y": 702.9634321478856
+        }
+      ],
+      "tick": 130
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078418,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 723.0663008450007,
+          "y": 704.9905585681433
+        }
+      ],
+      "tick": 131
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784122,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 727.6369417712049,
+          "y": 707.017684988401
+        }
+      ],
+      "tick": 132
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784158,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 732.2075826974091,
+          "y": 709.0448114086587
+        }
+      ],
+      "tick": 133
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784183,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 736.7782236236133,
+          "y": 711.0719378289165
+        }
+      ],
+      "tick": 134
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784126,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 741.3488645498174,
+          "y": 713.0990642491741
+        }
+      ],
+      "tick": 135
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784158,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 745.9195054760216,
+          "y": 715.1261906694319
+        }
+      ],
+      "tick": 136
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.9177803707841,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 750.4901464022258,
+          "y": 717.1533170896896
+        }
+      ],
+      "tick": 137
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784122,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 755.06078732843,
+          "y": 719.1804435099473
+        }
+      ],
+      "tick": 138
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078416,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 759.6314282546342,
+          "y": 721.207569930205
+        }
+      ],
+      "tick": 139
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784207,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 764.2020691808384,
+          "y": 723.2346963504627
+        }
+      ],
+      "tick": 140
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784094,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 768.7727101070426,
+          "y": 725.2618227707204
+        }
+      ],
+      "tick": 141
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078417,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 773.3433510332468,
+          "y": 727.2889491909782
+        }
+      ],
+      "tick": 142
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784055,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 777.913991959451,
+          "y": 729.3160756112359
+        }
+      ],
+      "tick": 143
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784094,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 782.4846328856552,
+          "y": 731.3432020314935
+        }
+      ],
+      "tick": 144
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078418,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 787.0552738118594,
+          "y": 733.3703284517513
+        }
+      ],
+      "tick": 145
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370783895,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 791.6259147380636,
+          "y": 735.397454872009
+        }
+      ],
+      "tick": 146
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.917780370784,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 796.1965556642677,
+          "y": 737.4245812922667
+        }
+      ],
+      "tick": 147
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.9177803707843,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 148
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 14.9177803707843,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 149
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 5.9177803707843,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 150
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 356.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 151
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 347.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 152
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 338.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 153
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 329.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 154
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 320.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 155
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 311.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 156
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 302.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 157
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 293.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 158
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 284.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 159
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 275.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 160
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 266.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 161
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 257.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 162
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 248.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.7671965904719,
+          "y": 739.4517077125245
+        }
+      ],
+      "tick": 163
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 239.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 164
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 230.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 165
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 221.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 166
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 212.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 167
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 203.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 168
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 194.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 169
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 185.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 170
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 176.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 171
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 167.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 172
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 158.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 173
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 149.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 174
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 140.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 175
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 131.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 176
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 122.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 177
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 113.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 178
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 104.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 798.260985420347,
+          "y": 735.1251726588423
+        }
+      ],
+      "tick": 179
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 95.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 180
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 86.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 181
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 77.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 182
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 68.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 183
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 59.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 184
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 50.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 185
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 41.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 186
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 32.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 187
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 188
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 14.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.7454793503896,
+          "y": 740.0985270089602
+        }
+      ],
+      "tick": 189
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 5.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 190
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 356.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 191
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 347.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 192
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 338.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 193
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 329.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 194
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 320.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 195
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 311.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 196
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 302.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 197
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 293.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 198
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 284.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 199
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 275.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 200
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 266.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 201
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 257.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 202
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 248.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.7188337005075,
+          "y": 740.6140330789176
+        }
+      ],
+      "tick": 203
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 239.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 204
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 230.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 205
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 221.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 206
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 212.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 207
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 203.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 208
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 194.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 209
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 185.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 210
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 176.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 211
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 167.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 212
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 158.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 213
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 149.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 214
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 140.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 215
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 131.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.2126225303825,
+          "y": 736.2874980252354
+        }
+      ],
+      "tick": 216
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 122.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 217
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 113.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 218
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 104.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 219
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 95.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 220
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 86.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 221
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 77.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 222
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 68.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 223
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 59.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 224
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 50.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 225
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 41.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 226
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 32.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 227
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 228
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 14.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.4954476319998,
+          "y": 740.4847543399724
+        }
+      ],
+      "tick": 229
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 5.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 230
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 356.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 231
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 347.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 232
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 338.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 233
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 329.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 234
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 320.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 235
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 311.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 236
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 302.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 237
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 293.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 238
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 284.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 239
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 275.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 240
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 266.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 241
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 257.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.4688019821177,
+          "y": 741.0002604099298
+        }
+      ],
+      "tick": 242
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 248.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 243
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 239.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 244
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 230.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 245
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 221.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 246
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 212.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 247
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 203.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 248
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 194.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 249
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 185.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 250
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 176.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 251
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 167.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 252
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 158.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 253
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 149.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 254
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 140.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.6702656269166,
+          "y": 736.3349343785553
+        }
+      ],
+      "tick": 255
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 131.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 256
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 122.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 257
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 113.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 258
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 104.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 259
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 95.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 260
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 86.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 261
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 77.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 262
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 68.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 263
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 59.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 264
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 50.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 265
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 41.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 266
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 32.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 267
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.3299481141937,
+          "y": 740.055455701461
+        }
+      ],
+      "tick": 268
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 14.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 269
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 5.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 270
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 356.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 271
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 347.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 272
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 338.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 273
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 329.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 274
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 320.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 275
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 311.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 276
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 302.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 277
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 293.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 278
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 284.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 279
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 275.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 280
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 266.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.1614293031745,
+          "y": 741.3426190634802
+        }
+      ],
+      "tick": 281
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 257.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 282
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 248.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 283
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 239.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 284
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 230.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 285
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 221.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 286
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 212.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 287
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 203.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 288
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 194.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 289
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 185.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 290
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 176.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 291
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 167.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 292
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 158.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 293
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 149.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.1148536969622,
+          "y": 736.4533778646354
+        }
+      ],
+      "tick": 294
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 140.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 295
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 131.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 296
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 122.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 297
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 113.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 298
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 104.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 299
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 95.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 300
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 86.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 301
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 77.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 302
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 68.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 303
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 59.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 304
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 50.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 305
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 41.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 306
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 32.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2336432729404,
+          "y": 739.6055526130377
+        }
+      ],
+      "tick": 307
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 308
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 14.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 309
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 5.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 310
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 356.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 311
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 347.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 312
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 338.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 313
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 329.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 314
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 320.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 315
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 311.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 316
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 302.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 317
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 293.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 318
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 284.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 319
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 275.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.8042841991446,
+          "y": 741.6326790332955
+        }
+      ],
+      "tick": 320
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 266.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 321
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 257.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 322
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 248.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 323
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 239.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 324
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 230.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 325
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 221.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 326
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 212.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 327
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 203.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 328
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 194.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 329
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 185.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 330
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 176.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 331
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 167.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 332
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 158.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.5354395067313,
+          "y": 736.6399120117571
+        }
+      ],
+      "tick": 333
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 149.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 334
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 140.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 335
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 131.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 336
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 122.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 337
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 113.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 338
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 104.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 339
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 95.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 340
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 86.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 341
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 77.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 342
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 68.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 343
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 59.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 344
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 50.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 345
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 41.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.2089044530492,
+          "y": 739.1461231818821
+        }
+      ],
+      "tick": 346
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 32.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 347
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 348
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 14.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 349
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 5.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 350
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 356.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 351
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 347.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 352
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 338.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 353
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 329.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 354
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 320.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 355
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 311.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 356
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 302.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 357
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 293.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 358
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 284.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.4061607677861,
+          "y": 741.8632980802648
+        }
+      ],
+      "tick": 359
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 275.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 360
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 266.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 361
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 257.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 362
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 248.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 363
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 239.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 364
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 230.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 365
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 221.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 366
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 212.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 367
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 203.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 368
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 194.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 369
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 185.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 370
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 176.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 371
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 167.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 801.9216668377435,
+          "y": 736.8899437301469
+        }
+      ],
+      "tick": 372
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 158.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 373
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 149.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 374
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 140.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 375
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 131.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 376
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 122.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 377
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 113.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 378
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 104.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 379
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 95.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 380
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 86.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 381
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 77.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 382
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 68.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 383
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 59.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 384
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 50.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 797.256340806369,
+          "y": 738.688480085348
+        }
+      ],
+      "tick": 385
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 41.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 386
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 32.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 387
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 23.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 388
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 14.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 389
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 5.917780370784271,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 390
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 356.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 391
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 347.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 392
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 338.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 393
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 329.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 394
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 320.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 395
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 311.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 396
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 302.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 397
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 293.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 800.9768621292748,
+          "y": 742.0287975980709
+        }
+      ],
+      "tick": 398
+    },
+    {
+      "events": [],
+      "hazards": [],
+      "items": [],
+      "projectiles": [],
+      "tanks": [
+        {
+          "alive": true,
+          "angle": 284.91778037078427,
+          "energy": 100.0,
+          "hp": 100.0,
+          "id": 1,
+          "kills": 0,
+          "shield": false,
+          "turret": 114.83000201191074,
+          "x": 802.264025491294,
+          "y": 737.1973164090901
+        }
+      ],
+      "tick": 399
+    }
+  ]
+}

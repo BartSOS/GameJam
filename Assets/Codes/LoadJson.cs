@@ -8,7 +8,7 @@ public class LoadJson : MonoBehaviour
     public Project project;
     void Awake()
     {
-        loadProjectTask = LoadProjectAsync();
+        loadProjectTask = LoadProjectAsync().Preserve();
     }
 
     public async UniTask LoadProjectAsync()
@@ -23,16 +23,29 @@ public class LoadJson : MonoBehaviour
                 return;
             }
 
+            CameraDigital cam = null;
+            await UniTask.WaitUntil(() =>
+            {
+                if (Camera.main != null) cam = Camera.main.GetComponent<CameraDigital>();
+                return cam != null && cam.Altura > 0;
+            });
+
             try
             {
-                CameraDigital cameraDigital = Camera.main.GetComponent<CameraDigital>();
-                project = JsonUtility.FromJson<Project>(req.downloadHandler.text);
-                project.NormalizeDates(cameraDigital.Altura, cameraDigital.Altura);
+                var p = JsonUtility.FromJson<Project>(req.downloadHandler.text);
+                if (p == null || p.frames == null || p.frames.Count == 0)
+                {
+                    Debug.LogError("Replay vazio ou sem frames.");
+                    return;
+                }
+                p.NormalizeDates(cam.Altura, cam.Altura);
+                project = p;                 // só publica depois de normalizar
             }
             catch (System.Exception ex)
             {
-                Debug.LogError($"Erro ao desserializar o JSON: {ex.Message}");
-            }   
+                Debug.LogError($"Erro ao ler o replay: {ex}");
+            }
+
         }
 
         // string caminhoArquivo = Path.Combine(Application.streamingAssetsPath, "match_frames.json");

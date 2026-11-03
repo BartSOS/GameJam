@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] public class Fase {
-    public string id; public int seed; public int max_ticks;
+[Serializable] public class Fase {
+    public string id; 
+    public int seed; 
+    public int max_ticks;
     public JogadorFase jogador;
     public List<PontoFase> pontos;
     public List<AlvoFase> alvos;
@@ -15,10 +17,13 @@ using UnityEngine;
     public float x, y, angulo, hp, energia; 
 }
 
-[System.Serializable] public class PontoFase { 
+[Serializable] public class PontoFase { 
     public string id; 
     public int ordem; 
-    public float x, y, raio; 
+    public float x;
+    public float y;
+    public float raio;
+    public int consumido_tick;
 }
 
 [Serializable] public class Bots
@@ -240,6 +245,8 @@ public class Project
             fase.alvos
         );  
 
+        Debug.LogError("Count de pontos: " + fase.pontos.Count);
+
         normalizaDates<PontoFase> (
             t => t.x,
             t => t.y,
@@ -261,7 +268,7 @@ public class Project
     {
         float max = Mathf.Max(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y);
         Vector3 tamSpriteBase = new Vector3(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y, 1f);
-    
+
         transform.localScale = Project.regraDeTresMaster(
             transform.localScale,
             tamSpriteBase,
