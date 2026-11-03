@@ -2,6 +2,50 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable] public class Fase {
+    public string id; public int seed; public int max_ticks;
+    public JogadorFase jogador;
+    public List<PontoFase> pontos;
+    public List<AlvoFase> alvos;
+    public List<ArtilhariaFase> artilharia;
+    public bool laser; public bool itens; public bool zona;
+}
+[System.Serializable] public class JogadorFase {   
+    public int tank_id; 
+    public float x, y, angulo, hp, energia; 
+}
+
+[System.Serializable] public class PontoFase { 
+    public string id; 
+    public int ordem; 
+    public float x, y, raio; 
+}
+
+[Serializable] public class Bots
+{
+    public int id;
+    public string nome;
+    public string lang;
+    public int posicao;
+    public bool vivo;
+    public int kills;
+    public float hp;
+    public bool vencedor; 
+}
+
+[System.Serializable] public class AlvoFase { 
+    public string id; 
+    public int tank_id; 
+    public float x, y, hp, angulo; 
+}
+[System.Serializable] public class ArtilhariaFase { 
+    public int tick; 
+    public float x, y, raio; 
+    public bool criada; 
+    public bool no_jogador; 
+}
+
+
 [Serializable]
 public class Tank
 {
@@ -84,6 +128,8 @@ public class Project
 {
     public List<FrameData> frames;
     public Config config;
+    public Fase fase;
+    public List<Bots> bots;
     public float width;
     public float height;
 
@@ -113,7 +159,7 @@ public class Project
         return regraDeTres(transformLocalScale, tamSpriteWorld, scaleMax);
     }
 
-    public void normalizaDates<TData>(
+    private void normalizaDates<TData>(
     Func<TData, float> extraiX, Func<TData, float> extraiY,
     Action<TData, float> setX, Action<TData, float> setY, 
     List<TData> datas)
@@ -129,6 +175,20 @@ public class Project
             setX(data, x);
             setY(data, y);
         }
+    }
+
+    private void normalizaDates<TData>(Func<TData, float> extraiX, Func<TData, float> extraiY,
+    Action<TData, float> setX, Action<TData, float> setY, 
+    TData datas)
+    {
+        float x = regraDeTres(extraiX(datas), config.arena_width, width);
+        float y = regraDeTres(extraiY(datas), config.arena_height, height);
+
+        x -= width / 2;
+        y -= height / 2;
+
+        setX(datas, x);
+        setY(datas, y);
     }
 
     public void NormalizeDates(float width, float height)
@@ -171,5 +231,41 @@ public class Project
                 frame.items
             );
         }
+
+        normalizaDates<AlvoFase> (
+            t => t.x,
+            t => t.y,
+            (t, x) => t.x = x,
+            (t, y) => t.y = y,
+            fase.alvos
+        );  
+
+        normalizaDates<PontoFase> (
+            t => t.x,
+            t => t.y,
+            (t, x) => t.x = x,
+            (t, y) => t.y = y,
+            fase.pontos
+        );
+
+        normalizaDates<JogadorFase> (
+            t => t.x,
+            t => t.y,
+            (t, x) => t.x = x,
+            (t, y) => t.y = y,
+            fase.jogador 
+        );
+    }
+
+    public static void ScaleObject(SpriteRenderer spriteRenderer, Transform transform, Vector3 vector3)
+    {
+        float max = Mathf.Max(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y);
+        Vector3 tamSpriteBase = new Vector3(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y, 1f);
+    
+        transform.localScale = Project.regraDeTresMaster(
+            transform.localScale,
+            tamSpriteBase,
+            vector3
+        );
     }
 }

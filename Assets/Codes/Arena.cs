@@ -31,6 +31,7 @@ public class ArenaVisualizer : MonoBehaviour
     private Dictionary<int, CardTankUI> cardTanksAtivos = new Dictionary<int, CardTankUI>();
     private Dictionary<int, MedKit> medkitNaCena= new Dictionary<int, MedKit>();
     private Dictionary<int, Lightning> lightningNaCena= new Dictionary<int, Lightning>();
+    private Dictionary<int, string> nomesDosTanques = new Dictionary<int, string>();
 
     private Queue<ManagerTiro> poolDeProjeteis = new Queue<ManagerTiro>();
     private Queue<Laser> poolDeLasers = new Queue<Laser>();
@@ -65,12 +66,101 @@ public class ArenaVisualizer : MonoBehaviour
         cameraDigital.configCamera(loadJson.project.config.arena_width, loadJson.project.config.arena_height);
         dadosCarregados = true; 
         project = loadJson.project;
+
+        StartNamesDosTanques(project.bots);
+        StartFase(project.fase);
     }
 
     void FixedUpdate()
     {    
         if (!dadosCarregados) return;
+
         FixedUpdateGame();
+    }
+
+    private void StartFase(Fase fase)
+    {
+        if (fase == null)
+        {
+            Debug.LogError("Fase não encontrada no JSON.");
+            return;
+        }
+
+        CriaJogador(fase.jogador);
+        CriaAlvos(fase.alvos);  
+        CriaPontos(fase.pontos);
+    }
+
+    private void CriaPontos(List<PontoFase> pontos)
+    {
+        if (pontos == null || pontos.Count == 0)
+        {
+            Debug.LogError("Lista de Pontos não encontrada ou vazia no JSON.");
+            return;
+        }
+
+        foreach (var ponto in pontos)
+        {
+            
+        }
+    }
+
+    private void CriaJogador(JogadorFase jogadorFase)
+    {
+        
+        Tank t = new Tank
+        {
+            id = jogadorFase.tank_id,
+            x = jogadorFase.x,
+            y = jogadorFase.y,
+            angle = jogadorFase.angulo,
+            hp = 100,
+            energy = 100,
+            shield = false,
+            alive = true
+        };
+        CriaTanque(t);
+        AtualizaTanque(t);
+    }
+
+    private void CriaAlvos(List<AlvoFase> alvos)
+    {
+        if (alvos == null || alvos.Count == 0)
+        {
+            Debug.LogError("Lista de Alvos não encontrada ou vazia no JSON.");
+            return;
+        }
+
+        foreach (var alvo in alvos)
+        {
+            Tank t = new Tank
+            {
+                id = alvo.tank_id,
+                x = alvo.x,
+                y = alvo.y,
+                angle = alvo.angulo,
+                hp = 100,
+                energy = 100,
+                shield = false,
+                alive = true
+            };
+            CriaTanque(t);
+            AtualizaTanque(t);
+        }
+    }
+
+    private void StartNamesDosTanques(List<Bots> bots)
+    {
+        if (bots == null || bots.Count == 0)
+        {
+            Debug.LogError("Lista de Bots não encontrada ou vazia no JSON.");
+            return;
+        }
+
+        foreach (var bot in bots)
+        {
+            nomesDosTanques[bot.id] = bot.nome;
+        }
     }
 
     private void FixedUpdateGame()
@@ -116,7 +206,6 @@ public class ArenaVisualizer : MonoBehaviour
         Sprite bases = spritesBase[idBot % spritesBase.Length];
         spriteRendererBase.sprite = bases;
     }
-
    
 
     private void AtualizarHazards(List<HazardData> hazardDatas)
@@ -159,26 +248,24 @@ public class ArenaVisualizer : MonoBehaviour
         );
     }
 
-    private void AtualizarTanques(List<Tank> dadosTanques)
+    private void CriaTanque(Tank t)
     {
-        if (dadosTanques == null) return;
-
-
-        foreach (Tank t in dadosTanques)
+        if (!tanquesNaCena.ContainsKey(t.id))
         {
-            if (!tanquesNaCena.ContainsKey(t.id))
-            {
-                configurarCores(t.id);
-                GameObject novoTanque = Instantiate(Tank, transform);
-                novoTanque.name = $"Tank_{t.id}";
-                
-                // CORREÇÃO: O GetComponent deve ser chamado no objeto instanciado (novoTanque), 
-                // e não no objeto atual que gerencia a arena.
-                MovementTank tankAtual = novoTanque.GetComponent<MovementTank>();
+            configurarCores(t.id);
+            GameObject novoTanque = Instantiate(Tank, transform);
+            novoTanque.name = nomesDosTanques.ContainsKey(t.id) ? nomesDosTanques[t.id] : $"Tank_{t.id}";
+            
+            MovementTank tankAtual = novoTanque.GetComponent<MovementTank>();
 
-                tanquesNaCena.Add(t.id, tankAtual);
-            }
+            tanquesNaCena.Add(t.id, tankAtual);
+        }
+    }
 
+    private void AtualizaTanque(Tank t)
+    {
+        if (tanquesNaCena.ContainsKey(t.id))
+        {
             MovementTank objTanque = tanquesNaCena[t.id];
             objTanque.updateValues(t.x, t.y, t.angle, t.hp, t.energy, t.shield);
             
@@ -191,6 +278,19 @@ public class ArenaVisualizer : MonoBehaviour
             {
                 objTanque.gameObject.SetActive(true); // Reativa caso o tanque "reviva" ou inicie inativo
             }
+        }
+    }
+
+    private void AtualizarTanques(List<Tank> dadosTanques)
+    {
+        if (dadosTanques == null) return;
+
+
+        foreach (Tank t in dadosTanques)
+        {
+            CriaTanque(t);
+
+            AtualizaTanque(t);
         }
     }
 

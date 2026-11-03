@@ -154,19 +154,11 @@ public class MovementTank : MonoBehaviour
         topo = spriteRendererTopo.gameObject;
         bas = spriteRendererBase.gameObject;
 
-        float max = Mathf.Max(spriteRendererBase.sprite.bounds.size.x, spriteRendererBase.sprite.bounds.size.y);
-
-        Vector3 tamSpriteBase = new Vector3(max, max, 1f);
-
-        CameraDigital cam = Camera.main.GetComponent<CameraDigital>();
-
-        transform.localScale = Project.regraDeTresMaster(
-            transform.localScale,
-            tamSpriteBase,
+        Project.ScaleObject(
+            spriteRendererBase,
+            bas.transform,
             new Vector3(80f, 80f, 1f)
         );
-
-        // oq seria tamSpriteEngine? 
     }
 
     public void updateValues(float x, float y, float angle, float hp, float energy, bool shield)
