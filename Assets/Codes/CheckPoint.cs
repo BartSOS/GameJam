@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using Datas;
 
 public class CheckPoint : MonoBehaviour
 {

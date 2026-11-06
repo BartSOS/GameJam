@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using Datas;
 
 public class Artillery : MonoBehaviour
 {

@@ -1,13 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Pooling{
-public abstract class AMonoBehaviourPool<T> : AMonoBehaviourBase where T : MonoBehaviour, IPoolable
+public abstract class AMonoBehaviourPool<TVisual, TData> : MonoBehaviour where TVisual : MonoBehaviour, IPoolable<TData>
 {
     [SerializeField]private GameObject prefab;
     [SerializeField] private int initialSize = 10;
-    private readonly Dictionary<int, T> _activesObjects = new Dictionary<int, T>();
-    private readonly Queue<T> _pool = new Queue<T>();
+    private readonly Dictionary<int, TVisual> _activesObjects = new Dictionary<int, TVisual>();
+    private readonly Queue<TVisual> _pool = new Queue<TVisual>();
 
     protected virtual void Awake()
     {
@@ -26,24 +27,25 @@ public abstract class AMonoBehaviourPool<T> : AMonoBehaviourBase where T : MonoB
     {
         GameObject newObj = Instantiate(prefab);
         newObj.SetActive(false);
-        _pool.Enqueue(newObj.GetComponent<T>());
+        _pool.Enqueue(newObj.GetComponent<TVisual>());
 
         return newObj;
     }
 
-    public T GetPool()
+    public TVisual GetPool(int id)
     {
         if (_pool.Count < 0)
             ExpandsPool();
 
-        T obj = _pool.Dequeue();
+        TVisual obj = _pool.Dequeue();
+        obj.Id = id;
         obj.gameObject.SetActive(true);
         _activesObjects.Add(obj.Id, obj);
 
         return obj;
     }
 
-    public void SetPool(T obj)
+    public void SetPool(TVisual obj)
     {
         int id = obj.Id;
 
@@ -52,6 +54,20 @@ public abstract class AMonoBehaviourPool<T> : AMonoBehaviourBase where T : MonoB
 
         obj.gameObject.SetActive(false);
         _pool.Enqueue(obj);
+    }
+
+    public bool GetDictionary(int id, out TVisual script)
+    {
+        script = default(TVisual);
+
+        if(_activesObjects.TryGetValue(id, out TVisual value))
+        {
+            script = value;
+            return true;    
+        }
+
+        Debug.Log("Id informado não encontrado");
+        return false;
     }
     
 }

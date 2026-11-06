@@ -2,6 +2,8 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.InputSystem;
 
+namespace WebCam
+{
 public class CameraController : MonoBehaviour
 {
     private CameraDigital cameraDigital;
@@ -88,4 +90,5 @@ public class CameraController : MonoBehaviour
         }
     }
 
+}
 }

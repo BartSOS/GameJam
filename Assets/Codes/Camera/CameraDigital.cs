@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace WebCam
+{
 
 public class CameraDigital : MonoBehaviour
 {
@@ -41,5 +43,5 @@ public class CameraDigital : MonoBehaviour
         this.width_engine = width_engine;
         this.height_engine = height_engine;
     }
-    
+}   
 }

@@ -3,6 +3,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using TMPro;
+using Datas;
 
 namespace Tanque
 {
@@ -128,7 +129,6 @@ public class MovementTank : MonoBehaviour
 
     private void scaleTank()
     {
-
         Project.ScaleObject(
             spriteRendererBase,
             spriteRendererBase.transform,

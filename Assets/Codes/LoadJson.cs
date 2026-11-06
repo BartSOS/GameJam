@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.IO;
 using Cysharp.Threading.Tasks; // Obrigatório para o UniTask
+using WebCam;
 using System.Collections.Generic;
+using Datas;
 public class LoadJson : MonoBehaviour
 {
     public UniTask loadProjectTask {get; private set; } 
@@ -38,7 +40,7 @@ public class LoadJson : MonoBehaviour
                     Debug.LogError("Replay vazio ou sem frames.");
                     return;
                 }
-                p.NormalizeDates(cam.Altura, cam.Altura);
+                // p.NormalizeDates(cam.Altura, cam.Altura);
                 project = p;                 // só publica depois de normalizar
             }
             catch (System.Exception ex)

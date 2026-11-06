@@ -4,6 +4,11 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 using Tanque;
+using WebCam;
+using Datas;
+using Datas.Fase;
+using Datas.Frames;
+
 
 public class ArenaVisualizer : MonoBehaviour
 {
@@ -57,7 +62,6 @@ public class ArenaVisualizer : MonoBehaviour
     {
         dadosCarregados = false;
         pode = false;
-        // transform.
         indice = 0;
         gameOver = false;
         
@@ -70,11 +74,11 @@ public class ArenaVisualizer : MonoBehaviour
 
 
         await loadJson.loadProjectTask;
-        cameraDigital.configCamera(loadJson.project.config.arena_width, loadJson.project.config.arena_height);
+        // cameraDigital.configCamera(loadJson.project.config.arena_width, loadJson.project.config.arena_height);
         dadosCarregados = true; 
         project = loadJson.project;
 
-        StartNamesDosTanques(project.bots);
+        StartNamesDosTanques(project.name2Ids);
         StartFase(project.fase);
     }
 
@@ -85,7 +89,7 @@ public class ArenaVisualizer : MonoBehaviour
         FixedUpdateGame();
     }
 
-    private void StartFase(Fase fase)
+    private void StartFase(Fases fase)
     {
         if (fase == null)
         {
@@ -98,7 +102,7 @@ public class ArenaVisualizer : MonoBehaviour
         CriaPontos(fase.pontos);
     }
 
-    private void CriaPontos(List<PontoFase> pontos)
+    private void CriaPontos(List<Ponto> pontos)
     {
         if (pontos == null || pontos.Count == 0)
         {
@@ -106,13 +110,13 @@ public class ArenaVisualizer : MonoBehaviour
             return;
         }
 
-        foreach (PontoFase ponto in pontos)
+        foreach (Ponto ponto in pontos)
         {
             CriaPonto(ponto);
         }
     }
 
-    private void CriaPonto(PontoFase ponto)
+    private void CriaPonto(Ponto ponto)
     {
         if (ponto == null)
         {
@@ -140,7 +144,7 @@ public class ArenaVisualizer : MonoBehaviour
         }
     }
 
-    private void CriaJogador(JogadorFase jogadorFase)
+    private void CriaJogador(Jogador jogadorFase)
     {
         if (jogadorFase == null)
         {
@@ -164,7 +168,7 @@ public class ArenaVisualizer : MonoBehaviour
         AtualizaTanque(t);
     }
 
-    private void CriaAlvos(List<AlvoFase> alvos)
+    private void CriaAlvos(List<Alvo> alvos)
     {
         if (alvos == null || alvos.Count == 0)
         {
@@ -212,7 +216,7 @@ public class ArenaVisualizer : MonoBehaviour
     }
     
 
-    private void StartNamesDosTanques(List<Bots> bots)
+    private void StartNamesDosTanques(List<Name2Id> bots)
     {
         if (bots == null || bots.Count == 0)
         {
@@ -272,12 +276,12 @@ public class ArenaVisualizer : MonoBehaviour
     }
    
 
-    private void AtualizarHazards(List<HazardData> hazardDatas)
+    private void AtualizarHazards(List<Hazard> hazardDatas)
     {
-        List<HazardData> lasers = hazardDatas.FindAll(h => h.type == "LASER");
-        List<HazardData> artilharias = hazardDatas.FindAll(h => h.type == "ARTILLERY");
+        List<Hazard> lasers = hazardDatas.FindAll(h => h.type == "LASER");
+        List<Hazard> artilharias = hazardDatas.FindAll(h => h.type == "ARTILLERY");
 
-        SincronizarPool<HazardData, Laser> (
+        SincronizarPool<Hazard, Laser> (
             dadosJson : lasers,
             dicionarioAtivos : laserNaCena,
             poolDeLasers,
@@ -294,7 +298,7 @@ public class ArenaVisualizer : MonoBehaviour
             rotinaMorte : laserManager => laserManager.onExit()
         );
 
-        SincronizarPool<HazardData, Artillery> (
+        SincronizarPool<Hazard, Artillery> (
             dadosJson: artilharias,
             dicionarioAtivos: artNaCena,
             poolDeArt,
@@ -359,9 +363,9 @@ public class ArenaVisualizer : MonoBehaviour
         }
     }
 
-    private void AtualizarProjetis(List<ProjectileData> dadosProjetis)
+    private void AtualizarProjetis(List<Projectile> dadosProjetis)
     {
-        SincronizarPool<ProjectileData, ManagerTiro> (
+        SincronizarPool<Projectile, ManagerTiro> (
             dadosProjetis,
             projeteisNaCena,
             poolDeProjeteis,
