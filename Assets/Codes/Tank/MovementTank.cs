@@ -1,52 +1,21 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.UI;
 using TMPro;
 
-class Bar
+namespace Tanque
 {
-    private Image image;
-    private float valorAtual;
-    private float larguraMaxima;
-    private float altura;
-
-    public Bar(Image image)
-    {
-        this.image = image;
-        this.larguraMaxima = image.rectTransform.sizeDelta.x;
-        this.altura = image.rectTransform.sizeDelta.y;
-        this.valorAtual = 100f;
-    }
-
-    public void updateBar(float val)
-    {
-        if (Mathf.Approximately(val, valorAtual)) return;
-
-        valorAtual = val;
-        image.rectTransform.DOKill();
-        image.rectTransform.DOSizeDelta(new Vector2(larguraMaxima * (val / 100f), altura), 0.5f);
-    }
-
-    public void setBar(float val)
-    {
-        valorAtual = val;
-        image.rectTransform.sizeDelta = new Vector2(larguraMaxima * (val / 100f), altura);
-    }
-}
 
 public class MovementTank : MonoBehaviour
 {
-    private Vector2 posicao;
     private float hp;
     private bool shield;
-    private Quaternion angle;
     private float turret;
-    private GameObject topo;
-    public GameObject EnergyShield;
-    private GameObject bas;
+    private Vector2 posicao;
+    private Quaternion angle;
     private SpriteRenderer spriteRendererBase;
+    public GameObject EnergyShield;
     private SpriteRenderer spriteRendererTopo;
     private Animator animatorShield;
     private Coroutine coroutine;
@@ -81,7 +50,7 @@ public class MovementTank : MonoBehaviour
 
     void Start()
     {
-        texto.text = gameObject.name;
+        // texto.text = gameObject.name;
         contornoFake = new GameObject("ContornoFake");
         CriaChildren(transform.gameObject, contornoFake);
         contornoFake.transform.localScale = new Vector3(scaleFactorContorno, scaleFactorContorno, scaleFactorContorno);
@@ -151,20 +120,18 @@ public class MovementTank : MonoBehaviour
             angle, 
             Time.deltaTime * 15f);
 
-        topo.transform.localRotation = Quaternion.Slerp(
-            topo.transform.localRotation, 
+        spriteRendererTopo.transform.localRotation = Quaternion.Slerp(
+            spriteRendererTopo.transform.localRotation, 
             Quaternion.Euler(0f, 0f, turret), 
             Time.deltaTime * 15f);
     }
 
     private void scaleTank()
     {
-        topo = spriteRendererTopo.gameObject;
-        bas = spriteRendererBase.gameObject;
 
         Project.ScaleObject(
             spriteRendererBase,
-            bas.transform,
+            spriteRendererBase.transform,
             new Vector3(80f, 80f, 1f)
         );
     }
@@ -279,4 +246,5 @@ public class MovementTank : MonoBehaviour
         contornoFake.SetActive(false);
     }
 
+}
 }

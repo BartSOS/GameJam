@@ -1,8 +1,9 @@
 using UnityEngine;
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
 using System;
-using System.Linq;
+using Tanque;
 
 public class ArenaVisualizer : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ArenaVisualizer : MonoBehaviour
     public GameObject Artillery;
     public GameObject CheckPoint;
     public GameObject CardTank;
+
     public Transform Painel;
     public GameObject MedKit;
     public GameObject Lightning;
@@ -55,9 +57,10 @@ public class ArenaVisualizer : MonoBehaviour
     {
         dadosCarregados = false;
         pode = false;
+        // transform.
         indice = 0;
         gameOver = false;
-
+        
         Camera cam = Camera.main;
         CameraDigital cameraDigital = cam.GetComponent<CameraDigital>();
 
