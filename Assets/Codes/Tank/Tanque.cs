@@ -5,10 +5,10 @@ using UnityEngine.UI;
 using TMPro;
 using Datas;
 
-namespace Tanque
+namespace Tanques
 {
 
-public class MovementTank : MonoBehaviour
+public class Tanque : MonoBehaviour
 {
     private float hp;
     private bool shield;

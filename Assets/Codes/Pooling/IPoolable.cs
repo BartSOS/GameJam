@@ -4,12 +4,9 @@ using UnityEngine;
 
 namespace Pooling
 {
-public interface IPoolable <TData>
+public interface IPoolable
 {
     public int Id {set; get;}
-
-    public Action<TData> onEntry {get; set;}
-    public Action<TData> onUpdate {get; set;}
-    public Func<IEnumerator> onExit {get; set;}
+    public int Tick {get; set;}
 }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 
-namespace Tanque
+namespace Tanques
 {
 
 public class Bar

@@ -1,8 +1,12 @@
 using UnityEngine;
 using System.Collections;
-
-public class ManagerTiro : MonoBehaviour
+using Datas.Frames;
+using Pooling;
+using System;
+public class ManagerTiro : AMonoBehaviourPool<ManagerTiro, Projectile>, IPoolable, IState<Projectile>
 {
+    public int Id{get; set;}
+    public int Tick {get; set;}
     private Vector2 posicao;
     private Vector2 posicaoTravada;
     public GameObject tiroAndando;
@@ -15,11 +19,12 @@ public class ManagerTiro : MonoBehaviour
     public AudioClip somExit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+
+    void Start()
     {
         animatorAndando = tiroAndando.GetComponent<Animator>();
         animatorParado = tiroParado.GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();   
     }
 
     // Update is called once per frame
@@ -35,20 +40,20 @@ public class ManagerTiro : MonoBehaviour
             tiroParado.transform.position = posicaoTravada;
     }
 
-    public void setValues(float x, float y)
+    public void onEntry(Projectile projectile)
     {
-        posicao = new Vector2(x, y);
-    }
-
-    public IEnumerator onEntry(float angle, float x, float y)
-    {
-        audioSource.PlayOneShot(somEntry);
-        transform.position = new Vector3(x, y);
-        posicao = transform.position;
+        float angle = Mathf.Atan2(projectile.vy, projectile.vx) * Mathf.Rad2Deg;
+        posicao = transform.position = new Vector3(projectile.x, projectile.y);
         transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
         posicaoTravada = transform.position;
 
-        gameObject.SetActive(true);
+        StartCoroutine(startAnimacao());
+    }
+
+    private IEnumerator startAnimacao()
+    {
+        audioSource.PlayOneShot(somEntry);
+
         tiroAndando.SetActive(true);
         tiroParado.SetActive(true);
 
@@ -68,12 +73,16 @@ public class ManagerTiro : MonoBehaviour
             tiroParado.SetActive(false);
     }
 
-    public IEnumerator onExit()
+    public void onUpdate(Projectile projectile)
+    {
+        posicao = new Vector2(projectile.x, projectile.y);
+    }
+
+    private IEnumerator endAnimacao(Action onComplete)
     {
         audioSource.PlayOneShot(somExit);
         posicaoTravada = transform.position;
 
-        gameObject.SetActive(true);
         tiroParado.SetActive(true);
         tiroAndando.SetActive(false);
 
@@ -86,9 +95,15 @@ public class ManagerTiro : MonoBehaviour
 
         yield return new WaitForSeconds(tempo);
 
-        gameObject.SetActive(false);
         tiroParado.SetActive(false);
         tiroAndando.SetActive(false);
+
+        onComplete.Invoke();        
+    }
+
+    public void onExit(Action onComplete)
+    {
+        StartCoroutine(endAnimacao(onComplete));
     }
 
 }

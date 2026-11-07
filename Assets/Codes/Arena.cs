@@ -3,16 +3,17 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
 using System;
-using Tanque;
+using Tanques;
 using WebCam;
 using Datas;
 using Datas.Fase;
 using Datas.Frames;
-
+using Pooling;
 
 public class ArenaVisualizer : MonoBehaviour
 {
     [Header("Prefabs de Referência")]
+    private PoolManager poolManager;
     public GameObject Laser;
     public GameObject Tank;
     public GameObject Tiro;
@@ -35,7 +36,7 @@ public class ArenaVisualizer : MonoBehaviour
     private Dictionary<string, CheckPoint> checkPointsNaCena = new Dictionary<string, CheckPoint>();
     private Dictionary<int, List<CheckPoint>> checkPointsNaCenaEliminacao = new Dictionary<int, List<CheckPoint>>();
 
-    private Dictionary<int, MovementTank> tanquesNaCena = new Dictionary<int, MovementTank>();
+    private Dictionary<int, Tanque> tanquesNaCena = new Dictionary<int, Tanque>();
     private Dictionary<int, ManagerTiro> projeteisNaCena = new Dictionary<int, ManagerTiro>();
     private Dictionary<int, Laser> laserNaCena= new Dictionary<int, Laser>();
     private Dictionary<int, Artillery> artNaCena= new Dictionary<int, Artillery>();
@@ -56,6 +57,7 @@ public class ArenaVisualizer : MonoBehaviour
     void Awake()
     {
         loadJson = GetComponent<LoadJson>();
+        poolManager = PoolManager.INSTANCE;
     }
 
     async void Start()
@@ -324,7 +326,7 @@ public class ArenaVisualizer : MonoBehaviour
             GameObject novoTanque = Instantiate(Tank, transform);
             novoTanque.name = nomesDosTanques.ContainsKey(t.id) ? nomesDosTanques[t.id] : $"Tank_{t.id}";
             
-            MovementTank tankAtual = novoTanque.GetComponent<MovementTank>();
+            Tanque tankAtual = novoTanque.GetComponent<Tanque>();
             tankAtual.onEntry(t.x, t.y, t.angle, t.turret, t.hp, t.energy, t.shield);
 
             tanquesNaCena.Add(t.id, tankAtual);
@@ -335,7 +337,7 @@ public class ArenaVisualizer : MonoBehaviour
     {
         if (tanquesNaCena.ContainsKey(t.id))
         {
-            MovementTank objTanque = tanquesNaCena[t.id];
+            Tanque objTanque = tanquesNaCena[t.id];
             objTanque.updateValues(t.x, t.y, t.angle, t.turret, t.hp, t.energy, t.shield);
             
             // Garante que o estado visual reflita a simulação
@@ -365,23 +367,10 @@ public class ArenaVisualizer : MonoBehaviour
 
     private void AtualizarProjetis(List<Projectile> dadosProjetis)
     {
-        SincronizarPool<Projectile, ManagerTiro> (
-            dadosProjetis,
-            projeteisNaCena,
-            poolDeProjeteis,
-            Tiro,
-            p => p.id,
-            aoNascer : (p, tiroManager) =>
-            {
-                float angle = Mathf.Atan2(p.vy, p.vx) * Mathf.Rad2Deg;
-                StartCoroutine(tiroManager.onEntry(angle, p.x, p.y));
-            },
-            aoAtualizar : (p, tiroManager) =>
-            {
-                tiroManager.setValues(p.x, p.y);
-            },
-            tiroManager => tiroManager.onExit()
-        );
+        foreach (Projectile dado in dadosProjetis)
+        {
+            poolManager.Morph<ManagerTiro, Projectile>(dado.id, dado);
+        }
     }
 
 
@@ -542,7 +531,7 @@ public class ArenaVisualizer : MonoBehaviour
         pool.Enqueue(script);
     }
 
-    public MovementTank getTankById(int id)
+    public Tanque getTankById(int id)
     {
         if (tanquesNaCena.ContainsKey(id))
         {

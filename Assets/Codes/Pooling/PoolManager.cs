@@ -1,16 +1,20 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using Unity.VisualScripting;
+using Datas;
+using System.Net;
 
 namespace Pooling
 {
 public class PoolManager : MonoBehaviour
 {
     public static PoolManager INSTANCE {get; private set;}
-    public List<MonoBehaviour> poolings;
+    public List<IPool> poolings;
 
     private readonly Dictionary<Type, object> _poolsByComponentType = new Dictionary<Type, object>();
-    // private delegate void ExecutaIfExists();
+
+    public int TickCurrent {get; set;}
 
     private void Awake()
     {
@@ -52,12 +56,12 @@ public class PoolManager : MonoBehaviour
     }
 
     // Método genérico universal para pegar qualquer objeto de qualquer pool
-    public TVisual Spawn<TVisual, TData>(int id, TData data, Vector3 position, Quaternion rotation) where TVisual : MonoBehaviour, IPoolable<TData>
+    public TVisual Spawn<TVisual, TData>(int id, TData data) where TVisual : MonoBehaviour, IPoolable, IState<TData>
     {
         if (TryGetPool<TVisual, TData>(id, out TVisual spawned))
         {
-            spawned.transform.SetPositionAndRotation(position, rotation);
             spawned.onEntry(data);
+            spawned.Tick = TickCurrent;
             return spawned;
         }
 
@@ -65,7 +69,7 @@ public class PoolManager : MonoBehaviour
         return null;
     }
 
-    private bool TryGetPool<TVisual, TData>(int id, out TVisual script) where TVisual : MonoBehaviour, IPoolable<TData>
+    private bool TryGetPool<TVisual, TData>(int id, out TVisual script) where TVisual : MonoBehaviour, IPoolable, IState<TData>
     {
         if (_poolsByComponentType.TryGetValue(typeof(TVisual), out object poolObj))
         {
@@ -79,31 +83,51 @@ public class PoolManager : MonoBehaviour
     }
 
     // Método universal para devolver o objeto ao pool correto
-    public void Despawn<TVisual, TData>(TVisual obj) where TVisual : MonoBehaviour, IPoolable<TData>
+    public void Despawn<TVisual, TData>(TVisual obj) where TVisual : MonoBehaviour, IPoolable, IState<TData>
     {
         if (_poolsByComponentType.TryGetValue(typeof(TVisual), out object poolObj))
         {
             AMonoBehaviourPool<TVisual, TData> pool = (AMonoBehaviourPool<TVisual, TData>)poolObj;
-            obj.onExit();
-            pool.SetPool(obj);
+            
+            obj.onExit(() => {
+                pool.SetPool(obj);
+            });
         }
     }
 
-    public void Morph<TVisual, TData> (int id, TData data) where TVisual : MonoBehaviour, IPoolable<TData>
+    public void Morph<TVisual, TData> (int id, TData data) where TVisual : MonoBehaviour, IPoolable, IState<TData>
     {
         if (_poolsByComponentType.TryGetValue(typeof(TVisual), out object poolObj))
         {
             AMonoBehaviourPool<TVisual, TData> pool = (AMonoBehaviourPool<TVisual, TData>)poolObj;
+
             if(pool.GetDictionary(id, out TVisual script))
             {
                 script.onUpdate(data); 
-                return;
+                script.Tick = TickCurrent;
             }
-            Debug.LogError($"Nenhum objeto encontrado para o tipo {typeof(TVisual).Name}");
+
+            else{
+                TVisual obj = Spawn<TVisual, TData> (id, data);
+                obj.onUpdate(data);                
+            }
+
+            return;
         }
 
         else
         Debug.LogError($"Nenhum pool encontrado para o tipo {typeof(TVisual).Name}");
+    }
+
+
+    public void UpdateTick(int tick)
+    {
+        foreach (IPool pool in poolings)
+        {
+            pool.CleanActivesFromDictionary(tick);
+        }
+
+        TickCurrent = tick;
     }
 }
 
