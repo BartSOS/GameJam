@@ -6,14 +6,17 @@ namespace Pooling{
 public abstract class AMonoBehaviourPool<TVisual, TData> : MonoBehaviour, IPool where TVisual : MonoBehaviour, IPoolable, IState<TData>
 {
     [SerializeField]private GameObject prefab;
-    [SerializeField] private int initialSize = 10;
+    [SerializeField] private int initialSize = 5;
     private readonly Dictionary<int, TVisual> _activesObjects = new Dictionary<int, TVisual>();
     private readonly Queue<TVisual> _pool = new Queue<TVisual>();
 
     protected virtual void Awake()
     {
         ExpandsPool();
+        AwakeChildren();
     }
+
+    protected abstract void AwakeChildren();
 
     private void ExpandsPool()
     {

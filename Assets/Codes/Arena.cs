@@ -7,6 +7,7 @@ using Tanques;
 using WebCam;
 using Datas;
 using Datas.Fase;
+using Tiros;
 using Datas.Frames;
 using Pooling;
 
@@ -16,7 +17,6 @@ public class ArenaVisualizer : MonoBehaviour
     private PoolManager poolManager;
     public GameObject Laser;
     public GameObject Tank;
-    public GameObject Tiro;
     public GameObject Artillery;
     public GameObject CheckPoint;
     public GameObject CardTank;
@@ -24,7 +24,7 @@ public class ArenaVisualizer : MonoBehaviour
     public Transform Painel;
     public GameObject MedKit;
     public GameObject Lightning;
-    private uint indice;
+    private int indice;
     private bool pode;
     private bool gameOver;
     private Project project;
@@ -37,7 +37,6 @@ public class ArenaVisualizer : MonoBehaviour
     private Dictionary<int, List<CheckPoint>> checkPointsNaCenaEliminacao = new Dictionary<int, List<CheckPoint>>();
 
     private Dictionary<int, Tanque> tanquesNaCena = new Dictionary<int, Tanque>();
-    private Dictionary<int, ManagerTiro> projeteisNaCena = new Dictionary<int, ManagerTiro>();
     private Dictionary<int, Laser> laserNaCena= new Dictionary<int, Laser>();
     private Dictionary<int, Artillery> artNaCena= new Dictionary<int, Artillery>();
     private Dictionary<int, CardTankUI> cardTanksAtivos = new Dictionary<int, CardTankUI>();
@@ -45,7 +44,6 @@ public class ArenaVisualizer : MonoBehaviour
     private Dictionary<int, Lightning> lightningNaCena= new Dictionary<int, Lightning>();
     private Dictionary<int, string> nomesDosTanques = new Dictionary<int, string>();
 
-    private Queue<ManagerTiro> poolDeProjeteis = new Queue<ManagerTiro>();
     private Queue<Laser> poolDeLasers = new Queue<Laser>();
     private Queue<Artillery> poolDeArt = new Queue<Artillery>();
     private Queue<MedKit> poolDeMedKits = new Queue<MedKit>();
@@ -68,7 +66,6 @@ public class ArenaVisualizer : MonoBehaviour
         gameOver = false;
         
         Camera cam = Camera.main;
-        CameraDigital cameraDigital = cam.GetComponent<CameraDigital>();
 
         SpriteRenderer [] spriteRenderers = Tank.GetComponentsInChildren<SpriteRenderer>();
         spriteRendererTopo = spriteRenderers[0];
@@ -238,16 +235,17 @@ public class ArenaVisualizer : MonoBehaviour
         {
             if (pode)
             {
-                AtualizarTanques(project.frames[(int)indice].tanks);
-                AtualizarProjetis(project.frames[(int)indice].projectiles);
-                AtualizarHazards(project.frames[(int)indice].hazards);
-                AtualizarCardTanks(project.frames[(int)indice].tanks);
-                AtualizarItems(project.frames[(int)indice].items);
-                AtualizarCheckPoints(project.frames[(int)indice].tick);
+                AtualizarTanques(project.frames[indice].tanks);
+                AtualizarProjeteis(project.frames[indice].projectiles);
+                AtualizarHazards(project.frames[indice].hazards);
+                AtualizarCardTanks(project.frames[indice].tanks);
+                AtualizarItems(project.frames[indice].items);
+                AtualizarCheckPoints(project.frames[indice].tick);
 
-                Debug.Log(project.frames[(int)indice].tick);
+                Debug.Log(project.frames[indice].tick);
                 indice++;
                 pode = false;
+                poolManager.UpdateTick(project.frames[indice].tick);
             }
 
             else
@@ -365,7 +363,7 @@ public class ArenaVisualizer : MonoBehaviour
         }
     }
 
-    private void AtualizarProjetis(List<Projectile> dadosProjetis)
+    private void AtualizarProjeteis(List<Projectile> dadosProjetis)
     {
         foreach (Projectile dado in dadosProjetis)
         {

@@ -1,9 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
-using Unity.VisualScripting;
-using Datas;
-using System.Net;
 
 namespace Pooling
 {
@@ -18,6 +15,12 @@ public class PoolManager : MonoBehaviour
 
     private void Awake()
     {
+        if (INSTANCE != null && INSTANCE != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         INSTANCE = this;
         RegistraPools();
     }
@@ -127,7 +130,7 @@ public class PoolManager : MonoBehaviour
             pool.CleanActivesFromDictionary(tick);
         }
 
-        TickCurrent = tick;
+        TickCurrent = tick + 1;
     }
 }
 
