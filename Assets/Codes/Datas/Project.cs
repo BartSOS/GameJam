@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using WebCam;
+using Datas.Frames;
 
 namespace Datas
 {
@@ -9,7 +10,7 @@ namespace Datas
 public class Project
 {
     public List<Frames.Frame> frames;
-    public List<Name2Id> name2Ids;
+    public List<Name2Id> bots;
     public Config config;
     public Fase.Fases fase;
     public float width;
@@ -77,7 +78,10 @@ public class Project
     {
         this.width = width;
         this.height = height;
+
         this.tam_engine = new Vector3(width, height);
+        Debug.LogError($"width: {width}, height: {height}");;
+        Debug.LogError($"Config: {config.arena_width}, {config.arena_height}");
 
         if (frames != null)
         {
@@ -97,8 +101,8 @@ public class Project
         {
             normalizeListData(fase.alvos);
             normalizeListData(fase.pontos);
-            normalizeListData(fase.artilharias);
-            normalizeUnicData(fase.jogador);
+            normalizeListData(fase.artilharia);
+            normalizeUnicData(fase.jogador);            
         }
 
         else    

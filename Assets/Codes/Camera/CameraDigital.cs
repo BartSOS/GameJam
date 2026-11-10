@@ -1,9 +1,11 @@
+using System.Threading.Tasks;
 using UnityEngine;
+using Datas;
 
 namespace WebCam
 {
 
-public class CameraDigital : MonoBehaviour
+public class CameraDigital : ADependsProject
 {
     public Camera cam;
     private float altura;
@@ -13,14 +15,14 @@ public class CameraDigital : MonoBehaviour
 
     public float Altura => altura;
     public float Largura => largura;
-    public float Largura_Engine => width_engine;
-    public float Altura_Engine => height_engine;
+    public float Largura_Engine => soDepoisDeCarregarProject(width_engine);
+    public float Altura_Engine => soDepoisDeCarregarProject(height_engine);
 
     public float Altura_Mundo => altura;
     public float Largura_Mundo => largura;
 
     public Vector2 Tam_Mundo => new Vector3(altura, altura);
-    public Vector2 Tam_Engine => new Vector3(width_engine, height_engine);
+    public Vector2 Tam_Engine => soDepoisDeCarregarProject(new Vector3(width_engine, height_engine));
     public Vector2 Tam_Tela => new Vector3(largura, altura);
     public Vector2 Posicao => transform.position;
 
@@ -31,17 +33,17 @@ public class CameraDigital : MonoBehaviour
         return new Vector3(largura, altura);
     }
 
-    void Awake()
+    protected override void AoAcordar()
     {
         cam = Camera.main;
         altura = cam.orthographicSize * 2f;
         largura = altura * cam.aspect;
     }
 
-    public void configCamera(float width_engine, float height_engine)
+    protected override void AoCarregarProject(Project project)
     {
-        this.width_engine = width_engine;
-        this.height_engine = height_engine;
+        width_engine = project.config.arena_width;
+        height_engine = project.config.arena_height;
     }
 }   
 }

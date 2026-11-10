@@ -1,2 +1,19 @@
 fileFormatVersion: 2
 guid: 1985016ded2d75980b8377214702ca08
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Laser: {fileID: 2765929956291399223, guid: 7ef3f52922bf65bbfb881874f07d67ad, type: 3}
+  - Tank: {fileID: 1891390598317454690, guid: e84445daea19ab900beb351f0618a9d7, type: 3}
+  - Artillery: {fileID: 3265235535973670578, guid: 3a56fcb06e88bc3a8af30962538ded61, type: 3}
+  - CheckPoint: {fileID: 7385014782231171913, guid: e0cca5003bec4ba2894fb3014b4935cd, type: 3}
+  - CardTank: {fileID: 5262777709668367595, guid: 3129e30e53486d7ffab67c16d4050f14, type: 3}
+  - Painel: {instanceID: 0}
+  - MedKit: {fileID: 5782543622997168054, guid: ff3b1b97c688648ec860184b50a41ddb, type: 3}
+  - Lightning: {fileID: 5850007469634190958, guid: 826cc8da8e15b9cf088fce23d8cd4e4d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

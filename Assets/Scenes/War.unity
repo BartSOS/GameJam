@@ -151,7 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   Laser: {fileID: 2765929956291399223, guid: 7ef3f52922bf65bbfb881874f07d67ad, type: 3}
   Tank: {fileID: 1891390598317454690, guid: e84445daea19ab900beb351f0618a9d7, type: 3}
-  Tiro: {fileID: 1688956659423403782, guid: fe4437435943f1327a9ca06fd504b3be, type: 3}
   Artillery: {fileID: 3265235535973670578, guid: 3a56fcb06e88bc3a8af30962538ded61, type: 3}
   CheckPoint: {fileID: 7385014782231171913, guid: e0cca5003bec4ba2894fb3014b4935cd, type: 3}
   CardTank: {fileID: 5262777709668367595, guid: 3129e30e53486d7ffab67c16d4050f14, type: 3}
@@ -197,6 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoadJson
   project:
     frames: []
+    name2Ids: []
     config:
       arena_height: 0
       arena_width: 0
@@ -207,18 +207,15 @@ MonoBehaviour:
       max_ticks: 0
       jogador:
         tank_id: 0
-        x: 0
-        y: 0
         angulo: 0
         hp: 0
         energia: 0
       pontos: []
       alvos: []
-      artilharia: []
+      artilharias: []
       laser: 0
       itens: 0
       zona: 0
-    bots: []
     width: 0
     height: 0
     tam_engine: {x: 0, y: 0, z: 0}
@@ -1180,6 +1177,53 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1524272633}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &866168782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866168784}
+  - component: {fileID: 866168783}
+  m_Layer: 0
+  m_Name: PoolerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &866168783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866168782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11778c8c8cd94c94597799d8079599d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pooling.PoolerManager
+  poolings:
+  - initialSize: 5
+    prefab: {fileID: 8252293353053555414, guid: fe4437435943f1327a9ca06fd504b3be, type: 3}
+--- !u!4 &866168784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866168782}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.85209, y: -1.17614, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1174507607
@@ -8860,3 +8904,4 @@ SceneRoots:
   - {fileID: 842491375}
   - {fileID: 470451305}
   - {fileID: 1174507611}
+  - {fileID: 866168784}

@@ -7,12 +7,10 @@ using Audio;
 
 namespace Tiros
 {
-public class ManagerTiro : AMonoBehaviourPool<ManagerTiro, Projectile>, IPoolable, IState<Projectile>
+public class ManagerTiro : APoolAbleMonobehaviour<Projectile>
 {
     // O Animator do TiroParado está com Culling Mode = Always Animate.
     // Loop Time desligado nos clips “Atirando” e “Explodindo”.
-    public int Id{get; set;}
-    public int Tick {get; set;}
     private Vector2 posicaoTravada;
 
     public GameObject tiroAndando;
@@ -31,7 +29,7 @@ public class ManagerTiro : AMonoBehaviourPool<ManagerTiro, Projectile>, IPoolabl
     private Tweener tween;
     private float ultimoUpdate;
 
-    protected override void AwakeChildren()
+    void Awake()
     {
         animatorAndando = tiroAndando.GetComponent<Animator>();
         animatorParado = tiroParado.GetComponent<Animator>();
@@ -47,7 +45,7 @@ public class ManagerTiro : AMonoBehaviourPool<ManagerTiro, Projectile>, IPoolabl
     }
 
 
-    public void onEntry(Projectile projectile)
+    public override void onEntry(Projectile projectile)
     {
         explodindo = false;
         float angle = Mathf.Atan2(projectile.vy, projectile.vx) * Mathf.Rad2Deg;
@@ -60,7 +58,7 @@ public class ManagerTiro : AMonoBehaviourPool<ManagerTiro, Projectile>, IPoolabl
 
     private void startAnimacao()
     {
-        AudioSFX.INSTANCE.Play(somEntry);
+        // AudioSFX.INSTANCE.Play(somEntry);
 
         tiroAndando.SetActive(true);
         tiroParado.SetActive(true);
@@ -69,7 +67,7 @@ public class ManagerTiro : AMonoBehaviourPool<ManagerTiro, Projectile>, IPoolabl
         animatorAndando.Play("TiroAndando", 0, 0f);
     }
 
-    public void onUpdate(Projectile projectile)
+    public override void onUpdate(Projectile projectile)
     {
         float intervalo = Mathf.Max(Time.time - ultimoUpdate, Time.deltaTime);
         ultimoUpdate = Time.time;
@@ -87,7 +85,7 @@ public class ManagerTiro : AMonoBehaviourPool<ManagerTiro, Projectile>, IPoolabl
 
     private void endAnimacao()
     {
-        AudioSFX.INSTANCE.Play(somExit);
+        // AudioSFX.INSTANCE.Play(somExit);
 
         tiroParado.SetActive(true);
         tiroAndando.SetActive(false);
@@ -95,7 +93,7 @@ public class ManagerTiro : AMonoBehaviourPool<ManagerTiro, Projectile>, IPoolabl
         animatorParado.Play("Explodindo", 0, 0f);
     }
 
-    public void onExit(Action onComplete)
+    public override void onExit(Action onComplete)
     {
         tween?.Complete();
         aoTerminar = onComplete;

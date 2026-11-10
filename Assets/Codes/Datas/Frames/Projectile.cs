@@ -7,10 +7,13 @@ namespace Datas.Frames
 public class Projectile : IData
 {
     public int id;
-    public float x {get; set;}
-    public float y {get; set;}
+    public float x;
+    public float y;
     public int owner_id;
     public float vx;
     public float vy;
+
+    float IData.x { get => x; set => x = value; }
+    float IData.y { get => y; set => y = value; }
 }
 }

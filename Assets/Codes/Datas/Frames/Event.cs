@@ -9,8 +9,11 @@ public class Event : IData
     public int source_id;
     public int target_id;
     public string type;
-    public float x {get; set;}
-    public float y {get; set;}
+    public float x;
+    public float y;
+
+    float IData.x { get => x; set => x = value; }
+    float IData.y { get => y; set => y = value; }
 }    
 
 }

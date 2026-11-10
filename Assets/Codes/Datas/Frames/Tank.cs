@@ -15,7 +15,10 @@ public class Tank : IData
     public int kills;
     public bool shield;
     public float turret;
-    public float x {get; set;}
-    public float y {get; set;}
+    public float x;
+    public float y;
+
+    float IData.x { get => x; set => x = value; }
+    float IData.y { get => y; set => y = value; }
 }
 }

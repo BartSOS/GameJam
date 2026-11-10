@@ -9,7 +9,7 @@ namespace Datas.Fase{
     public Jogador jogador;
     public List<Ponto> pontos;
     public List<Alvo> alvos;
-    public List<Artilharia> artilharias;
+    public List<Artilharia> artilharia;
     public bool laser; public bool itens; public bool zona;
 }
 }

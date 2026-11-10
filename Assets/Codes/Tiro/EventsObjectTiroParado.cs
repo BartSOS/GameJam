@@ -1,8 +1,9 @@
 using System;
+using UnityEngine;
 
 namespace Tiros
 {
-public class EventsObjectTiroParado
+public class EventsObjectTiroParado : MonoBehaviour
 {
     public event Action FimAtirando;    
     public event Action FimExplodindo;

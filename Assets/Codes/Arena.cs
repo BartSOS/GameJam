@@ -10,11 +10,12 @@ using Datas.Fase;
 using Tiros;
 using Datas.Frames;
 using Pooling;
+using Cysharp.Threading.Tasks;
 
 public class ArenaVisualizer : MonoBehaviour
 {
     [Header("Prefabs de Referência")]
-    private PoolManager poolManager;
+    private PoolerManager poolerManager;
     public GameObject Laser;
     public GameObject Tank;
     public GameObject Artillery;
@@ -48,18 +49,15 @@ public class ArenaVisualizer : MonoBehaviour
     private Queue<Artillery> poolDeArt = new Queue<Artillery>();
     private Queue<MedKit> poolDeMedKits = new Queue<MedKit>();
     private Queue<Lightning> poolDeLightnings = new Queue<Lightning>();
-
-    private LoadJson loadJson;
     private bool dadosCarregados;
 
     void Awake()
     {
-        loadJson = GetComponent<LoadJson>();
-        poolManager = PoolManager.INSTANCE;
     }
 
-    async void Start()
+    async UniTaskVoid Start()
     {
+        poolerManager = PoolerManager.INSTANCE;
         dadosCarregados = false;
         pode = false;
         indice = 0;
@@ -72,12 +70,10 @@ public class ArenaVisualizer : MonoBehaviour
         spriteRendererBase = spriteRenderers[1];
 
 
-        await loadJson.loadProjectTask;
-        // cameraDigital.configCamera(loadJson.project.config.arena_width, loadJson.project.config.arena_height);
+        project = await LoadJson.LoadProjectTask;
         dadosCarregados = true; 
-        project = loadJson.project;
 
-        StartNamesDosTanques(project.name2Ids);
+        StartNamesDosTanques(project.bots);
         StartFase(project.fase);
     }
 
@@ -169,12 +165,6 @@ public class ArenaVisualizer : MonoBehaviour
 
     private void CriaAlvos(List<Alvo> alvos)
     {
-        if (alvos == null || alvos.Count == 0)
-        {
-            Debug.LogError("Lista de Alvos não encontrada ou vazia no JSON.");
-            return;
-        }
-
         foreach (var alvo in alvos)
         {
             Tank t = new Tank
@@ -195,12 +185,6 @@ public class ArenaVisualizer : MonoBehaviour
 
     private void AtualizarCheckPoints(int tick)
     {
-        if (checkPointsNaCenaEliminacao == null || checkPointsNaCenaEliminacao.Count == 0)
-        {
-            Debug.LogError("Lista de CheckPoints não encontrada ou vazia.");
-            return;
-        }   
-
         if (checkPointsNaCenaEliminacao.ContainsKey(tick))
         {
             List<CheckPoint> checkPoints = checkPointsNaCenaEliminacao[tick];
@@ -245,7 +229,7 @@ public class ArenaVisualizer : MonoBehaviour
                 Debug.Log(project.frames[indice].tick);
                 indice++;
                 pode = false;
-                poolManager.UpdateTick(project.frames[indice].tick);
+                poolerManager.UpdateTick(project.frames[indice].tick);
             }
 
             else
@@ -336,6 +320,7 @@ public class ArenaVisualizer : MonoBehaviour
         if (tanquesNaCena.ContainsKey(t.id))
         {
             Tanque objTanque = tanquesNaCena[t.id];
+
             objTanque.updateValues(t.x, t.y, t.angle, t.turret, t.hp, t.energy, t.shield);
             
             // Garante que o estado visual reflita a simulação
@@ -365,9 +350,11 @@ public class ArenaVisualizer : MonoBehaviour
 
     private void AtualizarProjeteis(List<Projectile> dadosProjetis)
     {
+        if (poolerManager == null) Debug.LogError("DEU MERDAAA");
+
         foreach (Projectile dado in dadosProjetis)
         {
-            poolManager.Morph<ManagerTiro, Projectile>(dado.id, dado);
+            poolerManager.Morph<ManagerTiro, Projectile>(dado.id, dado);
         }
     }
 

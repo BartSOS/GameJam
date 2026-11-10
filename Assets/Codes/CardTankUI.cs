@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using Tanques;
 using DG.Tweening;
 using UnityEngine.InputSystem;
 
@@ -112,36 +113,36 @@ public class CardTankUI : MonoBehaviour, IPointerClickHandler
 
     public void BrilharContornoTank()
     {
-        // MovementTank tank;
+        Tanque tank;
 
-        // if (arenaManager != null)
-        // {
-        //     tank = arenaManager.getTankById(idTank);
-        // }
+        if (arenaManager != null)
+        {
+            tank = arenaManager.getTankById(idTank);
+        }
 
-        // else return;
+        else return;
 
-        // if (tank != null)
-        // {
-        //     tank.BrilharTank();
-        // }
+        if (tank != null)
+        {
+            tank.BrilharTank();
+        }
     }
 
     public void PararBrilhoTank()
     {
-        // MovementTank tank;
+        Tanque tank;
 
-        // if (arenaManager != null)
-        // {
-        //     tank = arenaManager.getTankById(idTank);
-        // }
+        if (arenaManager != null)
+        {
+            tank = arenaManager.getTankById(idTank);
+        }
 
-        // else return;
+        else return;
 
-        // if (tank != null)
-        // {
-        //     tank.PararBrilhoTank();
-        // }
+        if (tank != null)
+        {
+            tank.PararBrilhoTank();
+        }
     }
 }
 

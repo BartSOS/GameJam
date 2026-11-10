@@ -7,9 +7,12 @@ namespace Datas.Fase
 { 
     public string id; 
     public int ordem; 
-    public float x {get; set;}
-    public float y {get; set;}
+    public float x;
+    public float y;
     public float raio;
     public int consumido_tick;
+
+    float IData.x { get => x; set => x = value; }
+    float IData.y { get => y; set => y = value; }
 }
 }

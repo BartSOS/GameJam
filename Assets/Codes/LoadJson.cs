@@ -1,79 +1,75 @@
 using UnityEngine;
-using System.IO;
 using Cysharp.Threading.Tasks; // Obrigatório para o UniTask
 using WebCam;
-using System.Collections.Generic;
 using Datas;
-public class LoadJson : MonoBehaviour
+public static class LoadJson
 {
-    public UniTask loadProjectTask {get; private set; } 
-    public Project project;
-    void Awake()
+    static bool _iniciada = false;
+    static UniTask<Project> _task;
+    public static UniTask<Project> LoadProjectTask
     {
-        loadProjectTask = LoadProjectAsync().Preserve();
+        get
+        {
+            if (!_iniciada)
+            {
+                _iniciada = true;
+                _task = LoadProjectAsync().Preserve();
+            }
+
+            return _task;
+        }
+    } 
+    static Project project;
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void Iniciar()
+    {
+        _ = LoadProjectTask;
     }
 
-    public async UniTask LoadProjectAsync()
+    static async UniTask<Project> LoadProjectAsync()
     {
-        using (var req = UnityEngine.Networking.UnityWebRequest.Get(UrlDoReplay()))
+        var ct = Application.exitCancellationToken;
+
+        using var req = UnityEngine.Networking.UnityWebRequest.Get(UrlDoReplay());
+        try
         {
-            await req.SendWebRequest();
-    
-            if (req.result == UnityEngine.Networking.UnityWebRequest.Result.ConnectionError || req.result == UnityEngine.Networking.UnityWebRequest.Result.ProtocolError)
-            {
-                Debug.LogError($"Erro ao carregar o JSON: {req.error}");
-                return;
-            }
-
-            CameraDigital cam = null;
-            await UniTask.WaitUntil(() =>
-            {
-                if (Camera.main != null) cam = Camera.main.GetComponent<CameraDigital>();
-                return cam != null && cam.Altura > 0;
-            });
-
-            try
-            {
-                var p = JsonUtility.FromJson<Project>(req.downloadHandler.text);
-                if (p == null || p.frames == null || p.frames.Count == 0)
-                {
-                    Debug.LogError("Replay vazio ou sem frames.");
-                    return;
-                }
-                // p.NormalizeDates(cam.Altura, cam.Altura);
-                project = p;                 // só publica depois de normalizar
-            }
-            catch (System.Exception ex)
-            {
-                Debug.LogError($"Erro ao ler o replay: {ex}");
-            }
-
+            await req.SendWebRequest().WithCancellation(ct);
+        }
+        catch (UnityWebRequestException ex)
+        {
+            Debug.LogError($"Erro ao carregar o JSON: {ex.Message}");
+            return null;
         }
 
-        // string caminhoArquivo = Path.Combine(Application.streamingAssetsPath, "match_frames.json");
+        CameraDigital cam = null;
+        
+        await UniTask.WaitUntil(() =>
+        {
+            if (Camera.main != null) cam = Camera.main.GetComponent<CameraDigital>();
+            return cam != null && cam.Altura > 0;
+        }, cancellationToken: ct);
 
-        // if (File.Exists(caminhoArquivo))
-        // {
-        //     string conteudoJson = await File.ReadAllTextAsync(caminhoArquivo);
-        //     try
-        //     {
-        //         CameraDigital cameraDigital = Camera.main.GetComponent<CameraDigital>();
-        //         project = JsonUtility.FromJson<Project>(conteudoJson);
-        //         project.NormalizeDates(cameraDigital.Altura, cameraDigital.Altura);
-        //     }
+        try
+        {
+            var p = JsonUtility.FromJson<Project>(req.downloadHandler.text);
+            if (p == null || p.frames == null || p.frames.Count == 0)
+            {
+                Debug.LogError("Replay vazio ou sem frames.");
+                return null;
+            }
 
-        //     catch (System.Exception ex)
-        //     {
-        //         Debug.LogError($"Erro ao desserializar o JSON: {ex.Message}");
-        //     }
-        // }
-        // else
-        // {
-        //     Debug.LogError($"Não encontrei o arquivo! Verifique se ele está em: {caminhoArquivo}");
-        // }
+            p.NormalizeDates(cam.Altura, cam.Altura);
+            project = p;                 // só publica depois de normalizar
+            return p;
+        }
+        catch (System.Exception ex)
+        {
+            Debug.LogError($"Erro ao ler o replay: {ex}");
+            return null;
+        }
     }
 
-    string UrlDoReplay()
+    static string UrlDoReplay()
     {
         string p = Application.absoluteURL;
         int i = p.IndexOf("replay=");
@@ -88,3 +84,26 @@ public class LoadJson : MonoBehaviour
         return new System.Uri(new System.Uri(p), rel).ToString();
     }
 }
+
+// Alternativo:
+// string caminhoArquivo = Path.Combine(Application.streamingAssetsPath, "match_frames.json");
+
+// if (File.Exists(caminhoArquivo))
+// {
+//     string conteudoJson = await File.ReadAllTextAsync(caminhoArquivo);
+//     try
+//     {
+//         CameraDigital cameraDigital = Camera.main.GetComponent<CameraDigital>();
+//         project = JsonUtility.FromJson<Project>(conteudoJson);
+//         project.NormalizeDates(cameraDigital.Altura, cameraDigital.Altura);
+//     }
+
+//     catch (System.Exception ex)
+//     {
+//         Debug.LogError($"Erro ao desserializar o JSON: {ex.Message}");
+//     }
+// }
+// else
+// {
+//     Debug.LogError($"Não encontrei o arquivo! Verifique se ele está em: {caminhoArquivo}");
+// }
