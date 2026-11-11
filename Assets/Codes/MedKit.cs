@@ -1,7 +1,10 @@
 using UnityEngine;
+using Datas.Frames;
 using Datas;
+using Pooling;
+using System;
 
-public class MedKit : MonoBehaviour
+public class MedKit : APoolAbleMonobehaviour<Item>
 {
     private Animator animator;
 
@@ -12,21 +15,20 @@ public class MedKit : MonoBehaviour
 
         animator = GetComponent<Animator>();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    public override void onEntry(Item item)
     {
-        
-    }
-
-    public void onEntry(float x, float y)
-    {
-        transform.position = new Vector3(x, y, 0);
+        transform.position = new Vector3(item.x, item.y, 0);
         animator.Play("MedKitIdle");
+    }
+
+    public override void onExit(Action complete)
+    {
+        complete?.Invoke();   
+    }
+
+    public override void onUpdate(Item data)
+    {
+        
     }
 }

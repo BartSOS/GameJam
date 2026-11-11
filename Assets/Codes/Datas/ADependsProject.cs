@@ -1,14 +1,16 @@
 using Cysharp.Threading.Tasks;
+using Datas;
 using UnityEngine;
 
 public abstract class ADependsProject : MonoBehaviour
 {
     UniTask _pronto;
     bool _iniciado = false;
-    bool _configurado = false;
+    public bool Configurado {get; private set;}
 
     void Awake()
     {
+        Configurado = false;
         _ = Pronto;
         AoAcordar();
     }
@@ -36,17 +38,17 @@ public abstract class ADependsProject : MonoBehaviour
         }
 
         AoCarregarProject(p);
-        _configurado = true;
+        Configurado = true;
     }
 
     protected virtual void AoFalhar(){}
     protected virtual void AoAcordar(){}
 
-    protected abstract void AoCarregarProject(Datas.Project project);
+    protected abstract void AoCarregarProject(Project project);
 
     protected T soDepoisDeCarregarProject<T>(T valor)
     {
-        if (!_configurado)
+        if (!Configurado)
         {
             Debug.LogError($"Tentativa de acessar {valor} antes do carregamento do Project.");
         }

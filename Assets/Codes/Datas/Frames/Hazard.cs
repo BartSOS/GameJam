@@ -17,5 +17,6 @@ public class Hazard : IData
 
     float IData.x { get => x; set => x = value; }
     float IData.y { get => y; set => y = value; }
+    int IData.id { get => id;}
 }
 }

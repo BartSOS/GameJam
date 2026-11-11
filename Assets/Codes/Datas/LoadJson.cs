@@ -1,7 +1,9 @@
 using UnityEngine;
 using Cysharp.Threading.Tasks; // Obrigatório para o UniTask
 using WebCam;
-using Datas;
+
+namespace Datas
+{
 public static class LoadJson
 {
     static bool _iniciada = false;
@@ -107,3 +109,4 @@ public static class LoadJson
 // {
 //     Debug.LogError($"Não encontrei o arquivo! Verifique se ele está em: {caminhoArquivo}");
 // }
+}

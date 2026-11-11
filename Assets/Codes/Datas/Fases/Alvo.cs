@@ -13,5 +13,6 @@ namespace Datas.Fase
 
     float IData.x { get => x; set => x = value; }
     float IData.y { get => y; set => y = value; }
+    int IData.id { get => (int)id[0];}
 }
 }

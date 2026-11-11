@@ -5,5 +5,6 @@ public interface IData
 {
     public float x {get; set;}
     public float y {get; set;}
+    public int id {get;}
 }
 }

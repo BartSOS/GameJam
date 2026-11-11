@@ -12,7 +12,7 @@ using Datas.Frames;
 using Pooling;
 using Cysharp.Threading.Tasks;
 
-public class ArenaVisualizer : MonoBehaviour
+public class ArenaVisualizer : ADependsProject
 {
     [Header("Prefabs de Referência")]
     private PoolerManager poolerManager;
@@ -23,8 +23,6 @@ public class ArenaVisualizer : MonoBehaviour
     public GameObject CardTank;
 
     public Transform Painel;
-    public GameObject MedKit;
-    public GameObject Lightning;
     private int indice;
     private bool pode;
     private bool gameOver;
@@ -41,37 +39,32 @@ public class ArenaVisualizer : MonoBehaviour
     private Dictionary<int, Laser> laserNaCena= new Dictionary<int, Laser>();
     private Dictionary<int, Artillery> artNaCena= new Dictionary<int, Artillery>();
     private Dictionary<int, CardTankUI> cardTanksAtivos = new Dictionary<int, CardTankUI>();
-    private Dictionary<int, MedKit> medkitNaCena= new Dictionary<int, MedKit>();
-    private Dictionary<int, Lightning> lightningNaCena= new Dictionary<int, Lightning>();
     private Dictionary<int, string> nomesDosTanques = new Dictionary<int, string>();
 
     private Queue<Laser> poolDeLasers = new Queue<Laser>();
     private Queue<Artillery> poolDeArt = new Queue<Artillery>();
-    private Queue<MedKit> poolDeMedKits = new Queue<MedKit>();
-    private Queue<Lightning> poolDeLightnings = new Queue<Lightning>();
-    private bool dadosCarregados;
 
-    void Awake()
+    protected override void AoAcordar()
     {
+    }
+
+    protected override void AoCarregarProject(Project project)
+    {
+        this.project = project;
     }
 
     async UniTaskVoid Start()
     {
         poolerManager = PoolerManager.INSTANCE;
-        dadosCarregados = false;
         pode = false;
         indice = 0;
         gameOver = false;
         
-        Camera cam = Camera.main;
-
         SpriteRenderer [] spriteRenderers = Tank.GetComponentsInChildren<SpriteRenderer>();
         spriteRendererTopo = spriteRenderers[0];
         spriteRendererBase = spriteRenderers[1];
 
 
-        project = await LoadJson.LoadProjectTask;
-        dadosCarregados = true; 
 
         StartNamesDosTanques(project.bots);
         StartFase(project.fase);
@@ -79,7 +72,7 @@ public class ArenaVisualizer : MonoBehaviour
 
     void FixedUpdate()
     {    
-        if (!dadosCarregados) return;
+        if (!Configurado) return;
 
         FixedUpdateGame();
     }
@@ -243,7 +236,7 @@ public class ArenaVisualizer : MonoBehaviour
             if (!gameOver)
             {
                 gameOver = true;
-                AudioController audioController = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioController>();
+                AudioArena audioController = GetComponent<AudioArena>();
                 var unicoItem = tanquesNaCena.FirstOrDefault(t => t.Value.gameObject.activeSelf);
                 audioController.tocaSomSaida(unicoItem.Value.name); 
             }
@@ -387,52 +380,17 @@ public class ArenaVisualizer : MonoBehaviour
         List<Item> dadosMedKits = dadosItems.FindAll(item => item.type == "HEAL");
         List<Item> dadosLightning = dadosItems.FindAll(item => item.type == "ENERGY");
 
-        SincronizarPool<Item, Lightning>(
-            dadosJson: dadosLightning,
-            dicionarioAtivos: lightningNaCena,
-            pool: poolDeLightnings,
-            prefabBase: Lightning,
-            extrairId: l => l.id,
-            aoNascer: (l, lightning) =>
-            {
-                lightning.onEntry(l.x, l.y);
-            },
-            aoAtualizar: (l, lightning) =>
-            {
-                // Se houver alguma atualização necessária a cada frame, faça aqui
-                // Por exemplo, se o Lightning tiver algum tipo de animação ou efeito
-            },
-            rotinaMorte: lightning =>
-            {
-                lightning.gameObject.SetActive(false); // Desativa o Lightning antes de devolvê-lo à pool
-                return null;
-            }
-        );
-
-        SincronizarPool<Item, MedKit>(
-            dadosJson: dadosMedKits,
-            dicionarioAtivos: medkitNaCena,
-            pool: poolDeMedKits,
-            prefabBase: MedKit,
-            extrairId: m => m.id,
-            aoNascer: (m, medKit) =>
-            {
-                medKit.onEntry(m.x, m.y);
-            },
-            aoAtualizar: (m, medKit) =>
-            {
-                // Se houver alguma atualização necessária a cada frame, faça aqui
-                // Por exemplo, se o MedKit tiver algum tipo de animação ou efeito
-            },
-            rotinaMorte: medKit =>
-            {
-                medKit.gameObject.SetActive(false); // Desativa o MedKit antes de devolvê-lo à pool
-                return null;
-            }
-        );
+        AtualizarPoolAble<MedKit, Item>(dadosMedKits);
+        AtualizarPoolAble<Lightning, Item>(dadosLightning);
     }
 
-
+    private void AtualizarPoolAble<TVisual, TData>(List<TData> dados) where TData : IData where TVisual : APoolAbleMonobehaviour<TData>
+    {
+        foreach (TData data in dados)
+        {
+            PoolerManager.INSTANCE.Morph<TVisual, TData>(data.id, data);
+        }
+    }
     // ========================================================================
     // MOTOR GENÉRICO DE OBJECT POOL
     // ========================================================================

@@ -1,7 +1,10 @@
 using UnityEngine;
 using Datas;
+using Pooling;
+using Datas.Frames;
+using System;
 
-public class Lightning : MonoBehaviour
+public class Lightning : APoolAbleMonobehaviour<Item>
 {
     private Animator animator;
     private Animator animatorChildren;
@@ -13,22 +16,21 @@ public class Lightning : MonoBehaviour
         transform.localScale = Project.regraDeTresMaster(transform.localScale, GetComponent<SpriteRenderer>().sprite.bounds.size, new Vector3(40f, 40f));
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void onEntry(Item item)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void onEntry(float x, float y)
-    {
-        transform.position = new Vector3(x, y, 0);
+        transform.position = new Vector3(item.x, item.y, 0);
         animator.Play("LightningIdle");
         animatorChildren.Play("LightningChildren");
     }   
+
+    
+    public override void onExit(Action complete)
+    {
+        complete?.Invoke();   
+    }
+
+    public override void onUpdate(Item data)
+    {
+        
+    }
 }

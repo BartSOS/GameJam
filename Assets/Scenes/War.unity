@@ -129,7 +129,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3341584}
   - component: {fileID: 3341583}
-  - component: {fileID: 3341585}
   m_Layer: 0
   m_Name: Arena
   m_TagString: Untagged
@@ -182,43 +181,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3341585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3341582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5552aa87efe9fe84da79258890d3f23d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LoadJson
-  project:
-    frames: []
-    name2Ids: []
-    config:
-      arena_height: 0
-      arena_width: 0
-      max_ticks: 0
-    fase:
-      id: 
-      seed: 0
-      max_ticks: 0
-      jogador:
-        tank_id: 0
-        angulo: 0
-        hp: 0
-        energia: 0
-      pontos: []
-      alvos: []
-      artilharias: []
-      laser: 0
-      itens: 0
-      zona: 0
-    width: 0
-    height: 0
-    tam_engine: {x: 0, y: 0, z: 0}
 --- !u!1 &118162641
 GameObject:
   m_ObjectHideFlags: 0

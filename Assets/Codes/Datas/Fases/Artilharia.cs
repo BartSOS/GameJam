@@ -4,7 +4,8 @@ using System;
 namespace Datas.Fase
 {    
 [Serializable] public class Artilharia : IData
-{ 
+{
+    public int id; 
     public int tick; 
     public float x;
     public float y;
@@ -14,5 +15,6 @@ namespace Datas.Fase
 
     float IData.x { get => x; set => x = value; }
     float IData.y { get => y; set => y = value; }
+    int IData.id { get => id;}
 }
 }
