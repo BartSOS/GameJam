@@ -2,69 +2,55 @@ using System.Collections;
 using UnityEngine;
 using Datas;
 using Pooling;
+using Datas.Frames;
+using System;
 
-public class Artillery : MonoBehaviour
+public class Artillery : APoolAbleMonobehaviour<Hazard>
 {
     public GameObject circle;
     public GameObject explosion;
     public Sprite lastSprite;
+    private Vector3 scaleMax;
     private Animator animator;
     private float timeTotal;
-    private Vector3 scaleMax;
-    private Vector3 tamLastSprite;
+    private Action aoTerminar;
 
     void Awake()
     {
-        tamLastSprite = lastSprite.bounds.size;
         animator = explosion.GetComponent<Animator>();
     }
 
-    public void onEntry(float radius, float x, float y, float timeTotal, float tamSh, float tamMundo)
+    public override void onEntry(Hazard hazard)
     {
         explosion.SetActive(false);
 
-        transform.position = new Vector2(x, y);
+        transform.position = new Vector2(hazard.x, hazard.y);
 
-        float diametro = Project.regraDeTres(radius, tamSh, tamMundo) * 2f;
-
-        scaleMax = new Vector3(diametro, diametro, 1f);
+        scaleMax = new Vector3(hazard.radius * 2, hazard.radius * 2, 1f);
         circle.transform.localScale = Vector3.zero;
 
-        this.timeTotal = timeTotal;
-        explosion.transform.localScale = Project.regraDeTres(transform.localScale, tamLastSprite, scaleMax);
+        this.timeTotal = hazard.timer;
+        explosion.transform.localScale = Project.regraDeTresMaster(explosion.transform.localScale, lastSprite.bounds.size, scaleMax);
 
     }
 
-    public void updateValues(float time)
+    public override void onUpdate(Hazard hazard)
     {   
-        float progress = 1 - (time / timeTotal);
+        float progress = 1 - (hazard.timer / timeTotal);
 
         circle.transform.localScale = Vector3.Lerp(Vector3.zero, scaleMax, progress);
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void onExit(Action onComplete)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public IEnumerator onExit()
-    {
-        explosion.SetActive(true); 
-        yield return null;
+        aoTerminar = onComplete;
+        explosion.SetActive(true);
         animator.Play("Explodindo");
-        animator.Update(0f);
+    }
 
-        float tempo = animator.GetCurrentAnimatorStateInfo(0).length;
-
-        yield return new WaitForSeconds(tempo);
-
-        gameObject.SetActive(false);
+    public void OnFimExplodindo()
+    {
+        var callback = aoTerminar;
+        aoTerminar = null;
+        callback?.Invoke();
     }
 }

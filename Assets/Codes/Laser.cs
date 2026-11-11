@@ -3,8 +3,11 @@ using Pooling;
 using Datas.Frames;
 using UnityEngine;
 using WebCam;
+using System.Runtime.InteropServices;
+using Datas;
+using System;
 
-public class Laser : MonoBehaviour
+public class Laser : APoolAbleMonobehaviour<Hazard>
 {
     private SpriteRenderer spriteRenderer;
     private Animator animatorLaser;
@@ -13,6 +16,7 @@ public class Laser : MonoBehaviour
     private float timer;
     private Quaternion angle;
     private bool atirando;
+    private Action aoTerminar;
 
     void Awake()
     {
@@ -21,32 +25,26 @@ public class Laser : MonoBehaviour
         children = spriteRenderer.gameObject;
         cameraDigital = Camera.main.GetComponent<CameraDigital>();
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void onUpdate(Hazard hazard)
     {
+        this.angle = Quaternion.Euler(0, 0, hazard.angle);
+        this.timer = hazard.timer;
     }
 
-    public void updateValues(float angle, float duration, float time)
-    {
-        this.angle = Quaternion.Euler(0, 0, angle);
-        this.timer = time;
-    }
-
-    public void onEntry(float angle)
+    public override void onEntry(Hazard hazard)
     {
         atirando = false;
+
         Sprite spriteAtual = spriteRenderer.sprite;
-
+        spriteRenderer.transform.localScale = Project.regraDeTresMaster(spriteRenderer.transform.localPosition, spriteAtual.bounds.size, new Vector3(50f, 50f, 1f));
         float larguraCabecaPixels = spriteAtual.border.x;
-
         float larguraCabecaMundo = larguraCabecaPixels / spriteAtual.pixelsPerUnit;
 
         children.transform.localPosition = new Vector2(-(larguraCabecaMundo / 2), 0);
 
         spriteRenderer.size = new Vector2(cameraDigital.Largura * 1.7f, spriteRenderer.size.y);
+        transform.rotation = Quaternion.Euler(0, 0, hazard.angle);
 
-        transform.rotation = Quaternion.Euler(0, 0, angle);
 
         animatorLaser.Play("LaserSurgindo");
     }
@@ -69,16 +67,15 @@ public class Laser : MonoBehaviour
         }
     }
 
-    public IEnumerator onExit()
+    public override void onExit(Action onComplete)
     {
         animatorLaser.Play("LaserFechando");
+    }
 
-        yield return null;
-
-        float tempo = animatorLaser.GetCurrentAnimatorStateInfo(0).length;
-
-        yield return new WaitForSeconds(tempo);
-
-        gameObject.SetActive(false);
+    public void AoFimFechando()
+    {
+        var callback = aoTerminar;
+        aoTerminar = null;
+        callback?.Invoke();
     }
 }

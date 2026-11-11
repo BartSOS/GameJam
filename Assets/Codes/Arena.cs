@@ -16,9 +16,7 @@ public class ArenaVisualizer : ADependsProject
 {
     [Header("Prefabs de Referência")]
     private PoolerManager poolerManager;
-    public GameObject Laser;
     public GameObject Tank;
-    public GameObject Artillery;
     public GameObject CheckPoint;
     public GameObject CardTank;
 
@@ -36,13 +34,9 @@ public class ArenaVisualizer : ADependsProject
     private Dictionary<int, List<CheckPoint>> checkPointsNaCenaEliminacao = new Dictionary<int, List<CheckPoint>>();
 
     private Dictionary<int, Tanque> tanquesNaCena = new Dictionary<int, Tanque>();
-    private Dictionary<int, Laser> laserNaCena= new Dictionary<int, Laser>();
-    private Dictionary<int, Artillery> artNaCena= new Dictionary<int, Artillery>();
     private Dictionary<int, CardTankUI> cardTanksAtivos = new Dictionary<int, CardTankUI>();
     private Dictionary<int, string> nomesDosTanques = new Dictionary<int, string>();
 
-    private Queue<Laser> poolDeLasers = new Queue<Laser>();
-    private Queue<Artillery> poolDeArt = new Queue<Artillery>();
 
     protected override void AoAcordar()
     {
@@ -53,7 +47,7 @@ public class ArenaVisualizer : ADependsProject
         this.project = project;
     }
 
-    async UniTaskVoid Start()
+    void Start()
     {
         poolerManager = PoolerManager.INSTANCE;
         pode = false;
@@ -63,8 +57,6 @@ public class ArenaVisualizer : ADependsProject
         SpriteRenderer [] spriteRenderers = Tank.GetComponentsInChildren<SpriteRenderer>();
         spriteRendererTopo = spriteRenderers[0];
         spriteRendererBase = spriteRenderers[1];
-
-
 
         StartNamesDosTanques(project.bots);
         StartFase(project.fase);
@@ -258,39 +250,8 @@ public class ArenaVisualizer : ADependsProject
         List<Hazard> lasers = hazardDatas.FindAll(h => h.type == "LASER");
         List<Hazard> artilharias = hazardDatas.FindAll(h => h.type == "ARTILLERY");
 
-        SincronizarPool<Hazard, Laser> (
-            dadosJson : lasers,
-            dicionarioAtivos : laserNaCena,
-            poolDeLasers,
-            Laser,
-            l => l.id,
-            aoNascer : (l, laserManager) =>
-            {
-                laserManager.onEntry(l.angle);
-            },
-            aoAtualizar : (l, laserManager) =>
-            {
-                laserManager.updateValues(l.angle, l.duration, l.timer);
-            },
-            rotinaMorte : laserManager => laserManager.onExit()
-        );
-
-        SincronizarPool<Hazard, Artillery> (
-            dadosJson: artilharias,
-            dicionarioAtivos: artNaCena,
-            poolDeArt,
-            Artillery,
-            a => a.id,
-            aoNascer: (a, artManager) =>
-            {
-                artManager.onEntry(a.radius, a.x, a.y, a.timer, project.config.arena_width, project.width);
-            },
-            aoAtualizar: (a, artManager) =>
-            {
-                artManager.updateValues(a.timer);
-            },
-            rotinaMorte : artManager => artManager.onExit()
-        );
+        AtualizarPoolAble<Laser, Hazard>(lasers);
+        AtualizarPoolAble<Artillery, Hazard>(artilharias);
     }
 
     private void CriaTanque(Tank t)
@@ -366,7 +327,7 @@ public class ArenaVisualizer : ADependsProject
                 novoCard.name = $"CardTank_ID_{t.id}";
     
                 cardTankUI = novoCard.GetComponent<CardTankUI>();
-                cardTankUI.onEntry(t.id, $"Tank_{t.id}", this); // Exemplo de nome, você pode ajustar conforme necessário
+                cardTankUI.onEntry(t.id, nomesDosTanques[t.id], this); // Exemplo de nome, você pode ajustar conforme necessário
                 cardTanksAtivos.Add(t.id, cardTankUI);
             }
 
