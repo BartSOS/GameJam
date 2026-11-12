@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3341584}
   - component: {fileID: 3341583}
+  - component: {fileID: 3341585}
   m_Layer: 0
   m_Name: Arena
   m_TagString: Untagged
@@ -148,24 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1985016ded2d75980b8377214702ca08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Laser: {fileID: 2765929956291399223, guid: 7ef3f52922bf65bbfb881874f07d67ad, type: 3}
-  Tank: {fileID: 1891390598317454690, guid: e84445daea19ab900beb351f0618a9d7, type: 3}
-  Artillery: {fileID: 3265235535973670578, guid: 3a56fcb06e88bc3a8af30962538ded61, type: 3}
   CheckPoint: {fileID: 7385014782231171913, guid: e0cca5003bec4ba2894fb3014b4935cd, type: 3}
   CardTank: {fileID: 5262777709668367595, guid: 3129e30e53486d7ffab67c16d4050f14, type: 3}
   Painel: {fileID: 310014995}
-  MedKit: {fileID: 5782543622997168054, guid: ff3b1b97c688648ec860184b50a41ddb, type: 3}
-  Lightning: {fileID: 5850007469634190958, guid: 826cc8da8e15b9cf088fce23d8cd4e4d, type: 3}
-  spritesTopo:
-  - {fileID: 8825558557092505005, guid: 279a83996ac6b9c2695a82b555deb9ab, type: 3}
-  - {fileID: 8825558557092505005, guid: 9cf70e22af5c40099bb659e595beedee, type: 3}
-  - {fileID: 8825558557092505005, guid: f2c6cf471dbc5c3e38b6c08256205958, type: 3}
-  - {fileID: 8825558557092505005, guid: 79951829dc3c9abcf85c52ed7891090f, type: 3}
-  spritesBase:
-  - {fileID: -8756764557099445141, guid: 91c561a57551088c1aba593e12ff589a, type: 3}
-  - {fileID: -8756764557099445141, guid: bacb180b7de16a124b313522f05fe7db, type: 3}
-  - {fileID: -8756764557099445141, guid: 0cee40f9f33df0fe18a200089bda487f, type: 3}
-  - {fileID: -8756764557099445141, guid: 66e9c4f045e225b548cbcb80594e0c32, type: 3}
 --- !u!4 &3341584
 Transform:
   m_ObjectHideFlags: 0
@@ -181,6 +167,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3341585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3341582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3127b6c9bab5c44aa2fbb31260afe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioArena
+  somEntry: {fileID: 8300000, guid: 4c68562fd32ba4d1aa4203b15792b23c, type: 3}
+  somExit: {fileID: 8300000, guid: 274c6ad11a64535599d2abfcad5d0455, type: 3}
+  texto: {fileID: 541232859}
 --- !u!1 &118162641
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +335,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118162641}
   m_CullTransparentMesh: 1
+--- !u!1 &230776335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 230776336}
+  m_Layer: 0
+  m_Name: PoolArtillery
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &230776336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230776335}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 866168784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310014994
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +469,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310014994}
   m_CullTransparentMesh: 1
+--- !u!1 &392116162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 392116163}
+  m_Layer: 0
+  m_Name: PoolLaser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &392116163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392116162}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 866168784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &470451304
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +510,8 @@ GameObject:
   m_Component:
   - component: {fileID: 470451305}
   - component: {fileID: 470451307}
-  - component: {fileID: 470451306}
+  - component: {fileID: 470451309}
+  - component: {fileID: 470451308}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Audio
@@ -470,21 +534,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &470451306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 470451304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3127b6c9bab5c44aa2fbb31260afe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  somEntry: {fileID: 8300000, guid: 4c68562fd32ba4d1aa4203b15792b23c, type: 3}
-  somExit: {fileID: 8300000, guid: 274c6ad11a64535599d2abfcad5d0455, type: 3}
-  texto: {fileID: 541232859}
 --- !u!82 &470451307
 AudioSource:
   m_ObjectHideFlags: 0
@@ -582,6 +631,117 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &470451308
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470451304}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &470451309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470451304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea4d5e42c779876d6b3cb4ed1d9acdc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.AudioSFX
+  audioSourceShot: {fileID: 470451307}
+  audioSourceLoop: {fileID: 470451308}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,6 +1152,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &678548585
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678548586}
+  m_Layer: 0
+  m_Name: PoolLightning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &678548586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678548585}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 866168784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &727118022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,6 +1364,22 @@ MonoBehaviour:
   poolings:
   - initialSize: 5
     prefab: {fileID: 8252293353053555414, guid: fe4437435943f1327a9ca06fd504b3be, type: 3}
+    parent: {fileID: 1095239797}
+  - initialSize: 6
+    prefab: {fileID: 7212924019773202019, guid: e84445daea19ab900beb351f0618a9d7, type: 3}
+    parent: {fileID: 1191057283}
+  - initialSize: 5
+    prefab: {fileID: 1897926214014071051, guid: 826cc8da8e15b9cf088fce23d8cd4e4d, type: 3}
+    parent: {fileID: 678548586}
+  - initialSize: 5
+    prefab: {fileID: 7161676981590564704, guid: ff3b1b97c688648ec860184b50a41ddb, type: 3}
+    parent: {fileID: 880677105}
+  - initialSize: 5
+    prefab: {fileID: 2775044876067761712, guid: 3a56fcb06e88bc3a8af30962538ded61, type: 3}
+    parent: {fileID: 230776336}
+  - initialSize: 5
+    prefab: {fileID: 5429139047801072877, guid: 7ef3f52922bf65bbfb881874f07d67ad, type: 3}
+    parent: {fileID: 392116163}
 --- !u!4 &866168784
 Transform:
   m_ObjectHideFlags: 0
@@ -1185,8 +1392,76 @@ Transform:
   m_LocalPosition: {x: -3.85209, y: -1.17614, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1191057283}
+  - {fileID: 880677105}
+  - {fileID: 678548586}
+  - {fileID: 1095239797}
+  - {fileID: 230776336}
+  - {fileID: 392116163}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &880677104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 880677105}
+  m_Layer: 0
+  m_Name: PoolMedKit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &880677105
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880677104}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 866168784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1095239796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1095239797}
+  m_Layer: 0
+  m_Name: PoolTiro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1095239797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1095239796}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 866168784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1174507607
 GameObject:
@@ -1315,6 +1590,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1191057282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191057283}
+  m_Layer: 0
+  m_Name: PoolTanque
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1191057283
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191057282}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 866168784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330716198
 GameObject:

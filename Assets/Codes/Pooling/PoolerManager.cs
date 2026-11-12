@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using UnityEngine.UIElements;
 
 namespace Pooling
 {
@@ -24,14 +25,14 @@ public class PoolerManager : MonoBehaviour
         // Registra automaticamente todos os pools adicionados na lista
         foreach (var pool in poolings)
         {
-            _poolsByComponentType.Add(pool.prefab.GetType(), new Pooler(pool.prefab, transform, pool.initialSize));
+            _poolsByComponentType.Add(pool.prefab.GetType(), new Pooler(pool.prefab, pool.parent, pool.initialSize));
         }    
     }
 
     // Método genérico universal para pegar qualquer objeto de qualquer pool
     public TVisual Spawn<TVisual, TData>(int id, TData data) where TVisual : APoolAbleMonobehaviour<TData>
     {
-        if (TryGetPool<TVisual, TData>(id, out TVisual spawned))
+        if (TryGetPool<TVisual>(id, out TVisual spawned))
         {
             spawned.onEntry(data);
             spawned.Tick = TickCurrent;
@@ -42,7 +43,7 @@ public class PoolerManager : MonoBehaviour
         return null;
     }
 
-    private bool TryGetPool<TVisual, TData>(int id, out TVisual script) where TVisual : APoolAbleMonobehaviour<TData>
+    private bool TryGetPool<TVisual>(int id, out TVisual script) where TVisual : APoolAbleBase
     {
         if (_poolsByComponentType.TryGetValue(typeof(TVisual), out Pooler pooler))
         {
@@ -88,6 +89,18 @@ public class PoolerManager : MonoBehaviour
         Debug.LogError($"Nenhum pool encontrado para o tipo {typeof(TVisual).Name}");
     }
 
+    public TVisual GetVisual<TVisual>(int id) where TVisual : APoolAbleBase
+    {
+        if (_poolsByComponentType.TryGetValue(typeof(TVisual), out Pooler pooler))
+        {
+            if(pooler.GetDictionary(id, out APoolAbleBase script))
+            {
+                return (TVisual)script;
+            }
+        }
+
+        return default(TVisual);
+    }
 
     public void UpdateTick(int tick)
     {

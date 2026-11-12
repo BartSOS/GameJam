@@ -14,6 +14,9 @@ public class Tanque : APoolAbleMonobehaviour<Tank>
     private float turret;
     private Vector2 posicao;
     private Quaternion angle;
+    
+    [SerializeField] private Sprite [] spritesTopo;
+    [SerializeField] private Sprite [] spritesBase;
 
     public SpriteRenderer spriteRendererBase;
     public SpriteRenderer spriteRendererTopo;
@@ -33,8 +36,7 @@ public class Tanque : APoolAbleMonobehaviour<Tank>
         canvas = GetComponent<Canvas>();
         contornoFakeController = GetComponent<ContornoFake>();
         shieldController = GetComponentInChildren<Shield>();
-
-        scaleTank();
+        gameObject.name = $"Tank_Generico_{Id}";
     }
     
 
@@ -52,9 +54,9 @@ public class Tanque : APoolAbleMonobehaviour<Tank>
             angle, 
             Time.deltaTime * 15f);
 
-        spriteRendererTopo.transform.localRotation = Quaternion.Slerp(
-            spriteRendererTopo.transform.localRotation, 
-            Quaternion.Euler(0f, 0f, turret), 
+        spriteRendererTopo.transform.rotation = Quaternion.Slerp(
+            spriteRendererTopo.transform.rotation, 
+            Quaternion.Euler(0f, 0f, turret - 90f), 
             Time.deltaTime * 15f);
     }
 
@@ -65,10 +67,20 @@ public class Tanque : APoolAbleMonobehaviour<Tank>
             spriteRendererBase.transform,
             new Vector3(80f, 80f, 1f)
         );
+
+
+        Project.ScaleObject(
+            spriteRendererBase,
+            spriteRendererTopo.transform,
+            new Vector3(80f, 80f, 1f)
+        );
     }
 
     public override void onEntry(Tank tank)
     {
+        gameObject.name = LoadJson.project.GetNomeTank(tank.id);
+        scaleTank();
+        configurarCores();
         transform.position = posicao = new Vector2(tank.x, tank.y);
         transform.rotation = this.angle = Quaternion.Euler(0f, 0f, tank.angle - 90f);
         this.hp = tank.hp;
@@ -125,6 +137,16 @@ public class Tanque : APoolAbleMonobehaviour<Tank>
     public void PararBrilhoTank()
     {
         contornoFakeController.Deactive();
+    }
+
+    
+    public void configurarCores()
+    {
+        Sprite topo = spritesTopo[Id % spritesTopo.Length];
+        spriteRendererTopo.sprite = topo;
+
+        Sprite bases = spritesBase[Id % spritesBase.Length];
+        spriteRendererBase.sprite = bases;
     }
 }
 }

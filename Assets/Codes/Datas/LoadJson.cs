@@ -6,26 +6,33 @@ namespace Datas
 {
 public static class LoadJson
 {
-    static bool _iniciada = false;
-    static UniTask<Project> _task;
-    public static UniTask<Project> LoadProjectTask
-    {
-        get
-        {
-            if (!_iniciada)
-            {
-                _iniciada = true;
-                _task = LoadProjectAsync().Preserve();
-            }
+       static UniTaskCompletionSource<Project> _tcs = new();
+    public static UniTask<Project> LoadProjectTask => _tcs.Task;
 
-            return _task;
-        }
-    } 
-    static Project project;
+    public static Project project;
+
+    // Zera a cada Play (necessário se o Domain Reload estiver desligado)
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    static void Resetar() => _tcs = new UniTaskCompletionSource<Project>();
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    static void Iniciar()
+    static void Iniciar() => Carregar().Forget();
+
+    static async UniTaskVoid Carregar()
     {
-        _ = LoadProjectTask;
+        try
+        {
+            _tcs.TrySetResult(await LoadProjectAsync());
+        }
+        catch (System.OperationCanceledException)
+        {
+            _tcs.TrySetCanceled();           // saiu do Play
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogException(e);
+            _tcs.TrySetResult(null);         // quem espera recebe null, não fica preso
+        }
     }
 
     static async UniTask<Project> LoadProjectAsync()

@@ -10,14 +10,14 @@ public class MedKit : APoolAbleMonobehaviour<Item>
 
     void Awake()
     {   
-        Vector3 tamLastSprite = GetComponent<SpriteRenderer>().sprite.bounds.size;
-        transform.localScale = Project.regraDeTresMaster(transform.localScale, tamLastSprite, new Vector3(40f, 40f));
 
         animator = GetComponent<Animator>();
     }
 
     public override void onEntry(Item item)
     {
+        Vector3 tamLastSprite = GetComponent<SpriteRenderer>().sprite.bounds.size;
+        transform.localScale = Project.regraDeTresMaster(transform.localScale, tamLastSprite, new Vector3(40f, 40f));
         transform.position = new Vector3(item.x, item.y, 0);
         animator.Play("MedKitIdle");
     }

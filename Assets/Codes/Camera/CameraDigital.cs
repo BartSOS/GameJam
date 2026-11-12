@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 using Datas;
+using Cysharp.Threading.Tasks;
 
 namespace WebCam
 {
@@ -40,10 +41,11 @@ public class CameraDigital : ADependsProject
         largura = altura * cam.aspect;
     }
 
-    protected override void AoCarregarProject(Project project)
+    protected override UniTask AoCarregarProject(Project project)
     {
         width_engine = project.config.arena_width;
         height_engine = project.config.arena_height;
+        return UniTask.CompletedTask;
     }
 }   
 }

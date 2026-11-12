@@ -13,11 +13,11 @@ public class Lightning : APoolAbleMonobehaviour<Item>
     {
         animator = GetComponent<Animator>();
         animatorChildren = GetComponentsInChildren<Animator>()[1];
-        transform.localScale = Project.regraDeTresMaster(transform.localScale, GetComponent<SpriteRenderer>().sprite.bounds.size, new Vector3(40f, 40f));
     }
 
     public override void onEntry(Item item)
     {
+        transform.localScale = Project.regraDeTresMaster(transform.localScale, GetComponent<SpriteRenderer>().sprite.bounds.size, new Vector3(40f, 40f));
         transform.position = new Vector3(item.x, item.y, 0);
         animator.Play("LightningIdle");
         animatorChildren.Play("LightningChildren");

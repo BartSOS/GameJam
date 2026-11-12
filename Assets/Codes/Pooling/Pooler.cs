@@ -25,16 +25,18 @@ public class Pooler : IPool{
         }
     }
 
-    private void CreateNewInstance()
+    private APoolAbleBase CreateNewInstance()
     {
         APoolAbleBase newObj = Object.Instantiate(_prefab, _parent);
+        newObj.gameObject.name = $"{_prefab.name} (Pool)";
         newObj.gameObject.SetActive(false);
-        _pool.Enqueue(newObj.GetComponent<APoolAbleBase>());
+        _pool.Enqueue(newObj);
+        return newObj;
     }
 
     public APoolAbleBase GetPool(int id)
     {
-        APoolAbleBase obj = _pool.Count > 0 ? _pool.Dequeue() : Object.Instantiate(_prefab, _parent);
+        APoolAbleBase obj = _pool.Count > 0 ? _pool.Dequeue() : CreateNewInstance();
         obj.Id = id;
         obj.gameObject.SetActive(true);
         _activesObjects.Add(obj.Id, obj);
@@ -59,7 +61,6 @@ public class Pooler : IPool{
             return true;    
         }
 
-        Debug.Log("Id informado não encontrado");
         return false;
     }
 

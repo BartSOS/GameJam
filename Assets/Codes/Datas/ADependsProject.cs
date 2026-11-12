@@ -11,8 +11,8 @@ public abstract class ADependsProject : MonoBehaviour
     void Awake()
     {
         Configurado = false;
-        _ = Pronto;
         AoAcordar();
+        _ = Pronto;
     }
 
     public UniTask Pronto
@@ -37,14 +37,14 @@ public abstract class ADependsProject : MonoBehaviour
             return;
         }
 
-        AoCarregarProject(p);
+        await AoCarregarProject(p);
         Configurado = true;
     }
 
     protected virtual void AoFalhar(){}
     protected virtual void AoAcordar(){}
 
-    protected abstract void AoCarregarProject(Project project);
+    protected abstract UniTask AoCarregarProject(Project project);
 
     protected T soDepoisDeCarregarProject<T>(T valor)
     {

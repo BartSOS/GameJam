@@ -16,7 +16,6 @@ public class ArenaVisualizer : ADependsProject
 {
     [Header("Prefabs de Referência")]
     private PoolerManager poolerManager;
-    public GameObject Tank;
     public GameObject CheckPoint;
     public GameObject CardTank;
 
@@ -25,26 +24,24 @@ public class ArenaVisualizer : ADependsProject
     private bool pode;
     private bool gameOver;
     private Project project;
-    private SpriteRenderer spriteRendererTopo;
-    private SpriteRenderer spriteRendererBase;
-    [SerializeField] private Sprite [] spritesTopo;
-    [SerializeField] private Sprite [] spritesBase;
 
     private Dictionary<string, CheckPoint> checkPointsNaCena = new Dictionary<string, CheckPoint>();
     private Dictionary<int, List<CheckPoint>> checkPointsNaCenaEliminacao = new Dictionary<int, List<CheckPoint>>();
 
-    private Dictionary<int, Tanque> tanquesNaCena = new Dictionary<int, Tanque>();
     private Dictionary<int, CardTankUI> cardTanksAtivos = new Dictionary<int, CardTankUI>();
-    private Dictionary<int, string> nomesDosTanques = new Dictionary<int, string>();
+    private CameraDigital cameraDigital;
 
 
     protected override void AoAcordar()
     {
+        cameraDigital = Camera.main.GetComponent<CameraDigital>();
     }
 
-    protected override void AoCarregarProject(Project project)
+    protected override async UniTask AoCarregarProject(Project project)
     {
+        await cameraDigital.Pronto;
         this.project = project;
+        StartFase(project.fase);
     }
 
     void Start()
@@ -53,13 +50,6 @@ public class ArenaVisualizer : ADependsProject
         pode = false;
         indice = 0;
         gameOver = false;
-        
-        SpriteRenderer [] spriteRenderers = Tank.GetComponentsInChildren<SpriteRenderer>();
-        spriteRendererTopo = spriteRenderers[0];
-        spriteRendererBase = spriteRenderers[1];
-
-        StartNamesDosTanques(project.bots);
-        StartFase(project.fase);
     }
 
     void FixedUpdate()
@@ -144,8 +134,10 @@ public class ArenaVisualizer : ADependsProject
             shield = false,
             alive = true
         };
-        CriaTanque(t);
-        AtualizaTanque(t);
+
+        List<Tank> a = new();
+        a.Add(t);
+        AtualizarPoolAble<Tanque, Tank>(a);
     }
 
     private void CriaAlvos(List<Alvo> alvos)
@@ -163,8 +155,10 @@ public class ArenaVisualizer : ADependsProject
                 shield = false,
                 alive = true
             };
-            CriaTanque(t);
-            AtualizaTanque(t);
+            
+            List<Tank> a = new();
+            a.Add(t);
+            AtualizarPoolAble<Tanque, Tank>(a);
         }
     }
 
@@ -184,20 +178,6 @@ public class ArenaVisualizer : ADependsProject
     }
     
 
-    private void StartNamesDosTanques(List<Name2Id> bots)
-    {
-        if (bots == null || bots.Count == 0)
-        {
-            Debug.LogError("Lista de Bots não encontrada ou vazia no JSON.");
-            return;
-        }
-
-        foreach (var bot in bots)
-        {
-            nomesDosTanques[bot.id] = bot.nome;
-        }
-    }
-
     private void FixedUpdateGame()
     {
         if (indice < project.frames.Count)
@@ -212,6 +192,7 @@ public class ArenaVisualizer : ADependsProject
                 AtualizarCheckPoints(project.frames[indice].tick);
 
                 Debug.Log(project.frames[indice].tick);
+                
                 indice++;
                 pode = false;
                 poolerManager.UpdateTick(project.frames[indice].tick);
@@ -229,20 +210,12 @@ public class ArenaVisualizer : ADependsProject
             {
                 gameOver = true;
                 AudioArena audioController = GetComponent<AudioArena>();
-                var unicoItem = tanquesNaCena.FirstOrDefault(t => t.Value.gameObject.activeSelf);
-                audioController.tocaSomSaida(unicoItem.Value.name); 
+                // var unicoItem = tanquesNaCena.FirstOrDefault(t => t.Value.gameObject.activeSelf);
+                // audioController.tocaSomSaida(unicoItem.Value.name); 
             }
         }
     }
 
-    public void configurarCores(int idBot)
-    {
-        Sprite topo = spritesTopo[idBot % spritesTopo.Length];
-        spriteRendererTopo.sprite = topo;
-
-        Sprite bases = spritesBase[idBot % spritesBase.Length];
-        spriteRendererBase.sprite = bases;
-    }
    
 
     private void AtualizarHazards(List<Hazard> hazardDatas)
@@ -254,64 +227,19 @@ public class ArenaVisualizer : ADependsProject
         AtualizarPoolAble<Artillery, Hazard>(artilharias);
     }
 
-    private void CriaTanque(Tank t)
-    {
-        if (!tanquesNaCena.ContainsKey(t.id))
-        {
-            configurarCores(t.id);
-            GameObject novoTanque = Instantiate(Tank, transform);
-            novoTanque.name = nomesDosTanques.ContainsKey(t.id) ? nomesDosTanques[t.id] : $"Tank_{t.id}";
-            
-            Tanque tankAtual = novoTanque.GetComponent<Tanque>();
-            tankAtual.onEntry(t.x, t.y, t.angle, t.turret, t.hp, t.energy, t.shield);
-
-            tanquesNaCena.Add(t.id, tankAtual);
-        }
-    }
-
-    private void AtualizaTanque(Tank t)
-    {
-        if (tanquesNaCena.ContainsKey(t.id))
-        {
-            Tanque objTanque = tanquesNaCena[t.id];
-
-            objTanque.updateValues(t.x, t.y, t.angle, t.turret, t.hp, t.energy, t.shield);
-            
-            // Garante que o estado visual reflita a simulação
-            if (!t.alive)
-            {
-                objTanque.gameObject.SetActive(false);
-            }
-            else if (!objTanque.gameObject.activeSelf)
-            {
-                objTanque.gameObject.SetActive(true); // Reativa caso o tanque "reviva" ou inicie inativo
-            }
-        }
-    }
-
     private void AtualizarTanques(List<Tank> dadosTanques)
     {
-        if (dadosTanques == null) return;
-
-
-        foreach (Tank t in dadosTanques)
+        foreach (Tank tank in dadosTanques)
         {
-            CriaTanque(t);
-
-            AtualizaTanque(t);
+            if (tank.alive)
+                atualizarPool<Tanque, Tank>(tank);
         }
     }
 
     private void AtualizarProjeteis(List<Projectile> dadosProjetis)
     {
-        if (poolerManager == null) Debug.LogError("DEU MERDAAA");
-
-        foreach (Projectile dado in dadosProjetis)
-        {
-            poolerManager.Morph<ManagerTiro, Projectile>(dado.id, dado);
-        }
+        AtualizarPoolAble<ManagerTiro, Projectile>(dadosProjetis);
     }
-
 
     private void AtualizarCardTanks(List<Tank> dadosCardTanks)
     {
@@ -327,7 +255,17 @@ public class ArenaVisualizer : ADependsProject
                 novoCard.name = $"CardTank_ID_{t.id}";
     
                 cardTankUI = novoCard.GetComponent<CardTankUI>();
-                cardTankUI.onEntry(t.id, nomesDosTanques[t.id], this); // Exemplo de nome, você pode ajustar conforme necessário
+
+                if (t == null || t.id == 0)
+                {
+                    Debug.LogError("Tank ou Tank ID é nulo.");
+                    continue;
+                }
+                if (!LoadJson.project.nomesDosTanques.ContainsKey(t.id)) Debug.LogError($"Nome do tanque com ID {t.id} não encontrado.");
+
+                cardTankUI.onEntry(t.id, LoadJson.project.nomesDosTanques[t.id], this); // Exemplo de nome, você pode ajustar conforme necessário
+
+
                 cardTanksAtivos.Add(t.id, cardTankUI);
             }
 
@@ -351,6 +289,11 @@ public class ArenaVisualizer : ADependsProject
         {
             PoolerManager.INSTANCE.Morph<TVisual, TData>(data.id, data);
         }
+    }
+
+    private void atualizarPool<TVisual, TData>(TData data) where TData : IData where TVisual : APoolAbleMonobehaviour<TData>
+    {
+        PoolerManager.INSTANCE.Morph<TVisual, TData>(data.id, data);
     }
     // ========================================================================
     // MOTOR GENÉRICO DE OBJECT POOL
@@ -437,10 +380,12 @@ public class ArenaVisualizer : ADependsProject
 
     public Tanque getTankById(int id)
     {
-        if (tanquesNaCena.ContainsKey(id))
+        Tanque t = poolerManager.GetVisual<Tanque>(id);
+
+        if (t == null)
         {
-            return tanquesNaCena[id];
+            Debug.LogError($"Tanque deu merdacom ID {id} não encontrado.");
         }
-        return null;
+        return t;
     }
 }

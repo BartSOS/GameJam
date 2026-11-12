@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using WebCam;
 using Datas.Frames;
+using Datas.Fase;
 
 namespace Datas
 {
@@ -15,6 +16,7 @@ public class Project
     public Fase.Fases fase;
     public float width;
     public float height;
+    public readonly Dictionary<int, string> nomesDosTanques = new();
 
     public Vector3 tam_engine;
 
@@ -108,12 +110,38 @@ public class Project
         else    
             Debug.LogError("Fase ausente do projeto");
 
+        startNamesDosTanques(bots, fase.alvos);
+
+    }
+
+    private void startNamesDosTanques(List<Name2Id> bots, List<Alvo> alvos)
+    {
+        foreach (var bot in bots)
+        {
+            nomesDosTanques[bot.id] = bot.nome;
+        }
+
+        if (alvos != null)
+        {
+            foreach (var alvo in alvos)
+            {
+                nomesDosTanques[alvo.tank_id] = alvo.id; 
+            }
+        }
+    }
+
+    public string GetNomeTank(int id)
+    {
+        if (nomesDosTanques.TryGetValue(id, out string nome))
+            return nome;
+
+        return $"Tank_In_Pool";
     }
 
     public static void ScaleObject(SpriteRenderer spriteRenderer, Transform transform, Vector3 vector3)
     {
         float max = Mathf.Max(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y);
-        Vector3 tamSpriteBase = new Vector3(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y, 1f);
+        Vector3 tamSpriteBase = new Vector3(max, max, 1f);
 
         transform.localScale = Project.regraDeTresMaster(
             transform.localScale,

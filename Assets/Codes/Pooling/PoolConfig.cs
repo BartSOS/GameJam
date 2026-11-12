@@ -1,4 +1,6 @@
 using System;
+using UnityEngine;
+
 
 namespace Pooling
 {
@@ -7,5 +9,6 @@ public class PoolConfig
 {
     public int initialSize = 5;
     public APoolAbleBase prefab;
+    public Transform parent;
 }
 }

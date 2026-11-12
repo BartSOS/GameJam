@@ -207,6 +207,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7674510592424074174}
   - component: {fileID: 7212924019773202019}
+  - component: {fileID: 3464178869758898262}
+  - component: {fileID: 1306423005060258079}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -245,8 +247,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e78aa98c1a85731f9ac4e203aecbd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovementTank
-  EnergyShield: {fileID: 7259335019990769243}
+  spritesTopo:
+  - {fileID: 8825558557092505005, guid: 279a83996ac6b9c2695a82b555deb9ab, type: 3}
+  - {fileID: 8825558557092505005, guid: 9cf70e22af5c40099bb659e595beedee, type: 3}
+  - {fileID: 8825558557092505005, guid: f2c6cf471dbc5c3e38b6c08256205958, type: 3}
+  - {fileID: 8825558557092505005, guid: 79951829dc3c9abcf85c52ed7891090f, type: 3}
+  spritesBase:
+  - {fileID: -8756764557099445141, guid: 91c561a57551088c1aba593e12ff589a, type: 3}
+  - {fileID: -8756764557099445141, guid: bacb180b7de16a124b313522f05fe7db, type: 3}
+  - {fileID: -8756764557099445141, guid: 0cee40f9f33df0fe18a200089bda487f, type: 3}
+  - {fileID: -8756764557099445141, guid: 66e9c4f045e225b548cbcb80594e0c32, type: 3}
+  spriteRendererBase: {fileID: 0}
+  spriteRendererTopo: {fileID: 0}
+--- !u!114 &3464178869758898262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891390598317454690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca79e894c435d7b5acca515e5cdff82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tanques.ContornoFake
   scaleFactorContorno: 1.1
+--- !u!114 &1306423005060258079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891390598317454690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5975d6fed0c5485a9bd47aaa186b5cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tanques.Canvas
   imageHp: {fileID: 7407507149658776527}
   imageEnergy: {fileID: 5004058534768559803}
   texto: {fileID: 8168194172353878251}
@@ -565,6 +602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6246829259001964387}
   - component: {fileID: 2181224881858374513}
+  - component: {fileID: 4739334134285860331}
   - component: {fileID: 2982249187754257910}
   m_Layer: 0
   m_Name: Shield
@@ -610,6 +648,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4739334134285860331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7259335019990769243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887203d968907455aa5c6f60cef8e0b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tanques.Shield
 --- !u!212 &2982249187754257910
 SpriteRenderer:
   serializedVersion: 3

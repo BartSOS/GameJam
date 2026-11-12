@@ -20,7 +20,6 @@ public class Canvas : MonoBehaviour
         barraEnergy = new Bar(imageEnergy);
 
         canvas.name = $"CanvasTank_{gameObject.name}";
-        // texto.text = gameObject.name;
     }
 
     void LateUpdate()
@@ -40,6 +39,7 @@ public class Canvas : MonoBehaviour
 
     public void SetBars(float hp, float energy)
     {
+        texto.text = gameObject.name;
         barraHp.setBar(hp);
         barraEnergy.setBar(energy);
     }
