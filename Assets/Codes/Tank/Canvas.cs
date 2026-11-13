@@ -12,6 +12,8 @@ public class Canvas : MonoBehaviour
     public Image imageHp;
     public Image imageEnergy;
     public TextMeshProUGUI texto;
+    public TextMeshProUGUI hp;
+    public Image rect;
     public Transform canvas;
 
     void Awake()
@@ -35,11 +37,15 @@ public class Canvas : MonoBehaviour
     {
         barraHp.updateBar(hp);
         barraEnergy.updateBar(energy);
+        this.hp.text = ((int)hp).ToString();
+
     }
 
-    public void SetBars(float hp, float energy)
+    public void SetBars(float hp, float energy, Color corRect)
     {
         texto.text = gameObject.name;
+        this.hp.text = ((int)hp).ToString();
+        this.rect.color = corRect;
         barraHp.setBar(hp);
         barraEnergy.setBar(energy);
     }

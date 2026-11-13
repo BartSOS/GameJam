@@ -89,7 +89,7 @@ public class Tanque : APoolAbleMonobehaviour<Tank>
         transform.position = posicao;
         transform.rotation = this.angle;
 
-        canvas.SetBars(this.hp, tank.energy);
+        canvas.SetBars(this.hp, tank.energy, LoadJson.project.corTemaTanque[tank.id]);
     }
 
     public override void onUpdate(Tank tank)

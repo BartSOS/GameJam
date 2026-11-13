@@ -11,6 +11,7 @@ using Tiros;
 using Datas.Frames;
 using Pooling;
 using Cysharp.Threading.Tasks;
+using HUD;
 
 public class ArenaVisualizer : ADependsProject
 {
@@ -30,6 +31,8 @@ public class ArenaVisualizer : ADependsProject
 
     private Dictionary<int, CardTankUI> cardTanksAtivos = new Dictionary<int, CardTankUI>();
     private CameraDigital cameraDigital;
+    private Jogador jogador;
+    public Tela tela;
 
 
     protected override void AoAcordar()
@@ -209,9 +212,10 @@ public class ArenaVisualizer : ADependsProject
             if (!gameOver)
             {
                 gameOver = true;
-                AudioArena audioController = GetComponent<AudioArena>();
+                // AudioArena audioController = GetComponent<AudioArena>();
                 // var unicoItem = tanquesNaCena.FirstOrDefault(t => t.Value.gameObject.activeSelf);
                 // audioController.tocaSomSaida(unicoItem.Value.name); 
+                tela.MostraMsgFinal();
             }
         }
     }
@@ -231,8 +235,10 @@ public class ArenaVisualizer : ADependsProject
     {
         foreach (Tank tank in dadosTanques)
         {
-            if (tank.alive)
-                atualizarPool<Tanque, Tank>(tank);
+            if (!tank.alive)
+                PoolerManager.INSTANCE.GetVisual<Tanque>(tank.id).gameObject.SetActive(false);
+                
+            atualizarPool<Tanque, Tank>(tank);
         }
     }
 

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using WebCam;
 using Datas.Frames;
 using Datas.Fase;
+using UnityEngine.Video;
+using Tanques;
 
 namespace Datas
 {
@@ -11,12 +13,15 @@ namespace Datas
 public class Project
 {
     public List<Frames.Frame> frames;
-    public List<Name2Id> bots;
+    public List<Bot> bots;
+    public List<Tanques> tanques;
+    public Dono dono;
     public Config config;
     public Fase.Fases fase;
     public float width;
     public float height;
     public readonly Dictionary<int, string> nomesDosTanques = new();
+    public readonly Dictionary<int, Color> corTemaTanque = new();
 
     public Vector3 tam_engine;
 
@@ -111,10 +116,21 @@ public class Project
             Debug.LogError("Fase ausente do projeto");
 
         startNamesDosTanques(bots, fase.alvos);
-
+        startColorsDosTanques();
     }
 
-    private void startNamesDosTanques(List<Name2Id> bots, List<Alvo> alvos)
+    private void startColorsDosTanques()
+    {
+        if (tanques == null) Debug.LogError("DEu merda");
+
+        foreach (Tanques tanque in tanques)
+        {
+            Debug.LogError(tanque.id);
+            corTemaTanque[tanque.id] = tanque.cor.FromHex();
+        }
+    }
+
+    private void startNamesDosTanques(List<Bot> bots, List<Alvo> alvos)
     {
         foreach (var bot in bots)
         {
