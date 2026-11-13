@@ -1,4 +1,4 @@
-namespace HUD
+namespace HUD.Screen
 {
 public enum Resultado
 {

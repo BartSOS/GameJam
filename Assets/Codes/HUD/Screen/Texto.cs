@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace HUD
+namespace HUD.Screen
 {
 public static class Texto
 {

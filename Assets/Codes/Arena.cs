@@ -11,7 +11,7 @@ using Tiros;
 using Datas.Frames;
 using Pooling;
 using Cysharp.Threading.Tasks;
-using HUD;
+using HUD.Screen;
 
 public class ArenaVisualizer : ADependsProject
 {
@@ -33,6 +33,7 @@ public class ArenaVisualizer : ADependsProject
     private CameraDigital cameraDigital;
     private Jogador jogador;
     public Tela tela;
+    public HudTreinoPainel hudTreinoPainel;
 
 
     protected override void AoAcordar()
@@ -73,6 +74,7 @@ public class ArenaVisualizer : ADependsProject
         CriaJogador(fase.jogador);
         CriaAlvos(fase.alvos);  
         CriaPontos(fase.pontos);
+        hudTreinoPainel.Configurar(fase);
     }
 
     private void CriaPontos(List<Ponto> pontos)

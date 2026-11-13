@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using Datas;
 
-namespace HUD
+namespace HUD.Screen
 {
 public class Cards : MonoBehaviour
 {

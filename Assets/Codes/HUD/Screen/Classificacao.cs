@@ -5,7 +5,7 @@ using Datas;
 using Unity.VisualScripting;
 using System.Diagnostics;
 
-namespace HUD
+namespace HUD.Screen
 {
 public class Classificacao : MonoBehaviour
 {
