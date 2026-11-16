@@ -21,8 +21,27 @@ public class MiraAndando : HudTreinoObjetivo
     private int idJogador;
     private int[] tirosAcumulados = new int[0];
 
+
+    [Tooltip("Onde as linhas são criadas, na ordem dos campos. Vazio = este objeto.")]
+    public Transform conteudo;
+    private bool linhasInstanciadas;
+
+    /// Troca os campos que apontam para prefabs por cópias na cena.
+    private void InstanciarLinhas()
+    {
+        if (linhasInstanciadas) return;
+        linhasInstanciadas = true;
+        Transform pai = conteudo ? conteudo : transform;
+        distancia = HudInstancia.Garantir(distancia, pai);
+        alvos = HudInstancia.Garantir(alvos, pai);
+        tiros = HudInstancia.Garantir(tiros, pai);
+    }
+
+    void Awake() => InstanciarLinhas();
+
     public override void Configurar(Fases fase)
     {
+        InstanciarLinhas();
         idJogador = fase.IdJogador();
         if (distancia) distancia.DefinirPonto(fase.PrimeiroPonto());
         if (alvos) alvos.Configurar(fase);

@@ -20,8 +20,27 @@ public class AcertarAlvos : HudTreinoObjetivo
     private int idJogador;
     private int[] tirosAcumulados = new int[0];
 
+
+    [Tooltip("Onde as linhas são criadas, na ordem dos campos. Vazio = este objeto.")]
+    public Transform conteudo;
+    private bool linhasInstanciadas;
+
+    /// Troca os campos que apontam para prefabs por cópias na cena.
+    private void InstanciarLinhas()
+    {
+        if (linhasInstanciadas) return;
+        linhasInstanciadas = true;
+        Transform pai = conteudo ? conteudo : transform;
+        alvos = HudInstancia.Garantir(alvos, pai);
+        tiros = HudInstancia.Garantir(tiros, pai);
+        energia = HudInstancia.Garantir(energia, pai);
+    }
+
+    void Awake() => InstanciarLinhas();
+
     public override void Configurar(Fases fase)
     {
+        InstanciarLinhas();
         idJogador = fase.IdJogador();
         if (alvos) alvos.Configurar(fase);
         if (energia) energia.Configurar(fase.EnergiaInicial());

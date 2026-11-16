@@ -23,8 +23,27 @@ public class HudTreinoSobreviver : HudTreinoObjetivo
     private int idJogador;
     private List<int> explosoes = new List<int>();
 
+
+    [Tooltip("Onde as linhas são criadas, na ordem dos campos. Vazio = este objeto.")]
+    public Transform conteudo;
+    private bool linhasInstanciadas;
+
+    /// Troca os campos que apontam para prefabs por cópias na cena.
+    private void InstanciarLinhas()
+    {
+        if (linhasInstanciadas) return;
+        linhasInstanciadas = true;
+        Transform pai = conteudo ? conteudo : transform;
+        vida = HudInstancia.Garantir(vida, pai);
+        proximaBomba = HudInstancia.Garantir(proximaBomba, pai);
+        bombas = HudInstancia.Garantir(bombas, pai);
+    }
+
+    void Awake() => InstanciarLinhas();
+
     public override void Configurar(Fases fase)
     {
+        InstanciarLinhas();
         idJogador = fase.IdJogador();
         explosoes = fase.ExplosoesDaArtilharia();
         if (vida)

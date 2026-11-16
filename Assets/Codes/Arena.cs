@@ -13,35 +13,26 @@ using Pooling;
 using Cysharp.Threading.Tasks;
 using HUD.Screen;
 using HUD.Treino;
+using Unity.VisualScripting;
 public class ArenaVisualizer : ADependsProject
 {
     [Header("Prefabs de Referência")]
     private PoolerManager poolerManager;
-    public GameObject CheckPoint;
-    public GameObject CardTank;
-
-    public Transform Painel;
     private int indice;
-    private bool pode;
     private bool gameOver;
     private Project project;
-
-    private Dictionary<string, CheckPoint> checkPointsNaCena = new Dictionary<string, CheckPoint>();
-    private Dictionary<int, List<CheckPoint>> checkPointsNaCenaEliminacao = new Dictionary<int, List<CheckPoint>>();
-
-    // private Dictionary<int, CardTankUI> cardTanksAtivos = new Dictionary<int, CardTankUI>();
-    private CameraDigital cameraDigital;
     public Tela tela;
     public HudTreinoPainel hudTreinoPainel;
-
+    [SerializeField] private int velocidade = 4;
+    private int contador = 0;
 
     protected override void AoAcordar()
     {
-        cameraDigital = Camera.main.GetComponent<CameraDigital>();
     }
 
     protected override async UniTask AoCarregarProject(Project project)
     {
+        CameraDigital cameraDigital  = Camera.main.GetComponent<CameraDigital>();
         await cameraDigital.Pronto;
         this.project = project;
         StartFase(project.fase);
@@ -50,7 +41,6 @@ public class ArenaVisualizer : ADependsProject
     void Start()
     {
         poolerManager = PoolerManager.INSTANCE;
-        pode = false;
         indice = 0;
         gameOver = false;
     }
@@ -125,26 +115,23 @@ public class ArenaVisualizer : ADependsProject
 
     private void FixedUpdateGame()
     {
+        contador++;
+
         if (indice < project.frames.Count)
         {
-            if (pode)
+            if (contador % velocidade == 0)
             {
                 AtualizarTanques(project.frames[indice].tanks);
                 AtualizarProjeteis(project.frames[indice].projectiles);
                 AtualizarHazards(project.frames[indice].hazards);
                 AtualizarItems(project.frames[indice].items);
                 AtualizarCheckPoints(project.fase.pontos, project.frames[indice].tick);
+                hudTreinoPainel.MostrarFrame(project.frames[indice].tick);
 
                 Debug.Log(project.frames[indice].tick);
                 
                 indice++;
-                pode = false;
                 poolerManager.UpdateTick(project.frames[indice].tick);
-            }
-
-            else
-            {
-                pode = true;
             }
         }
 
@@ -184,7 +171,8 @@ public class ArenaVisualizer : ADependsProject
     {
         foreach (Ponto ponto in pontos)
         {
-            if (ponto.consumido_tick < tick)
+            Debug.Log($"Merfda {ponto.consumido_tick} -> {tick}");
+            if (ponto.consumido_tick >= tick)
                 atualizarPool<CheckPoint, Ponto>(ponto);
         }
     }
