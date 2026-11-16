@@ -1,11 +1,13 @@
 using UnityEngine;
 using TMPro;
 using Datas;
+using Pooling;
+using Datas.Fase;
+using System;
 
-public class CheckPoint : MonoBehaviour
+public class CheckPoint : APoolAbleMonobehaviour<Ponto>
 {
     private TextMeshProUGUI texto;
-    private float consumido_tick;
 
     SpriteRenderer spriteRenderer;
     void Awake()
@@ -14,16 +16,25 @@ public class CheckPoint : MonoBehaviour
         texto = GetComponentInChildren<TextMeshProUGUI>();
     }
 
-    public void onEntry(float raio, float x, float y, float consumido_tick, int ordem)
+    public override void onEntry(Ponto ponto)
     {
-        transform.position = new Vector3(x, y, 0);
+        transform.position = new Vector3(ponto.x, ponto.y, 0);
         Project.ScaleObject(
             spriteRenderer,
             transform,
-            new Vector3(raio * 2, raio * 2, 1f)
+            new Vector3(ponto.raio * 2, ponto.raio * 2, 1f)
         );
 
-        this.consumido_tick = consumido_tick;
-        texto.text = ordem.ToString();
+        texto.text = ponto.ordem.ToString();
+    }
+
+    public override void onUpdate(Ponto data)
+    {
+        
+    }
+
+    public override void onExit(Action complete)
+    {
+        complete?.Invoke();
     }
 }

@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Datas.Fase;
+using Datas.Frames;
 
+namespace HUD.Treino{
 /// <summary>
 /// Painel do treino: a parte fixa (etiqueta da fase, título, frame e barra do frame)
 /// e, embaixo, o prefab do objetivo da fase.
@@ -24,6 +27,12 @@ public class HudTreinoPainel : MonoBehaviour
     public TMP_Text textoFrameLimite;
     [Tooltip("Preenchimento da barra: filho da trilha, Anchor Min (0,0), Anchor Max (0,1), offsets 0. O código muda o Anchor Max X.")]
     public RectTransform barraFramePreenchimento;
+    [Tooltip("Image do preenchimento da barra do frame, para ficar laranja perto do prazo. Opcional.")]
+    public Image barraFrameImagem;
+    public Color corBarraFrame = new Color32(0xE6, 0xED, 0xF3, 0x8C);  // texto a 55%
+    public Color corBarraPrazo = new Color32(0xFF, 0x9F, 0x43, 0xFF);  // laranja
+    [Tooltip("A partir desta fração do prazo a barra fica laranja.")]
+    public float limiarPrazo = 0.8f;
 
     [Header("Parte de baixo (prefab por objetivo)")]
     [Tooltip("Onde o prefab do objetivo é criado (de preferência com Vertical Layout Group).")]
@@ -34,12 +43,29 @@ public class HudTreinoPainel : MonoBehaviour
     [Tooltip("Faixa \"FASE CONCLUÍDA\". Aparece quando o progresso do frame diz concluido.")]
     public GameObject faixaConcluida;
 
+    [Header("Fase não concluída (opcional)")]
+    [Tooltip("Faixa laranja \"PRAZO ESGOTADO\": o frame passou do limite_frame sem concluir.")]
+    public GameObject faixaPrazoEsgotado;
+    [Tooltip("Faixa vermelha \"TANQUE DESTRUÍDO\": o tanque da equipe morreu. Precisa dos frames: Configurar(fase, frames).")]
+    public GameObject faixaDestruido;
+
     private Fases fase;
+    private List<Frame> frames;
     private HudTreinoObjetivo objetivo;
 
     /// <summary>Recebe o bloco fase do replay. Sem progresso (torneio, replay antigo), o painel se esconde.</summary>
     public void Configurar(Fases novaFase)
     {
+        Configurar(novaFase, null);
+    }
+
+    /// <summary>
+    /// Como Configurar(fase), mais os frames do replay: as fases 04, 05 e 06 leem deles
+    /// alvos vivos, tiros, energia e vida. Sem os frames, essas linhas ficam paradas.
+    /// </summary>
+    public void Configurar(Fases novaFase, List<Frame> framesDoReplay)
+    {
+        frames = framesDoReplay;
         fase = novaFase.TemProgresso() ? novaFase : null;
         TrocarObjetivo(null);
 
@@ -66,9 +92,34 @@ public class HudTreinoPainel : MonoBehaviour
         if (p == null) return;
 
         if (textoFrameAtual) textoFrameAtual.text = p.frame.ToString();
-        if (barraFramePreenchimento) PreencherBarra(FormatoHud.Proporcao(p.frame, fase.UltimoFrame()));
+        float proporcao = FormatoHud.Proporcao(p.frame, fase.UltimoFrame());
+        if (barraFramePreenchimento) PreencherBarra(proporcao);
+        if (barraFrameImagem) barraFrameImagem.color = fase.TemPrazo() && proporcao >= limiarPrazo ? corBarraPrazo : corBarraFrame;
         if (faixaConcluida) faixaConcluida.SetActive(p.concluido);
-        if (objetivo) objetivo.Mostrar(p);
+
+        Frame frame = null;
+        int i = 0;
+        if (frames != null && frames.Count > 0)
+        {
+            i = Mathf.Clamp(indice, 0, frames.Count - 1);
+            frame = frames[i];
+        }
+        MostrarFalha(p, frame);
+
+        if (objetivo)
+        {
+            objetivo.Mostrar(p);
+            if (frame != null) objetivo.MostrarFrame(frame, i);
+        }
+    }
+
+    // Destruído tem prioridade sobre prazo; nenhuma das duas aparece depois de concluir.
+    private void MostrarFalha(Progresso p, Frame frame)
+    {
+        bool destruido = !p.concluido && frame != null && !frame.TanqueVivo(fase.IdJogador());
+        bool prazo = !p.concluido && !destruido && fase.TemPrazo() && p.frame > fase.limite_frame;
+        if (faixaDestruido) faixaDestruido.SetActive(destruido);
+        if (faixaPrazoEsgotado) faixaPrazoEsgotado.SetActive(prazo);
     }
 
     private HudTreinoObjetivo PrefabDaFase(string numero)
@@ -86,6 +137,7 @@ public class HudTreinoPainel : MonoBehaviour
         if (prefab == null || areaObjetivo == null) return;
         objetivo = Instantiate(prefab, areaObjetivo);
         objetivo.Configurar(fase);
+        if (frames != null) objetivo.ConfigurarFrames(frames);
     }
 
     private void PreencherBarra(float proporcao)
@@ -94,4 +146,5 @@ public class HudTreinoPainel : MonoBehaviour
         max.x = proporcao;
         barraFramePreenchimento.anchorMax = max;
     }
+}
 }

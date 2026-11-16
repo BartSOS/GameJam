@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Datas.Fase
 {
@@ -14,6 +15,21 @@ public class Progresso
     public float velocidade;   // unidades por frame
     public bool concluido;     // fase cumprida neste frame ou antes
 
-    public bool TemPonto => !string.IsNullOrEmpty(ponto);
+    public bool TemPonto()
+    {
+        return !string.IsNullOrEmpty(this.ponto);
+    }
+
+    /// <summary>Dentro do raio; sem ponto conta como fora.</summary>
+    public bool EstaDentro()
+    {
+        return this.TemPonto() && this.dentro;
+    }
+
+    /// <summary>Seguidos para exibir: depois de concluir o JSON continua contando (21, 22...); o HUD para em precisa.</summary>
+    public int SeguidosAteOLimite()
+    {
+        return this.precisa > 0 ? Mathf.Min(this.seguidos, this.precisa) : this.seguidos;
+    }
 }
 }

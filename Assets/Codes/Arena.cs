@@ -12,7 +12,7 @@ using Datas.Frames;
 using Pooling;
 using Cysharp.Threading.Tasks;
 using HUD.Screen;
-
+using HUD.Treino;
 public class ArenaVisualizer : ADependsProject
 {
     [Header("Prefabs de Referência")]
@@ -29,9 +29,8 @@ public class ArenaVisualizer : ADependsProject
     private Dictionary<string, CheckPoint> checkPointsNaCena = new Dictionary<string, CheckPoint>();
     private Dictionary<int, List<CheckPoint>> checkPointsNaCenaEliminacao = new Dictionary<int, List<CheckPoint>>();
 
-    private Dictionary<int, CardTankUI> cardTanksAtivos = new Dictionary<int, CardTankUI>();
+    // private Dictionary<int, CardTankUI> cardTanksAtivos = new Dictionary<int, CardTankUI>();
     private CameraDigital cameraDigital;
-    private Jogador jogador;
     public Tela tela;
     public HudTreinoPainel hudTreinoPainel;
 
@@ -73,50 +72,7 @@ public class ArenaVisualizer : ADependsProject
 
         CriaJogador(fase.jogador);
         CriaAlvos(fase.alvos);  
-        CriaPontos(fase.pontos);
         hudTreinoPainel.Configurar(fase);
-    }
-
-    private void CriaPontos(List<Ponto> pontos)
-    {
-        if (pontos == null || pontos.Count == 0)
-        {
-            Debug.LogError("Lista de Pontos não encontrada ou vazia no JSON.");
-            return;
-        }
-
-        foreach (Ponto ponto in pontos)
-        {
-            CriaPonto(ponto);
-        }
-    }
-
-    private void CriaPonto(Ponto ponto)
-    {
-        if (ponto == null)
-        {
-            Debug.LogError("Ponto não encontrado no JSON.");
-            return;
-        }
-
-        Debug.LogError($"Criando Ponto: {ponto.id}, x: {ponto.x}, y: {ponto.y}, raio: {ponto.raio}, consumido_tick: {ponto.consumido_tick}");
-
-        if (!checkPointsNaCena.ContainsKey(ponto.id))
-        {
-            GameObject novoPonto = Instantiate(CheckPoint, transform);
-            novoPonto.name = $"CheckPoint_{ponto.id}";
-
-            CheckPoint checkPointScript = novoPonto.GetComponent<CheckPoint>();
-            checkPointScript.onEntry(ponto.raio, ponto.x, ponto.y, ponto.consumido_tick, ponto.ordem);
-
-            checkPointsNaCena.Add(ponto.id, checkPointScript);
-
-            if (!checkPointsNaCenaEliminacao.ContainsKey(ponto.consumido_tick))
-            {
-                checkPointsNaCenaEliminacao.Add(ponto.consumido_tick, new List<CheckPoint>());
-            }
-            checkPointsNaCenaEliminacao[ponto.consumido_tick].Add(checkPointScript);
-        }
     }
 
     private void CriaJogador(Jogador jogadorFase)
@@ -167,22 +123,6 @@ public class ArenaVisualizer : ADependsProject
         }
     }
 
-    private void AtualizarCheckPoints(int tick)
-    {
-        if (checkPointsNaCenaEliminacao.ContainsKey(tick))
-        {
-            List<CheckPoint> checkPoints = checkPointsNaCenaEliminacao[tick];
-            foreach (CheckPoint checkPoint in checkPoints)
-            {
-                if (checkPoint != null)
-                {
-                    checkPoint.gameObject.SetActive(false); // Desativa o CheckPoint quando consumido
-                }
-            }
-        }
-    }
-    
-
     private void FixedUpdateGame()
     {
         if (indice < project.frames.Count)
@@ -192,9 +132,8 @@ public class ArenaVisualizer : ADependsProject
                 AtualizarTanques(project.frames[indice].tanks);
                 AtualizarProjeteis(project.frames[indice].projectiles);
                 AtualizarHazards(project.frames[indice].hazards);
-                AtualizarCardTanks(project.frames[indice].tanks);
                 AtualizarItems(project.frames[indice].items);
-                AtualizarCheckPoints(project.frames[indice].tick);
+                AtualizarCheckPoints(project.fase.pontos, project.frames[indice].tick);
 
                 Debug.Log(project.frames[indice].tick);
                 
@@ -214,9 +153,6 @@ public class ArenaVisualizer : ADependsProject
             if (!gameOver)
             {
                 gameOver = true;
-                // AudioArena audioController = GetComponent<AudioArena>();
-                // var unicoItem = tanquesNaCena.FirstOrDefault(t => t.Value.gameObject.activeSelf);
-                // audioController.tocaSomSaida(unicoItem.Value.name); 
                 tela.MostraMsgFinal();
             }
         }
@@ -244,42 +180,18 @@ public class ArenaVisualizer : ADependsProject
         }
     }
 
+    private void AtualizarCheckPoints(List<Ponto> pontos, int tick)
+    {
+        foreach (Ponto ponto in pontos)
+        {
+            if (ponto.consumido_tick < tick)
+                atualizarPool<CheckPoint, Ponto>(ponto);
+        }
+    }
+
     private void AtualizarProjeteis(List<Projectile> dadosProjetis)
     {
         AtualizarPoolAble<ManagerTiro, Projectile>(dadosProjetis);
-    }
-
-    private void AtualizarCardTanks(List<Tank> dadosCardTanks)
-    {
-        if (dadosCardTanks == null) return;
-
-        foreach (Tank t in dadosCardTanks)
-        {
-            CardTankUI cardTankUI;
-
-            if (!cardTanksAtivos.ContainsKey(t.id))
-            {
-                GameObject novoCard = Instantiate(CardTank, Painel, false);
-                novoCard.name = $"CardTank_ID_{t.id}";
-    
-                cardTankUI = novoCard.GetComponent<CardTankUI>();
-
-                if (t == null || t.id == 0)
-                {
-                    Debug.LogError("Tank ou Tank ID é nulo.");
-                    continue;
-                }
-                if (!LoadJson.project.nomesDosTanques.ContainsKey(t.id)) Debug.LogError($"Nome do tanque com ID {t.id} não encontrado.");
-
-                cardTankUI.onEntry(t.id, LoadJson.project.nomesDosTanques[t.id], this); // Exemplo de nome, você pode ajustar conforme necessário
-
-
-                cardTanksAtivos.Add(t.id, cardTankUI);
-            }
-
-            cardTankUI = cardTanksAtivos[t.id];
-            cardTankUI.updateValues(t.hp, t.energy, t.shield);
-        }
     }
 
     private void AtualizarItems(List<Item> dadosItems)
@@ -302,88 +214,6 @@ public class ArenaVisualizer : ADependsProject
     private void atualizarPool<TVisual, TData>(TData data) where TData : IData where TVisual : APoolAbleMonobehaviour<TData>
     {
         PoolerManager.INSTANCE.Morph<TVisual, TData>(data.id, data);
-    }
-    // ========================================================================
-    // MOTOR GENÉRICO DE OBJECT POOL
-    // ========================================================================
-    private void SincronizarPool<TData, TVisual>(
-        List<TData> dadosJson,                   // Lista do JSON (ex: dadosProjetis ou dadosHazards)
-        Dictionary<int, TVisual> dicionarioAtivos, // Dicionário de quem está na tela
-        Queue<TVisual> pool,                     // Fila de reciclagem
-        GameObject prefabBase,                   // Qual prefab instanciar se a fila estiver vazia
-        Func<TData, int> extrairId,              // Como ler o ID (ex: p => p.id)
-        Action<TData, TVisual> aoNascer,         // O que o script deve fazer no primeiro frame
-        Action<TData, TVisual> aoAtualizar,      // O que o script deve fazer a cada frame (movimento)
-        Func<TVisual, IEnumerator> rotinaMorte   // A Coroutine de explosão/desligamento
-    ) where TVisual : MonoBehaviour              // Garante que TVisual é um script da Unity
-    {
-        if (dadosJson == null) return;
-
-        HashSet<int> idsNoFrameAtual = new HashSet<int>();
-
-        // 1. POSICIONA OU REUTILIZA
-        foreach (TData itemData in dadosJson)
-        {
-            int id = extrairId(itemData);
-            idsNoFrameAtual.Add(id);
-
-            if (!dicionarioAtivos.ContainsKey(id))
-            {
-                TVisual scriptVisual;
-
-                if (pool.Count > 0)
-                {
-                    scriptVisual = pool.Dequeue();
-                    scriptVisual.gameObject.SetActive(true);
-                }
-                else
-                {
-                    GameObject novoObj = Instantiate(prefabBase, transform);
-                    novoObj.name = $"{prefabBase.name}_{id}";
-                    scriptVisual = novoObj.GetComponent<TVisual>();
-                }
-
-                // Executa a regra específica que você passou para o nascimento
-                aoNascer?.Invoke(itemData, scriptVisual);
-
-                dicionarioAtivos.Add(id, scriptVisual);
-            }
-
-            // Executa a regra específica de atualização
-            aoAtualizar?.Invoke(itemData, dicionarioAtivos[id]);
-        }
-
-        // 2. LIMPEZA E RECICLAGEM
-        List<int> idsParaRemover = new List<int>();
-        foreach (var kvp in dicionarioAtivos)
-        {
-            if (!idsNoFrameAtual.Contains(kvp.Key))
-                idsParaRemover.Add(kvp.Key);
-        }
-
-        foreach (int idRemovido in idsParaRemover)
-        {
-            TVisual scriptRemovido = dicionarioAtivos[idRemovido];
-            dicionarioAtivos.Remove(idRemovido);
-
-            // Usa a função auxiliar abaixo para esperar a animação acabar e guardar na fila
-            StartCoroutine(RotinaReciclagemGenerica(scriptRemovido, pool, rotinaMorte));
-        }
-    }
-
-    private IEnumerator RotinaReciclagemGenerica<TVisual>(
-        TVisual script, 
-        Queue<TVisual> pool, 
-        Func<TVisual, IEnumerator> rotinaMorte
-    ) where TVisual : MonoBehaviour
-    {
-        IEnumerator rotina = rotinaMorte?.Invoke(script);
-
-        if (rotina != null)
-            yield return StartCoroutine(rotina);
-        
-        // Só devolve para a caixa de munição quando a fumaça acabar
-        pool.Enqueue(script);
     }
 
     public Tanque getTankById(int id)

@@ -1,6 +1,7 @@
 using System.Globalization;
 using UnityEngine;
 
+namespace HUD.Treino{
 /// <summary>
 /// Formatação de números para os textos do HUD. Não sabe nada de fase:
 /// só transforma valores em texto ou em proporção para barras.
@@ -11,6 +12,12 @@ public static class FormatoHud
     public static string Decimal1(float valor)
     {
         return valor.ToString("0.0", CultureInfo.InvariantCulture).Replace('.', ',');
+    }
+
+    /// <summary>Número inteiro arredondado ("80").</summary>
+    public static string Inteiro(float valor)
+    {
+        return Mathf.RoundToInt(valor).ToString();
     }
 
     /// <summary>"/ 360"</summary>
@@ -24,4 +31,5 @@ public static class FormatoHud
     {
         return total > 0 ? Mathf.Clamp01((float)atual / total) : 0f;
     }
+}
 }
