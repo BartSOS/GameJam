@@ -24,6 +24,8 @@ public class Bar
     {
         if (Mathf.Approximately(val, valorAtual)) return;
 
+        Debug.LogError("Diminuiu algo");
+
         valorAtual = val;
         image.rectTransform.DOKill();
         image.rectTransform.DOSizeDelta(new Vector2(larguraMaxima * (val / 100f), altura), 0.5f);

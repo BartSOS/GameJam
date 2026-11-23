@@ -141,7 +141,7 @@ public class ArenaVisualizer : ADependsProject
                 if (project.fase.progresso[indice].concluido)
                 {
                     folga++;
-                    if (folga == 4)
+                    if (folga == 20)
                         acabaJogo();
                 }
             }

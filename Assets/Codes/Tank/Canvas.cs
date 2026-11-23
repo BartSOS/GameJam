@@ -35,6 +35,7 @@ public class Canvas : MonoBehaviour
 
     public void UpdateBars(float hp, float energy)
     {
+        Debug.Log($"[{gameObject.name}] hp={hp} energy={energy}", this);
         barraHp.updateBar(hp);
         barraEnergy.updateBar(energy);
         this.hp.text = ((int)hp).ToString();
