@@ -6,6 +6,7 @@ using Datas.Frames;
 using Datas.Fase;
 using UnityEngine.Video;
 using Tanques;
+using UnityEngine.Animations;
 
 namespace Datas
 {
@@ -125,7 +126,6 @@ public class Project
 
         foreach (Tanques tanque in tanques)
         {
-            Debug.LogError(tanque.id);
             corTemaTanque[tanque.id] = tanque.cor.FromHex();
         }
     }
@@ -154,8 +154,9 @@ public class Project
         return $"Tank_In_Pool";
     }
 
-    public static void ScaleObject(SpriteRenderer spriteRenderer, Transform transform, Vector3 vector3)
+    public static void ScaleObject(SpriteRenderer spriteRenderer, Transform transform, Vector3 vector3, Vector3 escalaOriginal)
     {
+        transform.localScale = escalaOriginal;
         float max = Mathf.Max(spriteRenderer.sprite.bounds.size.x, spriteRenderer.sprite.bounds.size.y);
         Vector3 tamSpriteBase = new Vector3(max, max, 1f);
 

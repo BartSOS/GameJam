@@ -4,6 +4,7 @@ using Pooling;
 using System;
 using DG.Tweening;
 using Audio;
+using Datas;
 
 namespace Tiros
 {
@@ -15,6 +16,7 @@ public class ManagerTiro : APoolAbleMonobehaviour<Projectile>
 
     public GameObject tiroAndando;
     public GameObject tiroParado;
+    public GameObject cratera;
     
     private Animator animatorAndando;
     private Animator animatorParado;
@@ -47,7 +49,10 @@ public class ManagerTiro : APoolAbleMonobehaviour<Projectile>
 
     public override void onEntry(Projectile projectile)
     {
+        tween?.Pause();
         explodindo = false;
+        tiroAndando.SetActive(true);
+        tiroParado.SetActive(true);
         float angle = Mathf.Atan2(projectile.vy, projectile.vx) * Mathf.Rad2Deg;
         posicaoTravada = transform.position = new Vector3(projectile.x, projectile.y);
         transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
@@ -91,6 +96,7 @@ public class ManagerTiro : APoolAbleMonobehaviour<Projectile>
         tiroAndando.SetActive(false);
 
         animatorParado.Play("Explodindo", 0, 0f);
+        Instantiate(cratera).transform.position = transform.position;
     }
 
     public override void onExit(Action onComplete)

@@ -7,7 +7,7 @@ public static class Texto
     public static readonly string Vitoria = "VITORIA";
     public static readonly string Derrota = "DERROTA";
     public static readonly string Empate = "EMPATE";
-    public static readonly string Neutro = "FIM DE PARTIDA";
+    public static readonly string Neutro = "FIM";
 
     public static string Causa(string c) => c switch
     {

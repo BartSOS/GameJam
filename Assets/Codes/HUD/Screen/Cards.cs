@@ -13,7 +13,8 @@ public class Cards : MonoBehaviour
 
     public void InsereDados(Bot eu)
     {
-        if (eu == null) gameObject.SetActive(false);
+        if (eu == null) 
+        {gameObject.SetActive(false); return;}
 
         posicao.text = eu.posicao.ToString() + "°";
         vida.text = ((int)eu.hp).ToString();

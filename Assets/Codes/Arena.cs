@@ -1,8 +1,5 @@
 using UnityEngine;
-using System.Linq;
 using System.Collections.Generic;
-using System.Collections;
-using System;
 using Tanques;
 using WebCam;
 using Datas;
@@ -10,21 +7,26 @@ using Datas.Fase;
 using Tiros;
 using Datas.Frames;
 using Pooling;
+using Artilharia;
 using Cysharp.Threading.Tasks;
 using HUD.Screen;
 using HUD.Treino;
-using Unity.VisualScripting;
+using Pontos;
+
 public class ArenaVisualizer : ADependsProject
 {
     [Header("Prefabs de Referência")]
     private PoolerManager poolerManager;
     private int indice;
+    public int Indice{get => indice;}
     private bool gameOver;
     private Project project;
     public Tela tela;
     public HudTreinoPainel hudTreinoPainel;
     [SerializeField] private int velocidade = 4;
     private int contador = 0;
+
+    private int folga = 0;
 
     protected override void AoAcordar()
     {
@@ -117,35 +119,49 @@ public class ArenaVisualizer : ADependsProject
     {
         contador++;
 
-        if (indice < project.frames.Count)
+        if (indice < project.frames.Count && !gameOver)
         {
             if (contador % velocidade == 0)
             {
-                AtualizarTanques(project.frames[indice].tanks);
-                AtualizarProjeteis(project.frames[indice].projectiles);
-                AtualizarHazards(project.frames[indice].hazards);
-                AtualizarItems(project.frames[indice].items);
-                AtualizarCheckPoints(project.fase.pontos, project.frames[indice].tick);
-                hudTreinoPainel.MostrarFrame(project.frames[indice].tick);
+                Frame frame = project.frames[indice];
+                poolerManager.BeginTick(frame.tick);
 
-                Debug.Log(project.frames[indice].tick);
+                AtualizarTanques(frame.tanks);
+                AtualizarProjeteis(frame.projectiles);
+                AtualizarHazards(frame.hazards);
+                AtualizarItems(frame.items);
+                AtualizarCheckPoints(project.fase.pontos, frame.tick, project.fase.progresso[indice]);
+                hudTreinoPainel.MostrarFrame(frame.tick);
+
+                Debug.Log(frame.tick);
                 
                 indice++;
-                poolerManager.UpdateTick(project.frames[indice].tick);
+                poolerManager.UpdateTick();
+
+                if (project.fase.progresso[indice].concluido)
+                {
+                    folga++;
+                    if (folga == 4)
+                        acabaJogo();
+                }
             }
         }
 
         else 
         {
-            if (!gameOver)
-            {
-                gameOver = true;
-                tela.MostraMsgFinal();
-            }
+            acabaJogo();
         }
     }
 
-   
+    private void acabaJogo()
+    {
+        if (!gameOver && contador % velocidade == 0)
+        {            
+            gameOver = true;
+            tela.MostraMsgFinal();
+            hudTreinoPainel.DesligaHud();
+        }
+    }
 
     private void AtualizarHazards(List<Hazard> hazardDatas)
     {
@@ -167,13 +183,13 @@ public class ArenaVisualizer : ADependsProject
         }
     }
 
-    private void AtualizarCheckPoints(List<Ponto> pontos, int tick)
+    private void AtualizarCheckPoints(List<Ponto> pontos, int tick, Progresso progresso)
     {
         foreach (Ponto ponto in pontos)
         {
-            Debug.Log($"Merfda {ponto.consumido_tick} -> {tick}");
-            if (ponto.consumido_tick >= tick)
-                atualizarPool<CheckPoint, Ponto>(ponto);
+            atualizarPool<CheckPoint, Ponto>(ponto);
+            CheckPoint checkPoint = poolerManager.GetVisual<CheckPoint>(ponto.id.GetHashCode());
+            checkPoint.MostrarEstado(progresso);
         }
     }
 

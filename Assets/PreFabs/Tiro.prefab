@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   tiroAndando: {fileID: 7948173926833384115}
   tiroParado: {fileID: 6897561358017100717}
+  cratera: {fileID: 6683258557243288277, guid: cdc3eb796f92637a099498eb8d007e39, type: 3}
   somEntry: {fileID: 8300000, guid: 20d886dbfa42763d4b056dc814993a25, type: 3}
   somExit: {fileID: 8300000, guid: ae2e3b06fd72f5797b839261c1393324, type: 3}
 --- !u!1 &6897561358017100717

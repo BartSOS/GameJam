@@ -31,5 +31,11 @@ public class Progresso
     {
         return this.precisa > 0 ? Mathf.Min(this.seguidos, this.precisa) : this.seguidos;
     }
+
+    
+    public bool EstaNoPonto(string idPonto)
+    {
+        return EstaDentro() && ponto == idPonto;
+    }
 }
 }

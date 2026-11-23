@@ -102,14 +102,17 @@ public class PoolerManager : MonoBehaviour
         return default(TVisual);
     }
 
-    public void UpdateTick(int tick)
+    public void UpdateTick()
     {
         foreach (IPool pool in _poolsByComponentType.Values)
         {
-            pool.CleanActivesFromDictionary(tick);
+            pool.CleanActivesFromDictionary(TickCurrent);
         }
+    }
 
-        TickCurrent = tick + 1;
+    public void BeginTick(int tick)
+    {
+        TickCurrent = tick;
     }
 }
 

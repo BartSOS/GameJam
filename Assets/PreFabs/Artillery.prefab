@@ -152,6 +152,7 @@ GameObject:
   - component: {fileID: 2295024966978939107}
   - component: {fileID: 821508146956467587}
   - component: {fileID: 5941004484485268170}
+  - component: {fileID: 1389937507034777310}
   m_Layer: 0
   m_Name: Animation
   m_TagString: Untagged
@@ -256,3 +257,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1389937507034777310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8658168767695767292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e641a0640bb8a907d91189a0eb458b1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Artilharia.Explosao
