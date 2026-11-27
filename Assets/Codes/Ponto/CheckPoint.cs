@@ -19,14 +19,11 @@ public class CheckPoint : APoolAbleMonobehaviour<Ponto>
     [Header("Cores")]
     public Color corFora = new Color32(0xE6, 0xED, 0xF3, 0xFF);
     public Color corDentro = new Color32(0x3D, 0xDC, 0x84, 0xFF);
-    public Color corConsumido = new Color32(0x3D, 0xDC, 0x84, 0x99); // verde a 60%
-    [Tooltip("Opacidade do número quando o ponto já foi consumido.")]
-    [Range(0f, 1f)] public float alfaTextoConsumido = 0.6f;
+    public Color corConsumido = new Color32(0x3D, 0xDC, 0x84, 0xFF);
 
     private Vector3 escalaOriginal;
     private TextMeshProUGUI texto;
     private SpriteRenderer spriteRenderer;
-    private Color corTextoOriginal;
 
     private Ponto ponto;
     private EstadoCheckPoint estado;
@@ -36,7 +33,6 @@ public class CheckPoint : APoolAbleMonobehaviour<Ponto>
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         texto = GetComponentInChildren<TextMeshProUGUI>();
-        if (texto) corTextoOriginal = texto.color;
         escalaOriginal = transform.localScale;
     }
 
@@ -89,12 +85,7 @@ public class CheckPoint : APoolAbleMonobehaviour<Ponto>
             if (sprite) spriteRenderer.sprite = sprite;
             spriteRenderer.color = CorDoEstado(novo);
         }
-        if (texto)
-        {
-            var cor = consumido ? corDentro : CorDoEstado(novo);
-            if (consumido) cor.a *= alfaTextoConsumido;
-            texto.color = cor;
-        }
+        if (texto) texto.color = CorDoEstado(novo);
     }
 
     private Color CorDoEstado(EstadoCheckPoint e)

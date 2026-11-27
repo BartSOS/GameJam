@@ -5,6 +5,7 @@ using System;
 using DG.Tweening;
 using Audio;
 using Datas;
+using UnityEngine.Serialization;
 
 namespace Tiros
 {
@@ -21,7 +22,9 @@ public class ManagerTiro : APoolAbleMonobehaviour<Projectile>
     private Animator animatorAndando;
     private Animator animatorParado;
 
-    public AudioClip somEntry;
+    [Header("Áudio")]
+    [Tooltip("Tiro de canhão: toca (AudioSFX) quando o projétil é disparado.")]
+    [FormerlySerializedAs("somEntry")] public AudioClip somTiroCanhao;
     public AudioClip somExit;
 
     private EventsObjectTiroParado eventsObjectTiroParado;
@@ -63,7 +66,7 @@ public class ManagerTiro : APoolAbleMonobehaviour<Projectile>
 
     private void startAnimacao()
     {
-        // AudioSFX.INSTANCE.Play(somEntry);
+        if (somTiroCanhao && AudioSFX.INSTANCE) AudioSFX.INSTANCE.Play(somTiroCanhao);
 
         tiroAndando.SetActive(true);
         tiroParado.SetActive(true);

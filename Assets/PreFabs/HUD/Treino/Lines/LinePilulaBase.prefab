@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2811345289030734782}
   - component: {fileID: 5553828374201474736}
+  - component: {fileID: 2463057412489777647}
   m_Layer: 5
   m_Name: Pilulas
   m_TagString: Untagged
@@ -26,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 1521839648182149313}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8456659, y: 0.8456659, z: 0.8456659}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6671781179212433175}
@@ -63,6 +64,26 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2463057412489777647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521839648182149313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: 1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &6416315171717291825
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1751452937392209945, guid: b536685ba03c3d0ee8e2d65a9a952b3e, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1751452937392209945, guid: b536685ba03c3d0ee8e2d65a9a952b3e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -337,59 +358,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1751452937392209945, guid: b536685ba03c3d0ee8e2d65a9a952b3e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2811345289030734782}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 303778549167162885, guid: b536685ba03c3d0ee8e2d65a9a952b3e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2116352049254504265}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b536685ba03c3d0ee8e2d65a9a952b3e, type: 3}
---- !u!1 &2623721989566988286 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 303778549167162885, guid: b536685ba03c3d0ee8e2d65a9a952b3e, type: 3}
-  m_PrefabInstance: {fileID: 2332417950662490619}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2116352049254504265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2623721989566988286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 848e0f2919b2f5bb3b3b5a5bd68b2119, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HUD.Treino.Linha.HudLinhaAlvos
-  textoValor: {fileID: 5069560275708590131}
-  textoTotal: {fileID: 7468081590805415140}
-  areaPilulas: {fileID: 2811345289030734782}
-  pilulas: []
-  modeloPilula: {fileID: 735101111902390402, guid: 753730954768664219c8f8e0292c43b0, type: 3}
-  linhas: []
-  modeloLinha: {fileID: 0}
 --- !u!224 &4039729888069466594 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1751452937392209945, guid: b536685ba03c3d0ee8e2d65a9a952b3e, type: 3}
   m_PrefabInstance: {fileID: 2332417950662490619}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5069560275708590131 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7351242327189471688, guid: b536685ba03c3d0ee8e2d65a9a952b3e, type: 3}
-  m_PrefabInstance: {fileID: 2332417950662490619}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!114 &7468081590805415140 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5187475412001504543, guid: b536685ba03c3d0ee8e2d65a9a952b3e, type: 3}
-  m_PrefabInstance: {fileID: 2332417950662490619}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI

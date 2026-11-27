@@ -49,6 +49,7 @@ MonoBehaviour:
   circle: {fileID: 5742186437603352714}
   explosion: {fileID: 8658168767695767292}
   lastSprite: {fileID: 21300000, guid: fec1d2bc0bafd407f97e88310071956e, type: 3}
+  somExplosao: {fileID: 8300000, guid: 1cb4fb5d5b9672fc79bdd1857c47ea54, type: 3}
 --- !u!1 &5742186437603352714
 GameObject:
   m_ObjectHideFlags: 0

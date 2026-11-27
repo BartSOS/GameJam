@@ -3,6 +3,7 @@ using UnityEngine;
 using Datas;
 using Pooling;
 using Datas.Frames;
+using Audio;
 
 namespace Artilharia
 {
@@ -11,6 +12,10 @@ public class Artillery : APoolAbleMonobehaviour<Hazard>
     public GameObject circle;
     public GameObject explosion;
     public Sprite lastSprite;
+
+    [Header("Áudio")]
+    [Tooltip("Toca (AudioSFX) quando a bomba explode.")]
+    [SerializeField] private AudioClip somExplosao;
 
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -52,6 +57,7 @@ public class Artillery : APoolAbleMonobehaviour<Hazard>
         circle.SetActive(false);
         explosion.SetActive(true);
         animator.Play("Explodindo", 0, 0f);
+        if (somExplosao && AudioSFX.INSTANCE) AudioSFX.INSTANCE.Play(somExplosao);
     }
 
     private void OnFimExplodindo()

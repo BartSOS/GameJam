@@ -12,6 +12,7 @@ using Cysharp.Threading.Tasks;
 using HUD.Screen;
 using HUD.Treino;
 using Pontos;
+using Audio;
 
 public class ArenaVisualizer : ADependsProject
 {
@@ -26,10 +27,12 @@ public class ArenaVisualizer : ADependsProject
     [SerializeField] private int velocidade = 4;
     private int contador = 0;
     private int folga = 0;
+    private AudioArena audioArena;
 
     protected override void AoAcordar()
     {
         poolerManager = PoolerManager.INSTANCE;
+        audioArena = GetComponent<AudioArena>();
     }
 
     protected override async UniTask AoCarregarProject(Project project)
@@ -161,6 +164,7 @@ public class ArenaVisualizer : ADependsProject
         gameOver = true;
         if (tela) tela.MostraMsgFinal();
         if (hudTreinoPainel) hudTreinoPainel.DesligaHud();
+        audioArena.tocaSomSaida();
     }
 
     private void AtualizarTanques(List<Tank> dadosTanques)

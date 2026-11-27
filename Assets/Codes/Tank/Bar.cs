@@ -34,6 +34,7 @@ public class Bar
     public void setBar(float val)
     {
         valorAtual = val;
+        image.rectTransform.DOKill();
         image.rectTransform.sizeDelta = new Vector2(larguraMaxima * (val / 100f), altura);
     }
 }

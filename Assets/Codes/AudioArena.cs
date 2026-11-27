@@ -1,24 +1,21 @@
 using UnityEngine;
 using TMPro;
 using Audio;
+using NUnit.Framework.Constraints;
 
 public class AudioArena : MonoBehaviour
 {
     public AudioClip somEntry;
     public AudioClip somExit;
-    public TextMeshProUGUI texto;    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         AudioSFX.INSTANCE.PlayLoop(somEntry);
-        texto.gameObject.SetActive(false);
+        Debug.LogError("Ta tocando");
     }
 
-    public void tocaSomSaida(string nameVencedor)
+    public void tocaSomSaida()
     {
         AudioSFX.INSTANCE.PlayLoop(somExit);
-
-        texto.text = nameVencedor + " venceu!";
-        texto.gameObject.SetActive(true);
     }
 }

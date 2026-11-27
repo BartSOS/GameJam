@@ -117,7 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc348c5a7fa053b8a87d062bd52433c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HUD.Treino.Prefab.MiraAndando
-  distancia: {fileID: 2725472243416616716, guid: 3c8b8285971f42bc19038c03081139fe, type: 3}
-  alvos: {fileID: 6621646051303745320, guid: ffe38c8fe1127c24480f89a16f3a038f, type: 3}
-  tiros: {fileID: 5315126838218027720, guid: 26bf366bb5087bda7aa2d8e4a1ec8e4b, type: 3}
-  conteudo: {fileID: 0}
+  distancia: {fileID: 5243011845433066624, guid: 3d9f9a304f4809c9db8dd0d994e02640, type: 3}
+  alvos: {fileID: 2754072420293394896, guid: 1c0ea39bb920663d999d814bccde2635, type: 3}
+  tiros: {fileID: -8827756445401658915, guid: dbeed6e5e737445efa889501f2b366c1, type: 3}
