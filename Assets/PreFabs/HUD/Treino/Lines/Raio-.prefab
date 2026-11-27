@@ -836,8 +836,9 @@ GameObject:
   m_Component:
   - component: {fileID: 317642790863756302}
   - component: {fileID: 2828926719539635382}
+  - component: {fileID: 2225051033203139642}
   m_Layer: 5
-  m_Name: Raio
+  m_Name: Raio-
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -890,6 +891,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &2225051033203139642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145397221293026147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0b5b48b0004f6cd8f005e5ab5058a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HUD.Treino.Linha.HudLinhaBarra
+  textoValor: {fileID: 4868993718283966698}
+  textoTotal: {fileID: 7621206598174585198}
+  barraPreenchimento: {fileID: 8769393527484867459}
 --- !u!1 &4295248533237916763
 GameObject:
   m_ObjectHideFlags: 0

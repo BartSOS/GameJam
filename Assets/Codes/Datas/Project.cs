@@ -23,7 +23,7 @@ public class Project
     public float height;
     public readonly Dictionary<int, string> nomesDosTanques = new();
     public readonly Dictionary<int, Color> corTemaTanque = new();
-
+    public bool EhTreino => fase != null && !string.IsNullOrEmpty(fase.id);
     public Vector3 tam_engine;
 
     public static float Div(float x, float y)
@@ -54,8 +54,8 @@ public class Project
     {
         if (datas == null)
         {
-            Debug.LogError($"List do tipo {datas.GetType()} não existe");
-            return ;
+            Debug.LogWarning($"Lista ausente no replay");
+            return;
         }
 
         foreach (IData data in datas)
@@ -68,7 +68,7 @@ public class Project
     {
         if (data == null)
         {
-            Debug.LogError($"O tipo {data.GetType()} não existe");
+            Debug.LogError($"O tipo não existe");
             return ;
         }
 
@@ -105,7 +105,7 @@ public class Project
         else
             Debug.LogError("Lista de frames ausente do projeto");
 
-        if (fase != null)
+        if (EhTreino)
         {
             normalizeListData(fase.alvos);
             normalizeListData(fase.pontos);
@@ -116,7 +116,7 @@ public class Project
         else    
             Debug.LogError("Fase ausente do projeto");
 
-        startNamesDosTanques(bots, fase.alvos);
+        startNamesDosTanques(bots, EhTreino ? fase.alvos : null);
         startColorsDosTanques();
     }
 
@@ -132,10 +132,14 @@ public class Project
 
     private void startNamesDosTanques(List<Bot> bots, List<Alvo> alvos)
     {
-        foreach (var bot in bots)
+        if (bots != null)
         {
-            nomesDosTanques[bot.id] = bot.nome;
+            foreach (var bot in bots)
+            {
+                nomesDosTanques[bot.id] = bot.nome;
+            }
         }
+
 
         if (alvos != null)
         {

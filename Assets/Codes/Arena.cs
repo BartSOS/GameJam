@@ -18,53 +18,52 @@ public class ArenaVisualizer : ADependsProject
     [Header("Prefabs de Referência")]
     private PoolerManager poolerManager;
     private int indice;
-    public int Indice{get => indice;}
+    public int Indice { get => indice; }
     private bool gameOver;
     private Project project;
     public Tela tela;
     public HudTreinoPainel hudTreinoPainel;
     [SerializeField] private int velocidade = 4;
     private int contador = 0;
-
     private int folga = 0;
 
     protected override void AoAcordar()
     {
+        poolerManager = PoolerManager.INSTANCE;
     }
 
     protected override async UniTask AoCarregarProject(Project project)
     {
-        CameraDigital cameraDigital  = Camera.main.GetComponent<CameraDigital>();
+        CameraDigital cameraDigital = Camera.main.GetComponent<CameraDigital>();
         await cameraDigital.Pronto;
         this.project = project;
-        StartFase(project.fase);
+
+        if (poolerManager == null) poolerManager = PoolerManager.INSTANCE;
+
+        if (project.EhTreino)
+            StartFase(project.fase);
+        else if (hudTreinoPainel)
+            hudTreinoPainel.DesligaHud();
     }
 
     void Start()
     {
-        poolerManager = PoolerManager.INSTANCE;
+        if (poolerManager == null) poolerManager = PoolerManager.INSTANCE;
         indice = 0;
         gameOver = false;
     }
 
     void FixedUpdate()
-    {    
+    {
         if (!Configurado) return;
-
         FixedUpdateGame();
     }
 
     private void StartFase(Fases fase)
     {
-        if (fase == null)
-        {
-            Debug.LogError("Fase não encontrada no JSON.");
-            return;
-        }
-
         CriaJogador(fase.jogador);
-        CriaAlvos(fase.alvos);  
-        hudTreinoPainel.Configurar(fase);
+        CriaAlvos(fase.alvos);
+        if (hudTreinoPainel) hudTreinoPainel.Configurar(fase, project.frames);
     }
 
     private void CriaJogador(Jogador jogadorFase)
@@ -75,8 +74,7 @@ public class ArenaVisualizer : ADependsProject
             return;
         }
 
-        
-        Tank t = new Tank
+        atualizarPool<Tanque, Tank>(new Tank
         {
             id = jogadorFase.tank_id,
             x = jogadorFase.x,
@@ -86,18 +84,16 @@ public class ArenaVisualizer : ADependsProject
             energy = 100,
             shield = false,
             alive = true
-        };
-
-        List<Tank> a = new();
-        a.Add(t);
-        AtualizarPoolAble<Tanque, Tank>(a);
+        });
     }
 
     private void CriaAlvos(List<Alvo> alvos)
     {
+        if (alvos == null) return;
+
         foreach (var alvo in alvos)
         {
-            Tank t = new Tank
+            atualizarPool<Tanque, Tank>(new Tank
             {
                 id = alvo.tank_id,
                 x = alvo.x,
@@ -107,11 +103,7 @@ public class ArenaVisualizer : ADependsProject
                 energy = 100,
                 shield = false,
                 alive = true
-            };
-            
-            List<Tank> a = new();
-            a.Add(t);
-            AtualizarPoolAble<Tanque, Tank>(a);
+            });
         }
     }
 
@@ -119,77 +111,84 @@ public class ArenaVisualizer : ADependsProject
     {
         contador++;
 
-        if (indice < project.frames.Count && !gameOver)
-        {
-            if (contador % velocidade == 0)
-            {
-                Frame frame = project.frames[indice];
-                poolerManager.BeginTick(frame.tick);
+        if (gameOver) return;
 
-                AtualizarTanques(frame.tanks);
-                AtualizarProjeteis(frame.projectiles);
-                AtualizarHazards(frame.hazards);
-                AtualizarItems(frame.items);
-                AtualizarCheckPoints(project.fase.pontos, frame.tick, project.fase.progresso[indice]);
-                hudTreinoPainel.MostrarFrame(frame.tick);
-
-                Debug.Log(frame.tick);
-                
-                indice++;
-                poolerManager.UpdateTick();
-
-                if (project.fase.progresso[indice].concluido)
-                {
-                    folga++;
-                    if (folga == 20)
-                        acabaJogo();
-                }
-            }
-        }
-
-        else 
+        if (project.frames == null || indice >= project.frames.Count)
         {
             acabaJogo();
+            return;
         }
+
+        if (contador % velocidade != 0) return;
+
+        Frame frame = project.frames[indice];
+        Progresso progresso = ProgressoNoIndice(indice);
+
+        poolerManager.BeginTick(frame.tick);
+
+        AtualizarTanques(frame.tanks);
+        AtualizarProjeteis(frame.projectiles);
+        AtualizarHazards(frame.hazards);
+        AtualizarItems(frame.items);
+
+        if (project.EhTreino)
+        {
+            AtualizarCheckPoints(project.fase.pontos, progresso);
+            if (hudTreinoPainel) hudTreinoPainel.MostrarFrame(indice);
+        }
+
+        poolerManager.UpdateTick();
+        indice++;
+
+        if (progresso != null && progresso.concluido)
+        {
+            folga++;
+            if (folga >= 20) acabaJogo();
+        }
+    }
+
+    private Progresso ProgressoNoIndice(int i)
+    {
+        if (!project.EhTreino) return null;
+        var lista = project.fase.progresso;
+        if (lista == null || i < 0 || i >= lista.Count) return null;
+        return lista[i];
     }
 
     private void acabaJogo()
     {
-        if (!gameOver && contador % velocidade == 0)
-        {            
-            gameOver = true;
-            tela.MostraMsgFinal();
-            hudTreinoPainel.DesligaHud();
-        }
-    }
-
-    private void AtualizarHazards(List<Hazard> hazardDatas)
-    {
-        List<Hazard> lasers = hazardDatas.FindAll(h => h.type == "LASER");
-        List<Hazard> artilharias = hazardDatas.FindAll(h => h.type == "ARTILLERY");
-
-        AtualizarPoolAble<Laser, Hazard>(lasers);
-        AtualizarPoolAble<Artillery, Hazard>(artilharias);
+        if (gameOver) return;
+        gameOver = true;
+        if (tela) tela.MostraMsgFinal();
+        if (hudTreinoPainel) hudTreinoPainel.DesligaHud();
     }
 
     private void AtualizarTanques(List<Tank> dadosTanques)
     {
+        if (dadosTanques == null) return;
+
         foreach (Tank tank in dadosTanques)
         {
             if (!tank.alive)
-                PoolerManager.INSTANCE.GetVisual<Tanque>(tank.id).gameObject.SetActive(false);
-                
+            {
+                Tanque visual = poolerManager.GetVisual<Tanque>(tank.id);
+                if (visual) visual.gameObject.SetActive(false);
+                continue;
+            }
+
             atualizarPool<Tanque, Tank>(tank);
         }
     }
 
-    private void AtualizarCheckPoints(List<Ponto> pontos, int tick, Progresso progresso)
+    private void AtualizarCheckPoints(List<Ponto> pontos, Progresso progresso)
     {
+        if (pontos == null) return;
+
         foreach (Ponto ponto in pontos)
         {
             atualizarPool<CheckPoint, Ponto>(ponto);
             CheckPoint checkPoint = poolerManager.GetVisual<CheckPoint>(ponto.id.GetHashCode());
-            checkPoint.MostrarEstado(progresso);
+            if (checkPoint && progresso != null) checkPoint.MostrarEstado(progresso);
         }
     }
 
@@ -198,36 +197,36 @@ public class ArenaVisualizer : ADependsProject
         AtualizarPoolAble<ManagerTiro, Projectile>(dadosProjetis);
     }
 
+    private void AtualizarHazards(List<Hazard> hazardDatas)
+    {
+        if (hazardDatas == null) return;
+        AtualizarPoolAble<Laser, Hazard>(hazardDatas.FindAll(h => h.type == "LASER"));
+        AtualizarPoolAble<Artillery, Hazard>(hazardDatas.FindAll(h => h.type == "ARTILLERY"));
+    }
+
     private void AtualizarItems(List<Item> dadosItems)
     {
-        List<Item> dadosMedKits = dadosItems.FindAll(item => item.type == "HEAL");
-        List<Item> dadosLightning = dadosItems.FindAll(item => item.type == "ENERGY");
-
-        AtualizarPoolAble<MedKit, Item>(dadosMedKits);
-        AtualizarPoolAble<Lightning, Item>(dadosLightning);
+        if (dadosItems == null) return;
+        AtualizarPoolAble<MedKit, Item>(dadosItems.FindAll(item => item.type == "HEAL"));
+        AtualizarPoolAble<Lightning, Item>(dadosItems.FindAll(item => item.type == "ENERGY"));
     }
 
     private void AtualizarPoolAble<TVisual, TData>(List<TData> dados) where TData : IData where TVisual : APoolAbleMonobehaviour<TData>
     {
+        if (dados == null) return;
         foreach (TData data in dados)
-        {
-            PoolerManager.INSTANCE.Morph<TVisual, TData>(data.id, data);
-        }
+            poolerManager.Morph<TVisual, TData>(data.id, data);
     }
 
     private void atualizarPool<TVisual, TData>(TData data) where TData : IData where TVisual : APoolAbleMonobehaviour<TData>
     {
-        PoolerManager.INSTANCE.Morph<TVisual, TData>(data.id, data);
+        poolerManager.Morph<TVisual, TData>(data.id, data);
     }
 
     public Tanque getTankById(int id)
     {
         Tanque t = poolerManager.GetVisual<Tanque>(id);
-
-        if (t == null)
-        {
-            Debug.LogError($"Tanque deu merdacom ID {id} não encontrado.");
-        }
+        if (t == null) Debug.LogError($"Tanque com ID {id} não encontrado.");
         return t;
     }
 }

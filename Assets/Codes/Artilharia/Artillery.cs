@@ -1,57 +1,62 @@
-using System.Collections;
+using System;
 using UnityEngine;
 using Datas;
 using Pooling;
 using Datas.Frames;
-using System;
 
-namespace Artilharia{
+namespace Artilharia
+{
 public class Artillery : APoolAbleMonobehaviour<Hazard>
 {
     public GameObject circle;
     public GameObject explosion;
     public Sprite lastSprite;
-    private Vector3 scaleMax;
+
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private float timeTotal;
     private Action aoTerminar;
 
     void Awake()
     {
         animator = explosion.GetComponent<Animator>();
-        Explosao explosao = explosion.GetComponent<Explosao>();
-        explosao.FimExplodindo += OnFimExplodindo;
+        spriteRenderer = animator.GetComponent<SpriteRenderer>();
+        explosion.GetComponent<Explosao>().FimExplodindo += OnFimExplodindo;
     }
 
     public override void onEntry(Hazard hazard)
     {
+        aoTerminar = null;
         explosion.SetActive(false);
+        circle.SetActive(true);
+        circle.transform.localScale = Vector3.zero;
 
         transform.position = new Vector2(hazard.x, hazard.y);
 
-        scaleMax = new Vector3(hazard.radius * 2, hazard.radius * 2, 1f);
-        circle.transform.localScale = Vector3.zero;
+        timeTotal = Mathf.Max(hazard.timer, 0.0001f);
 
-        this.timeTotal = hazard.timer;
-        explosion.transform.localScale = Project.regraDeTresMaster(explosion.transform.localScale, lastSprite.bounds.size, scaleMax);
-
+        spriteRenderer.sprite = lastSprite;
+        Vector3 diametro = new Vector3(hazard.radius * 2f, hazard.radius * 2f, 1f);
+        Project.ScaleObject(spriteRenderer, animator.transform, diametro, Vector3.one);
     }
 
     public override void onUpdate(Hazard hazard)
-    {   
-        float progress = 1 - (hazard.timer / timeTotal);
-
-        circle.transform.localScale = Vector3.Lerp(Vector3.zero, scaleMax, progress);
+    {
+        float progress = Mathf.Clamp01(1f - hazard.timer / timeTotal);
+        circle.transform.localScale = Vector3.one * progress;
     }
+
     public override void onExit(Action onComplete)
     {
         aoTerminar = onComplete;
+        circle.SetActive(false);
         explosion.SetActive(true);
-        animator.Play("Explodindo");
+        animator.Play("Explodindo", 0, 0f);
     }
 
-    public void OnFimExplodindo()
+    private void OnFimExplodindo()
     {
+        explosion.SetActive(false);
         var callback = aoTerminar;
         aoTerminar = null;
         callback?.Invoke();
